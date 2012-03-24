@@ -25,6 +25,19 @@
 		<header role="banner">
 			<h1><a href="<?php echo home_url( '/' ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
 			<p><?php bloginfo( 'description' ); ?></p>
+			
+			<?php 
+			ob_start(); 
+			bloginfo('home');
+			$site_url = ob_get_clean(); 
+			?>
+			
+			<div class="links">
+				<p><a href="<?php bloginfo('home'); ?>"><?php echo str_replace('http://', '', $site_url) ?></a></p>
+				<p><a href="http://twitter.com/gravityonmars">@gravityonmars</a> 		</p>
+				<p><a href="<?php echo get_settings('admin_email') ?>">say hello</a>    </p>
+				<p><a href="<?php bloginfo('rss2_url'); ?>">rss feed</a>     </p>
+			</div><!-- .links -->
 		</header>
 		
 		<section id="content" role="main">
