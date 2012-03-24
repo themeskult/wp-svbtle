@@ -1,0 +1,52 @@
+/* body.settings_page_boilerplate-admin */
+#boilerplate-options-wrap {
+  width: 100%;
+  max-width: 900px;
+  padding: 3em;
+}
+
+#boilerplate-options-wrap h2 {
+  margin-bottom:2em;
+}
+
+#boilerplate-options-wrap #icon-tools {
+  position: relative;
+  top: -10px;
+}
+
+#boilerplate-options-wrap input[type="checkbox"] {
+  float:left;
+  margin:0 6px 0 -20px;
+}
+
+#boilerplate-options-wrap p input {
+  border-color:#666;
+}
+
+#boilerplate-options-wrap table.form-table tr {
+	border-top:1px solid #666;
+}
+
+#boilerplate-options-wrap table.form-table tr:nth-child(odd){
+	background:#ccc;
+}
+
+#boilerplate-options-wrap table.form-table td {
+	padding:8px 10px 8px 20px;
+}
+
+#boilerplate-options-wrap table.form-table p {
+	margin:0 0 1px;
+	color:#444;
+}
+
+#boilerplate-options-wrap code {
+	display:block;
+	font-weight: normal;
+	background:#000;
+	color:lime;
+}
+
+#boilerplate-options-wrap p code {
+	display:inline;
+}
