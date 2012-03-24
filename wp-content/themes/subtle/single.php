@@ -9,15 +9,10 @@
 
 get_header(); ?>
 <?php if ( have_posts() ) while ( have_posts() ) : the_post(); ?>
-				<nav id="nav-above" class="navigation">
-					<?php previous_post_link( '%link', '' . _x( '&larr;', 'Previous post link', 'boilerplate' ) . ' %title' ); ?>
-					<?php next_post_link( '%link', '%title ' . _x( '&rarr;', 'Next post link', 'boilerplate' ) . '' ); ?>
-				</nav><!-- #nav-above -->
+
 				<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-					<h1><?php the_title(); ?></h1>
-					<div class="entry-meta">
-						<?php boilerplate_posted_on(); ?>
-					</div><!-- .entry-meta -->
+					<h2 class="entry-title"><a href="<?php echo the_permalink() ?>"><?php the_title(); ?></a></h2>
+
 					<div class="entry-content">
 						<?php the_content(); ?>
 						<?php wp_link_pages( array( 'before' => '' . __( 'Pages:', 'boilerplate' ), 'after' => '' ) ); ?>
@@ -38,10 +33,7 @@ get_header(); ?>
 					</footer><!-- .entry-utility -->
 				</article><!-- #post-## -->
 				<nav id="nav-below" class="navigation">
-					<div class="nav-previous"><?php previous_post_link( '%link', '<span class="meta-nav">' . _x( '&larr;', 'Previous post link', 'boilerplate' ) . '</span> %title' ); ?></div>
-					<div class="nav-next"><?php next_post_link( '%link', '%title <span class="meta-nav">' . _x( '&rarr;', 'Next post link', 'boilerplate' ) . '</span>' ); ?></div>
+					<a href="#" class="back-to-blog">Back to blog</a>
 				</nav><!-- #nav-below -->
-				<?php comments_template( '', true ); ?>
 <?php endwhile; // end of the loop. ?>
-<?php get_sidebar(); ?>
 <?php get_footer(); ?>
