@@ -1,0 +1,8 @@
+# Ignore everything
+*
+
+# But not these files...
+!wp-subtle
+!wp-content
+!.gitignore
+
