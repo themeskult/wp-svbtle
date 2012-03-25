@@ -13,15 +13,14 @@ include('header.php')
 	
 	<div class=" module">
 		<div class="ideas">
-			<a href="#" class="button">New entry</a>
-			<h2>Ideas</h2>
+			<h2><a href="?page=new_post" class="button new-entry">New entry</a>Ideas</h2>
 			<?php
 			$ideas_posts = $wpdb->get_results("SELECT * FROM $wpdb->posts WHERE post_status = 'draft' AND post_type = 'post' ORDER BY post_date DESC");
 			?>
 
 			<?php foreach ($ideas_posts as $memberpost): ?>
 				<p>
-					<a href="<?php echo $memberpost->guid ?>"><span class="word-count"><?php echo str_word_count($memberpost->post_content) ?></span><?php echo $memberpost->post_title ?></a>
+					<a href="<?php echo $memberpost->guid ?>"><?php echo $memberpost->post_title ?></a>
 				</p>
 			<?php endforeach ?>
 		</div><!-- .ideas -->		
