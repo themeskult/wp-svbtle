@@ -29,7 +29,7 @@ if (! defined("ABSPATH")) {
 	define("ABSPATH", dirname(dirname(__FILE__)) . "/");
 }
 
-define("WPSUBTLE_PATH", ABSPATH . "wp-subtle/");
+define("WPSUBTLE_PATH", ABSPATH . "wp-svbtle/");
 
 /* 
  * Runing application
