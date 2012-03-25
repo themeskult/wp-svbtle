@@ -262,7 +262,7 @@ a.button.new-entry{float: right; margin-top: .5em; font-size: 14px}
 .buttons a.button{display: inline-block; padding: .8em 1.2em; margin: 5px}
 .buttons div.double{display: inline-block; border: 4px solid black; border-radius: 8px}
 input.text, textarea{border: 0; max-width: 500px}
-textarea{font-size: .8em; line-height: 1.4em}
+textarea{font-size: .8em; line-height: 1.4em; bottom: 100px; position: absolute; top: 130px; padding-bottom: 200px;}
 input.text:focus, textarea:focus{outline: 0}
 #post_title{font-size: 2em; font-weight: bold;}
 
