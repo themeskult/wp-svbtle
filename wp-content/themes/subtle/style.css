@@ -237,17 +237,23 @@ td { vertical-align: top; }
    ========================================================================== */
 
 
-body{font-size: 94%}
+body{font-size: 92%; color: #4D4D4D}
 a, a:visited{color: black; text-decoration: none;}
 #wrap{width: 860px; margin: auto; border-right: 1px solid #f1f1f1; }
-header{float: left; width: 20%; padding: 2em; position: fixed; color: #999; }
+header{float: left;  padding: 2em; position: fixed; color: #999; }
 header h1 a{color: black; }
-#content{margin-left: 230px; color: #444; border-left: 1px solid #f1f1f1; }
-article .entry-title{margin-top: 0; padding-top: 1em;}
+#content{margin-left: 30%;  border-left: 1px solid #f1f1f1; }
+
+article {border-bottom: 1px solid #f1f1f1; }
+article .entry-title, article .entry-content, article .entry-meta{padding: 3em 8%}
+article .entry-title{margin-top: 0; font-size: 1.4em; padding-top: 2em; padding-bottom: 0em}
+article .entry-title h2{margin: 0; padding: 0}
 article .entry-title a{display: inline-block; border-bottom: 1px solid #ccc; }
-article .entry-content p{line-height: 2em}
+article .entry-meta {border-bottom: 1px solid #f1f1f1; color: black; text-transform: uppercase; font-weight: bold; padding-top: 4em; padding-bottom: 4em; font-size: .9em}
+article .entry-content {padding-top: 0em}
+article .entry-content p{line-height: 1.9em}
 article .entry-content blockquote{border-left: 8px solid #0084ca; margin-left: 0; padding-left: 1.4em}
-article {border-bottom: 1px solid #f1f1f1; padding: 2em 3em}
+
 
 .links {margin-top: 2em}
 .links a{display: inline-block; color: #999; clear: both; border: 2px solid #ccc; border-radius: 100px; padding: .4em 1em}

@@ -457,23 +457,25 @@ function boilerplate_posted_on() {
 	// m = 01–12
 	// j = 1–31
 	// d = 01–31
-	printf( __( '<span class="%1$s">Posted on</span> <span class="entry-date">%2$s %3$s %4$s</span> <span class="meta-sep">by</span> %5$s', 'boilerplate' ),
+	// printf( __( '<span class="%1$s">Posted on</span> <span class="entry-date">%2$s %3$s %4$s</span> <span class="meta-sep">by</span> %5$s', 'boilerplate' ),
+
+	printf( __( '<span class="entry-date">%2$s %3$s %4$s</span>', 'boilerplate' ),
 		// %1$s = container class
 		'meta-prep meta-prep-author',
 		// %2$s = month: /yyyy/mm/
-		sprintf( '<a href="%1$s" title="%2$s" rel="bookmark">%3$s</a>',
+		sprintf( '%3$s',
 			home_url() . '/' . get_the_date( 'Y' ) . '/' . get_the_date( 'm' ) . '/',
 			esc_attr( 'View Archives for ' . get_the_date( 'F' ) . ' ' . get_the_date( 'Y' ) ),
 			get_the_date( 'F' )
 		),
 		// %3$s = day: /yyyy/mm/dd/
-		sprintf( '<a href="%1$s" title="%2$s" rel="bookmark">%3$s</a>',
+		sprintf( '%3$s',
 			home_url() . '/' . get_the_date( 'Y' ) . '/' . get_the_date( 'm' ) . '/' . get_the_date( 'd' ) . '/',
 			esc_attr( 'View Archives for ' . get_the_date( 'F' ) . ' ' . get_the_date( 'j' ) . ' ' . get_the_date( 'Y' ) ),
 			get_the_date( 'j' )
 		),
 		// %4$s = year: /yyyy/
-		sprintf( '<a href="%1$s" title="%2$s" rel="bookmark">%3$s</a>',
+		sprintf( '%3$s',
 			home_url() . '/' . get_the_date( 'Y' ) . '/',
 			esc_attr( 'View Archives for ' . get_the_date( 'Y' ) ),
 			get_the_date( 'Y' )
