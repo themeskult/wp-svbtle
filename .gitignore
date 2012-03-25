@@ -1,8 +1,9 @@
 # Ignore everything
-*
+/*
+/*/
 
 # But not these files...
-!wp-subtle*
-!wp-content*
+!/wp-subtle/
+!/wp-content/themes/subtle/
 !.gitignore
 
