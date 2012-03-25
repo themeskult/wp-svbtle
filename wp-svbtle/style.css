@@ -237,12 +237,22 @@ td { vertical-align: top; }
    ========================================================================== */
 
 
-body{font-size: 92%; color: #4D4D4D}
+body{font-size: 100%; color: #4D4D4D; margin-top: 1em}
 a, a:visited{color: black; text-decoration: none;}
 a:hover{color: #0184ca}
+a.button{display: inline-block; text-transform: uppercase; font-size: .8em; font-weight: bold; color: white; background: black; border-radius: 5px; padding: .4em 1em}
+a.button:hover{background-color: #0184ca}
+
+.logout{float: right; margin: 0 30px}
 .wrap{width: 80%; margin: auto}
-.word-count{border: 2px solid #ccc}
+.word-count{border: 3px solid #333; font-size: .8em; font-weight: bold; border-radius: 100px; width: 38px; padding: 10px 0; margin-right: 10px; text-align: center; display: inline-block;}
 .module{width: 50%; float: left;}
+.module.published{opacity: .5}
+.module p{border-bottom: 1px solid #ccc; padding: 1em 5%; margin: 0}
+.module p:first-child{border-top: 1px solid #ccc}
+.ideas{border: 8px solid black; padding: 1em; min-height: 500px}
+h2{padding-left: 5%; border-bottom: 1px solid #ccc; padding-bottom: 1em; margin-bottom: 0; font-weight: 900; text-transform: uppercase;}
+
 
 /* ==|== media queries ======================================================
    EXAMPLE Media Query for Responsive Design.
