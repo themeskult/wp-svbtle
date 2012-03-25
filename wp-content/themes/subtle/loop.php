@@ -90,7 +90,7 @@
 				<?php boilerplate_posted_on(); ?>
 			</div><!-- .entry-meta -->
 			
-			<h2 class="entry-title"><a href="<?php the_permalink(); ?>" title="<?php printf( esc_attr__( 'Permalink to %s', 'boilerplate' ), the_title_attribute( 'echo=0' ) ); ?>" rel="bookmark"><?php the_title(); ?></a></h2>
+			<h2 class="entry-title"><?php print_post_title(); ?></h2>
 
 
 
@@ -117,7 +117,9 @@
 <?php /* Display navigation to next/previous pages when applicable */ ?>
 <?php if (  $wp_query->max_num_pages > 1 ) : ?>
 	<nav id="nav-below" class="navigation">
-		<?php next_posts_link( __( '&larr; Older posts', 'boilerplate' ) ); ?>
-		<?php previous_posts_link( __( 'Newer posts &rarr;', 'boilerplate' ) ); ?>
+		<?php next_posts_link( __( '&larr; Previous', 'boilerplate' ) ); ?>
+		<div class="next">
+			<?php previous_posts_link( __( 'Next &rarr;', 'boilerplate' ) ); ?>
+		</div>
 	</nav><!-- #nav-below -->
 <?php endif; ?>

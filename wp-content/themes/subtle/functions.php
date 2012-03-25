@@ -545,4 +545,32 @@ if ( function_exists( 'add_theme_support' ) ) {
 	add_theme_support( 'post-thumbnails' );
 }
 
+
+function print_post_title() {
+global $post;
+$thePostID = $post->ID;
+$post_id = get_post($thePostID);
+$title = $post_id->post_title;
+$perm = get_permalink($post_id);
+$post_keys = array(); $post_val = array();
+$post_keys = get_post_custom_keys($thePostID);
+$is_link = 0;
+if (!empty($post_keys)) {
+foreach ($post_keys as $pkey) {
+if ($pkey=='url1' || $pkey=='title_url' || $pkey=='url_title') {
+$post_val = get_post_custom_values($pkey);
+}
+}
+if (empty($post_val)) {
+$link = $perm;
+} else {
+$link = $post_val[0];
+$is_link = 1;
+}
+} else {
+$link = $perm;
+}
+echo '<a class="is_link_"'.$is_link.'" href="'.$link.'" rel="bookmark" title="'.$title.'">'.$title.'</a>';
+}
+
 ?>
