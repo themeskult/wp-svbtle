@@ -239,7 +239,7 @@ td { vertical-align: top; }
 
 body{font-size: 94%}
 a, a:visited{color: black; text-decoration: none;}
-#wrap{width: 860px; margin: auto; border: 1px solid #f1f1f1; }
+#wrap{width: 860px; margin: auto; border-right: 1px solid #f1f1f1; }
 header{float: left; width: 20%; padding: 2em; position: fixed; color: #999; }
 header h1 a{color: black; }
 #content{margin-left: 230px; color: #444; border-left: 1px solid #f1f1f1; }
@@ -254,6 +254,7 @@ article {border-bottom: 1px solid #f1f1f1; padding: 2em 3em}
 .links a:hover{border-color: #00ca44}
 
 a.back-to-blog{color: white; display: inline-block; margin: 2em; background: black; border-radius: 4px; padding: 1em; font-size: 1.2em}
+a.back-to-blog:hover{background-color: #00ca44}
 
 
 /* ==|== media queries ======================================================

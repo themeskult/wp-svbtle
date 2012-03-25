@@ -33,7 +33,7 @@ get_header(); ?>
 					</footer><!-- .entry-utility -->
 				</article><!-- #post-## -->
 				<nav id="nav-below" class="navigation">
-					<a href="#" class="back-to-blog">Back to blog</a>
+					<a href="#" class="back-to-blog">&larr; Back to blog</a>
 				</nav><!-- #nav-below -->
 <?php endwhile; // end of the loop. ?>
 <?php get_footer(); ?>
