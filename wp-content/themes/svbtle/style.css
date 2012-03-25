@@ -1,17 +1,12 @@
 /*
-	Theme Name: Boilerplate
-	Theme URI: http://aarontgrogg.com/boilerplate/
-	Description: A merger created by Aaron T. Grogg (<a href="http://aarontgrogg.com/">http://aarontgrogg.com/</a>) of the HTML5 Boilerplate (<a href="http://html5boilerplate.com/">http://html5boilerplate.com/</a>) and the Starkers theme (<a href="http://starkerstheme.com/">http://starkerstheme.com/</a>), Boilerplate: Starkers provides developers with an ideal, bleeding-edge, clean-start theme.  Mark-up is minimal (thanks Elliott) and the most edge-case web technology is baked right in (thanks Paul, Divya and a large cast of supporting characters)!  Boilerplate themes are designed to serve as a Parent theme to whatever Child (<a href="http://codex.wordpress.org/Child_Themes">http://codex.wordpress.org/Child_Themes</a>) you care to add, but you could just as easily use this as a starting point and alter the PHP as your design needs.  More about this theme can be found at <a href="http://aarontgrogg.com/boilerplate/">http://aarontgrogg.com/boilerplate/</a>.
+	Theme Name: Svbtle
+	Theme URI: http://gravityonmars.com/notepad/
 	Author: Aaron T. Grogg, based on the work of Paul Irish, Divya Manian, and Elliot Jay Stocks
 	Author URI: http://aarontgrogg.com/
-	Version: 3.4.4
-	Tags: custom-menu, editor-style, theme-options, threaded-comments, sticky-post, microformats, rtl-language-support, translation-ready
-
+	Version: 1.0
 	License: GNU General Public License v2.0
 	License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-	This CSS file is a concatenation of style.css from HTML5 Boilerplate and style.css from Starkers.
-	Comment blocks indicate where each begins and ends, like this, for example...
 */
 
 /** START HTML5 Boilerplate CSS **/
@@ -233,10 +228,10 @@ td { vertical-align: top; }
 
 
 /* ==|== primary styles =====================================================
-   Author:
+   Author: Ricardo Rauch
    ========================================================================== */
 
-
+html{ -webkit-font-smoothing:antialiased; }
 body{font-size: 92%; color: #4D4D4D}
 a, a:visited{color: black; text-decoration: none;}
 a:hover{color: #0184ca}
