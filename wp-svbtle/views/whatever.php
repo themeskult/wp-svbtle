@@ -66,7 +66,7 @@ include('header.php');
 	$(document).ready(function() {
 		$notice = $('p.wps-notice');
 		if($notice.length) {
-			$notice.fadeOut(2000, function() {
+			$notice.fadeOut(3000, function() {
 				$('form div.wrap').fadeIn(500);
 			});
 		} else {
