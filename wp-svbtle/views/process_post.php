@@ -1,30 +1,22 @@
 <?php
 set_time_limit(0);
+//ver de manejar mejor esto, con _wp_http_referer a lo mejor
+$current_page   = "?page=" . $_GET['page'];
+
+// Si es un submit de nuevos post
 if (isset($_POST['action']) && $_POST['action'] == 'post' && wp_verify_nonce($_POST['_wpnonce'],'new-post')) {
 	if ( !is_user_logged_in() ){
 		wp_redirect( get_bloginfo( 'url' ) . '/' );
 		exit;
 	};
-	$cat = array();
 	$err = "";
 	$user_id 		= $current_user->user_id;
 	$post_title 	= $_POST['post_title'];
 	$post_content 	= $_POST['post_content'];
-	$cat[0]	 		= $_POST['cat'];
-	$post_tags 		= $_POST['post_tags'];
-	$current_page   = $_POST['_wp_http_referer'];
+	// $current_page   = $_POST['_wp_http_referer'];
 
 	if ($post_title == "") {
 		$err .= __('Please fill in Post Title field') . "<br />";
-	}
-	if ( $cat[0] == "-1") {
-		$err .= __('Please choose your Post Category') . "<br />";
-	} else {
-		global $wpdb;
-		$cat_ids = (array) $wpdb->get_col("SELECT term_id FROM $wpdb->terms");
-		if ( !in_array($cat[0], $cat_ids) && $cat != "-1") {
-			$err .= __('This category doesn\'t exist') . "<br />";
-		}
 	}
 	if ($post_content == "") {
 		$err .= __('Please fill in Post Content field') . "<br />";
@@ -35,12 +27,51 @@ if (isset($_POST['action']) && $_POST['action'] == 'post' && wp_verify_nonce($_P
 			'post_author'	=> $user_id,
 			'post_title'	=> $post_title,
 			'post_content'	=> $post_content,
-			'post_category'	=> $cat,
-			'post_status'	=> 'publish',
-			'tags_input'	=> $post_tags
+			'post_status'	=> 'publish' //aca ver idea=>draft || publish=>publish
 		) );
-		wp_redirect( $current_page . '?success=success' );
+
+		$current_page .= (isset($post_id) ? "&id=" . $post_id : "");
+		wp_redirect( $current_page . '&success=success' );
 		exit;
+	}
+// Si en cambio es un edit
+} elseif (isset($_GET['id'])) {
+	// En caso de un submit de un edit
+	if (isset($_POST['action']) && $_POST['action'] == 'edit' && wp_verify_nonce($_POST['_wpnonce'],'manage-post')) {
+		$err = "";
+		$post_id		= $_POST['id'];
+		$post_title 	= $_POST['post_title'];
+		$post_content 	= $_POST['post_content'];
+		// $current_page   = $_POST['_wp_http_referer'];
+
+		if ($post_title == "") {
+			$err .= __('Please fill in Post Title field') . "<br />";
+		}
+		if ($post_content == "") {
+			$err .= __('Please fill in Post Content field') . "<br />";
+		}
+
+		if ( $err == "" ) {
+			$post_id = wp_update_post( array(
+				'ID'	=> $post_id,
+				'post_title'	=> $post_title,
+				'post_content'	=> $post_content
+			) );
+			$current_page .= "&id=" . $_GET['id'];
+			wp_redirect( $current_page . '&edit=success' );
+			exit;
+		}
+	// En caso de entrar a ver el post 
+	} else {
+		$err = "";
+
+		$post = get_post($_GET['id']);
+
+		$post_id 		= $post->ID;
+		$post_title 	= $post->post_title;
+		$post_content 	= $post->post_content;
+
+		$user_id 		= $current_user->user_id;
 	}
 }
 ?>

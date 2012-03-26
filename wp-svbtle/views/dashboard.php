@@ -23,7 +23,7 @@ include('header.php')
 
 			<?php foreach ($ideas_posts as $memberpost): ?>
 				<p>
-					<a href="?page=edit_post&id=<?php echo $memberpost->ID ?>"><?php echo $memberpost->post_title ?></a>
+					<a href="?page=new_post&id=<?php echo $memberpost->ID ?>"><?php echo $memberpost->post_title ?></a>
 				</p>
 			<?php endforeach ?>
 		</div><!-- .ideas -->		
@@ -36,7 +36,7 @@ include('header.php')
 		
 		<?php foreach ($published_posts as $memberpost): ?>
 			<p>
-				<a href="?page=edit_post&id=<?php echo $memberpost->ID ?>"><span class="word-count"><?php echo str_word_count($memberpost->post_content) ?></span><?php echo $memberpost->post_title ?></a>
+				<a href="?page=new_post&id=<?php echo $memberpost->ID ?>"><span class="word-count"><?php echo str_word_count($memberpost->post_content) ?></span><?php echo $memberpost->post_title ?></a>
 			</p>
 		<?php endforeach ?>
 	</div><!-- .name -->

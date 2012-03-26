@@ -4,5 +4,5 @@
 
 # But not these files...
 !/wp-svbtle/
-!/wp-content/themes/subtle/
+!/wp-content/themes/svbtle/
 !.gitignore
