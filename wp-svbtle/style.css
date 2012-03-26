@@ -244,7 +244,7 @@ a.button{display: inline-block; text-transform: uppercase; font-size: .8em; font
 a.button:hover, a.button.checked{background-color: #0184ca}
 
 
-.logout{float: right; margin: 0 30px}
+a.button.logout{float: right; padding: 6px 8px; margin: 0 30px}
 .wrap{width: 80%; margin: auto}
 .word-count{border: 3px solid #333; font-size: .8em; font-weight: bold; border-radius: 100px; width: 38px; padding: 10px 0; margin-right: 10px; text-align: center; display: inline-block;}
 .module{width: 50%; float: left;}
@@ -264,7 +264,7 @@ a.button.new-entry{float: right; margin-top: .5em; font-size: 14px}
 input.text, textarea{border: 0; max-width: 500px}
 textarea{font-size: .8em; line-height: 1.4em; bottom: 100px; position: absolute; top: 130px; padding-bottom: 200px;}
 input.text:focus, textarea:focus{outline: 0}
-#post_title{font-size: 2em; font-weight: bold;}
+#post_title{font-size: 2em; margin-top: 1.6em; font-weight: bold;}
 
 /* ==|== media queries ======================================================
    EXAMPLE Media Query for Responsive Design.

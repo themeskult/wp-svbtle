@@ -51,6 +51,7 @@ include('header.php');
 	</div>
 	
 	<a href="#" class="button">Save</a>
+	<a href="?page=dashboard" class="button">Dashboard</a>
 
 </div><!-- .buttons -->
 </form>
