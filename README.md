@@ -15,3 +15,4 @@ Just move wp-svbtle folder to your Wordpress path and then log in. Enjoy!
 #### Todo
 * Support editors to publish posts
 * Add external links to post title.
+* Autosave 
