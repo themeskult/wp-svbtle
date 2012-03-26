@@ -49,8 +49,11 @@ include('header.php');
 		<a href="#" class="button">Option</a>
 		
 		<div class="double">
-			<a href="#" class="button checked">&#10004;	Idea</a>
-			<a href="#" class="button ">Public</a>
+			<input type="radio" class="RadioClass" name="status" value="draft" id="">
+			<a href="#" class="button checked"><span class="tick">&#10004;</span>	Idea</a>
+			
+			<input type="radio" class="RadioClass" name="status" value="public" id="">
+			<a href="#" class="button "><span class="tick">&#10004;</span> Public</a>
 		</div>
 		
 		<input type="submit" class="button" value="Save"/>
