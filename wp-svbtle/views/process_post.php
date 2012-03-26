@@ -1,5 +1,7 @@
 <?php
 
+require_once WPSVBTLE_PATH . "includes/markdown.php";
+
 set_time_limit(0);
 //ver de manejar mejor esto, con _wp_http_referer a lo mejor
 $current_page   = "?page=" . $_GET['page'];
@@ -36,10 +38,12 @@ if(!empty($_GET['id']) and ($_GET['action'] == 'del')) {
 		$post_id = wp_insert_post( array(
 			'post_author'	=> $user_id,
 			'post_title'	=> $post_title,
-			'post_content'	=> $post_content,
+			'post_content'	=> Markdown($post_content),
 			'post_type'		=> "post",
 			'post_status'	=> $post_status // Idea=>draft || Public=>publish
 		) );
+
+		add_post_meta($post_id, 'wp-svbtle-markdown', $post_content, true);
 
 		$current_page .= (isset($post_id) ? "&id=" . $post_id : "");
 		wp_redirect( $current_page . '&success=success' );
@@ -67,9 +71,12 @@ if(!empty($_GET['id']) and ($_GET['action'] == 'del')) {
 			$post_id = wp_update_post( array(
 				'ID'	=> $post_id,
 				'post_title'	=> $post_title,
-				'post_content'	=> $post_content,
+				'post_content'	=> Markdown($post_content),
 				'post_status'	=> $post_status
 			) );
+			
+			update_post_meta($post_id, 'wp-svbtle-markdown', $post_content, true);
+			
 			$current_page .= "&id=" . $_GET['id'];
 			wp_redirect( $current_page . '&edit=success' );
 			exit;
