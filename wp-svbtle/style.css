@@ -242,8 +242,10 @@ input[type=text]{border: 0;}
 input[type=text]:focus{outline: none}
 a, a:visited{color: black; text-decoration: none;}
 :hover{color: #0184ca}
-a.button, input.button{display: inline-block;  border: 0; margin: 0; padding: 0; text-transform: uppercase; font-size: .8em; font-weight: bold; color: white; background: black; border-radius: 5px; padding: 1em 1em}
-.button:hover, a.button.checked{background-color: #0184ca}
+a.button, input.button{display: inline-block;  border: 0; margin: 0; padding: 0; text-transform: uppercase; font-size: .8em; font-weight: bold; color: white; background: black; border-radius: 5px; padding: .6em 1em}
+.button:hover, .button.checked{background-color: #0184ca}
+.button .tick{display: none;}
+.button.checked .tick{display: inline-block;}
 
 a.button.logout{float: right; padding: 6px 8px; margin: 0 30px}
 .wrap{width: 80%; margin: auto}
@@ -265,6 +267,7 @@ a.button.new-entry{float: right; margin-top: .5em; font-size: 14px}
 .buttons {position: absolute; right: 0; left: 10%; bottom: 0; padding-bottom: 1em; background: white; box-shadow: 0 0 10px 10px white}
 .buttons .button{display: inline-block; padding: 10px 1.2em; margin: 5px}
 .buttons div.double{display: inline-block; border: 4px solid black; border-radius: 8px}
+.buttons div.double .RadioClass{display: none;}
 input.text, textarea{border: 0; max-width: 500px}
 textarea{font-size: .8em; line-height: 1.4em; bottom: 100px; position: absolute; top: 130px; padding-bottom: 200px;}
 input.text:focus, textarea:focus{outline: 0}
