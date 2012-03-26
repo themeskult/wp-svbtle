@@ -1,8 +1,8 @@
 # wp-svbtle
 ### Wordpress admin area alternative inspired by svbtle.com
 
-### Installation
-Just move wp-svbtle folder to your Wordpress path. Enjoy!
+#### Installation
+Just move wp-svbtle folder to your Wordpress path and then log in. Enjoy!
 
 ![][2]
 
@@ -12,6 +12,6 @@ Just move wp-svbtle folder to your Wordpress path. Enjoy!
  [1]: https://github.com/gravityonmars/wp-svbtle/raw/master/wp-svbtle/screenshot-1.png
 
 
-### Todo
+#### Todo
 * Support editors to publish posts
 * Add external links to post title.
