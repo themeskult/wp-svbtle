@@ -50,7 +50,7 @@ include('header.php');
 		<a href="#" class="button ">Public</a>
 	</div>
 	
-	<a href="#" class="button">Save</a>
+	<input type="submit" class="button" value="Save"/>
 	<a href="?page=dashboard" class="button">Dashboard</a>
 
 </div><!-- .buttons -->
