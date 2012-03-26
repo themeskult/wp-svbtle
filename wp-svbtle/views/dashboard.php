@@ -11,12 +11,14 @@ include('header.php')
 <p class="clear clearfix"><a href="#" class="button logout"><img src="logout.png" width="16" height="18" alt="Logout"></a></p>
 <div class="wrap">
 	
-	<div class=" module">
+	<div class="module">
 		<div class="ideas">
 			<h2><a href="?page=whatever" class="button new-entry">New entry</a>Ideas</h2>
 			
-				<form action="whatever_submit" class="form-idea" method="post" accept-charset="utf-8">
-					<input type="text" name="" value="" class="start_typing" id="" placeholder="Start typing an idea here...">
+				<form action="?page=whatever" class="form-idea" method="post" accept-charset="utf-8">
+					<input type="hidden" name="action" value="dashboard_submit" />
+					<?php wp_nonce_field( 'new-post' ); ?>
+					<input type="text" name="idea_title" value="" class="start_typing" id="idea_title" placeholder="Start typing an idea here...">
 				</form>
 			
 			<?php $ideas_posts = $wpdb->get_results("SELECT * FROM $wpdb->posts WHERE post_status = 'draft' AND post_type = 'post' ORDER BY post_date DESC"); ?>

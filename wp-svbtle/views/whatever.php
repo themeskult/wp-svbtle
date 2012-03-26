@@ -9,15 +9,15 @@ nocache_headers();
 include('header.php');
 ?>
 <form action="" method="post" enctype="multipart/form-data">
+	<?php if ($err != ""): ?>
+		<?php echo "<p class='wps-notice'>".$err."</p>" ?>
+	<?php elseif ($_GET['success'] == "success"): ?>
+		<?php echo "<p class='wps-notice'>Your post was successfully submitted.</p>" ?>
+	<?php elseif ($_GET['edit'] == "success"): ?>
+		<?php echo "<p class='wps-notice'>Your post was successfully edited.</p>" ?>					
+	<?php endif ?>
 
-	<div class="wrap">
-		<?php if ($err != ""): ?>
-			<?php echo "<p>".$err."</p>" ?>
-		<?php elseif ($_GET['success'] == "success"): ?>
-			<?php echo "<p>Your post was successfully submitted.</p>" ?>
-		<?php elseif ($_GET['edit'] == "success"): ?>
-			<?php echo "<p>Your post was successfully edited.</p>" ?>					
-		<?php endif ?>
+	<div class="wrap" style="display:none;">
 
 		<?php if (is_user_logged_in()): // checking weather or not the user has logged in.?>
 			<?php if(isset($post_id)): ?>
@@ -49,11 +49,11 @@ include('header.php');
 		<a href="#" class="button">Option</a>
 		
 		<div class="double">
-			<input type="radio" class="RadioClass" name="status" value="draft" id="">
-			<a href="#" class="button checked"><span class="tick">&#10004;</span>	Idea</a>
+			<input type="radio" class="RadioClass" name="post_status" value="draft" <?php if($post_status == 'draft'): ?>checked="checked"<?php endif; ?> id="">
+			<a href="#" class="button <?php if($post_status == 'draft'): ?>checked<?php endif; ?>"><span class="tick">&#10004;</span>	Idea</a>
 			
-			<input type="radio" class="RadioClass" name="status" value="public" id="">
-			<a href="#" class="button "><span class="tick">&#10004;</span> Public</a>
+			<input type="radio" class="RadioClass" name="post_status" value="publish" <?php if($post_status == 'publish'): ?>checked="checked"<?php endif; ?> id="">
+			<a href="#" class="button <?php if($post_status == 'publish'): ?>checked<?php endif; ?>"><span class="tick">&#10004;</span> Public</a>
 		</div>
 		
 		<input type="submit" class="button" value="Save"/>
@@ -61,3 +61,18 @@ include('header.php');
 
 	</div><!-- .buttons -->
 </form>
+
+<script type="text/javascript">
+	$(document).ready(function() {
+		$notice = $('p.wps-notice');
+		if($notice.length) {
+			$notice.fadeOut(2000, function() {
+				$('form div.wrap').fadeIn(500);
+			});
+		} else {
+			$('form div.wrap').show();
+		}
+	});
+</script>
+
+<?php include('footer.php'); ?>
