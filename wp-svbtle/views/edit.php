@@ -34,7 +34,7 @@ include('header.php');
 			</p>
 
 			<p>
-				<textarea name="post_content" id="post_content" placeholder="Write post here" cols=88 rows=20 tabindex="2"><?php echo $post_content; ?></textarea>
+				<textarea name="post_content" id="post_content" placeholder="Write post here" cols=88 rows=20 tabindex="2"><?php echo get_post_meta($post_id, $key,; ?></textarea>
 			</p>
 
 		<?php else: ?>
