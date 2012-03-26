@@ -1,10 +1,4 @@
 <?php
-/*
- * 
- *
- *
- *
- */
 
 /* 
  * Including wp-functions

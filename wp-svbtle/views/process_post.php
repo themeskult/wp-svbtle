@@ -1,10 +1,18 @@
 <?php
+
 set_time_limit(0);
 //ver de manejar mejor esto, con _wp_http_referer a lo mejor
 $current_page   = "?page=" . $_GET['page'];
 
-// Si es un submit de nuevos post
-if (isset($_POST['action']) && $_POST['action'] == 'post' && wp_verify_nonce($_POST['_wpnonce'],'new-post')) {
+if(!empty($_GET['id']) and ($_GET['action'] == 'del')) {
+
+	$post_id = wp_delete_post( $_GET['id']);
+	
+	wp_redirect( '?page=dashboard' );
+	exit;
+
+// Si en cambio estoy en un nuevo post	
+}elseif(isset($_POST['action']) && $_POST['action'] == 'post' && wp_verify_nonce($_POST['_wpnonce'],'new-post')) {
 	if ( !is_user_logged_in() ){
 		wp_redirect( get_bloginfo( 'url' ) . '/' );
 		exit;
@@ -94,8 +102,11 @@ if (isset($_POST['action']) && $_POST['action'] == 'post' && wp_verify_nonce($_P
 	$current_page .= (isset($post_id) ? "&id=" . $post_id : "");
 	wp_redirect( $current_page . '&success=success' );
 	exit;
-// Si en cambio estoy en un nuevo post
+
 } else {
 	$post_status = 'draft';
 }
+
+echo $_GET['post_status'];
+
 ?>

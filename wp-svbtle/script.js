@@ -4,4 +4,8 @@ $(function() {
 		$(this).prev("input.RadioClass").attr("checked","checked");
     $(this).addClass("checked");
 	});
+	
+	$(".remove").click(function(){
+		confirm('Are you sure?');
+	});
 });

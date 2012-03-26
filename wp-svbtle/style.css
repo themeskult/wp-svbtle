@@ -261,7 +261,7 @@ a.button.logout{float: right; padding: 6px 8px; margin: 0 30px}
 .ideas a{font-weight: 600;}
 .ideas p{line-height: 2.4em}
 .ideas input.start_typing{border: 0; font-size: 1.3em; color: #0184ca; width: 100%}
-a.button.new-entry{float: right; margin-top: .5em; font-size: 14px}
+a.button.new-entry{float: right; margin-top: .3em; font-size: 14px}
 
 .form-idea{padding: 0 5%; border-bottom: 1px solid #ccc; margin: 1em 0 0 0; padding-bottom: 1em}
 
@@ -274,7 +274,7 @@ textarea{font-size: .8em; line-height: 1.4em; bottom: 100px; padding-right: 2em;
 input.text:focus, textarea:focus{outline: 0}
 #post_title{font-size: 2em; margin-top: 1.6em; font-weight: bold;}
 
-.wps-notice{width: 80%; margin: auto}
+.wps-notice{width: 80%; margin: auto; position: absolute; left: 10%;}
 
 /* ==|== media queries ======================================================
    EXAMPLE Media Query for Responsive Design.

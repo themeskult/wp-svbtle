@@ -5,7 +5,7 @@ if (! function_exists(wp_svbtle_render)) {
 		// available sections
 		$pages = array(
 			'dashboard',
-			'whatever'
+			'edit'
 		);
 
 		if ( in_array($p, $pages) ) {
