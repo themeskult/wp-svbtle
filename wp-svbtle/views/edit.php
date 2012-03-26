@@ -48,7 +48,7 @@ include('header.php');
 		<?php if (!empty($_GET['id'])): ?>
 			<a href="<?php echo get_permalink($post_id) ?>" class="button">Preview</a>
 		<?php endif ?>
-		<a href="#" class="button">Option</a>
+		<!-- <a href="#" class="button">Option</a> -->
 		
 		<div class="double">
 			<input type="radio" class="RadioClass" name="post_status" value="draft" <?php if($post_status == 'draft'): ?>checked="checked"<?php endif; ?> id="">
