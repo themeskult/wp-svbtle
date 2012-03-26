@@ -14,13 +14,16 @@ include('header.php')
 	<div class=" module">
 		<div class="ideas">
 			<h2><a href="?page=new_post" class="button new-entry">New entry</a>Ideas</h2>
-			<?php
-			$ideas_posts = $wpdb->get_results("SELECT * FROM $wpdb->posts WHERE post_status = 'draft' AND post_type = 'post' ORDER BY post_date DESC");
-			?>
+			
+				<form action="new_post_submit" class="form-idea" method="post" accept-charset="utf-8">
+					<input type="text" name="" value="" class="start_typing" id="" placeholder="Start typing an idea here...">
+				</form>
+			
+			<?php $ideas_posts = $wpdb->get_results("SELECT * FROM $wpdb->posts WHERE post_status = 'draft' AND post_type = 'post' ORDER BY post_date DESC"); ?>
 
 			<?php foreach ($ideas_posts as $memberpost): ?>
 				<p>
-					<a href="<?php echo $memberpost->guid ?>"><?php echo $memberpost->post_title ?></a>
+					<a href="?page=edit_post&id=<?php echo $memberpost->ID ?>"><?php echo $memberpost->post_title ?></a>
 				</p>
 			<?php endforeach ?>
 		</div><!-- .ideas -->		
@@ -29,13 +32,11 @@ include('header.php')
 	
 	<div class="published module">
 		<h2>Published</h2>
-		<?php
-		$published_posts = $wpdb->get_results("SELECT * FROM $wpdb->posts WHERE post_status = 'publish' AND post_type = 'post' ORDER BY post_date DESC");
-		?>
+		<?php $published_posts = $wpdb->get_results("SELECT * FROM $wpdb->posts WHERE post_status = 'publish' AND post_type = 'post' ORDER BY post_date DESC");?>
 		
 		<?php foreach ($published_posts as $memberpost): ?>
 			<p>
-				<a href="<?php echo $memberpost->guid ?>"><span class="word-count"><?php echo str_word_count($memberpost->post_content) ?></span><?php echo $memberpost->post_title ?></a>
+				<a href="?page=edit_post&id=<?php echo $memberpost->ID ?>"><span class="word-count"><?php echo str_word_count($memberpost->post_content) ?></span><?php echo $memberpost->post_title ?></a>
 			</p>
 		<?php endforeach ?>
 	</div><!-- .name -->

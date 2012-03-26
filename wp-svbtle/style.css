@@ -238,6 +238,8 @@ td { vertical-align: top; }
 
 
 body{font-size: 110%; color: #4D4D4D; margin-top: 1em; font-family: helvetica}
+input[type=text]{border: 0;}
+input[type=text]:focus{outline: none}
 a, a:visited{color: black; text-decoration: none;}
 a:hover{color: #0184ca}
 a.button{display: inline-block; text-transform: uppercase; font-size: .8em; font-weight: bold; color: white; background: black; border-radius: 5px; padding: .4em 1em}
@@ -256,7 +258,10 @@ a.button.logout{float: right; padding: 6px 8px; margin: 0 30px}
 .module .ideas h2{color: black; font-size: 2em; overflow: hidden; margin-top: .4em; padding-bottom: .3em}
 .ideas a{font-weight: 600;}
 .ideas p{line-height: 2.4em}
+.ideas input.start_typing{border: 0; font-size: 1.3em; color: #0184ca; width: 100%}
 a.button.new-entry{float: right; margin-top: .5em; font-size: 14px}
+
+.form-idea{padding-left: 20px; border-bottom: 1px solid #ccc; margin: 1em 0 0 0; padding-bottom: 1em}
 
 .buttons {position: absolute; right: 0; left: 10%; bottom: 0; padding-bottom: 1em; background: white; box-shadow: 0 0 10px 10px white}
 .buttons a.button{display: inline-block; padding: .8em 1.2em; margin: 5px}
