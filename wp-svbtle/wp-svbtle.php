@@ -21,7 +21,7 @@ require_once(dirname(dirname(__FILE__)) . '/wp-blog-header.php');
 if (!is_user_logged_in()) { auth_redirect(); }
 
 /* 
- * Definition of WP-SUBTLE path
+ * Definition of WP-SVBTLE path
  *
  */
 
@@ -29,38 +29,21 @@ if (! defined("ABSPATH")) {
 	define("ABSPATH", dirname(dirname(__FILE__)) . "/");
 }
 
-define("WPSUBTLE_PATH", ABSPATH . "wp-svbtle/");
+define("WPSVBTLE_PATH", ABSPATH . "wp-svbtle/");
 
 /* 
  * Runing application
  *
  */
+require_once WPSVBTLE_PATH . "includes/wps-functions.php";
+
 $page = $_GET['page'] ? $_GET['page'] : '';
 
 if($page === '') {
 	wp_redirect($current_page . '?page=dashboard');
 }
 
-// require_once(ABSPATH . 'wp-subtle/wp-subtle.php');
-if (! function_exists(wp_subtle_render)) {
-	function wp_subtle_render($p) {
-		// available sections
-		$sections = array(
-			'dashboard',
-			'new_post',
-			'edit_post'
-		);
-
-		if (in_array($p,$sections)) {
-			// echo file_get_contents("views/test.php");
-			require_once WPSUBTLE_PATH . "views/$p.php";
-		}else {
-			wp_redirect( $current_page . '?page=dashboard' );
-		}
-	}
-}
-
-wp_subtle_render($page);
+wp_svbtle_render($page);
 
 
- ?>
+?>

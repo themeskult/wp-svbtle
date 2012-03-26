@@ -3,7 +3,7 @@
 Template Name: New Post
 */
 // process the collected data
-require_once WPSUBTLE_PATH . 'views/process_post.php'; 
+require_once WPSVBTLE_PATH . 'views/process_post.php'; 
 
 nocache_headers();
 include('header.php');
