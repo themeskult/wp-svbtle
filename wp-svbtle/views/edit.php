@@ -34,7 +34,7 @@ include('header.php');
 			</p>
 
 			<p>
-				<textarea name="post_content" id="post_content" placeholder="Write post here" cols=88 rows=20 tabindex="2"><?php echo get_post_meta($post_id, $key,; ?></textarea>
+				<textarea name="post_content" id="post_content" placeholder="Write post here"  tabindex="2"><?php echo $post_content ?></textarea>
 			</p>
 
 		<?php else: ?>
@@ -57,7 +57,7 @@ include('header.php');
 			<input type="radio" class="RadioClass" name="post_status" value="publish" <?php if($post_status == 'publish'): ?>checked="checked"<?php endif; ?> id="">
 			<a href="#" class="button <?php if($post_status == 'publish'): ?>checked<?php endif; ?>"><span class="tick">&#10004;</span> Public</a>
 		</div>
-		<!-- <a href="?page=edit&action=del&id=<?php echo $_GET['id'] ?>" class="button remove">Remove</a> -->
+		<a href="?page=edit&action=del&id=<?php echo $_GET['id'] ?>" class="button remove">Remove</a>
 		
 		<input type="submit" class="button" value="Save"/>
 		<!-- <a href="?page=dashboard" class="button">Dashboard</a> -->

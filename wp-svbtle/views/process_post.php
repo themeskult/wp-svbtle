@@ -53,12 +53,13 @@ if(!empty($_GET['id']) and ($_GET['action'] == 'del')) {
 } elseif (isset($_GET['id'])) {
 	// En caso de un submit de un edit
 	if (isset($_POST['action']) && $_POST['action'] == 'edit' && wp_verify_nonce($_POST['_wpnonce'],'manage-post')) {
+		
+		
 		$err = "";
 		$post_id		= $_POST['id'];
 		$post_title 	= $_POST['post_title'];
 		$post_content 	= $_POST['post_content'];
 		$post_status 	= $_POST['post_status'];
-		// $current_page   = $_POST['_wp_http_referer'];
 
 		if ($post_title == "") {
 			$err .= __('Please fill in Post Title field') . "<br />";
@@ -74,8 +75,12 @@ if(!empty($_GET['id']) and ($_GET['action'] == 'del')) {
 				'post_content'	=> Markdown($post_content),
 				'post_status'	=> $post_status
 			) );
-			
-			update_post_meta($post_id, 'wp-svbtle-markdown', $post_content, true);
+		
+			if (get_post_meta($post_id, 'wp-svbtle-markdown', true)) {
+				update_post_meta($post_id, 'wp-svbtle-markdown', $post_content);
+			}else {
+				add_post_meta($post_id, 'wp-svbtle-markdown', $post_content, true);
+			}
 			
 			$current_page .= "&id=" . $_GET['id'];
 			wp_redirect( $current_page . '&edit=success' );
@@ -89,10 +94,19 @@ if(!empty($_GET['id']) and ($_GET['action'] == 'del')) {
 
 		$post_id 		= $post->ID;
 		$post_title 	= $post->post_title;
-		$post_content 	= $post->post_content;
+		
+		if (get_post_meta($post_id, 'wp-svbtle-markdown', true)) {
+			$post_content = get_post_meta($post_id, 'wp-svbtle-markdown', true);
+		}else {
+			$post_content 	= $post->post_content;
+		}
+
 		$post_status 	= $post->post_status;
+		
 	}
+
 } elseif (isset($_POST['action']) && $_POST['action'] == 'dashboard_submit' && wp_verify_nonce($_POST['_wpnonce'],'new-post')) {
+
 	$user_id 		= $current_user->user_id;
 	$post_title 	= $_POST['idea_title'];
 	// $post_content 	= $_POST['post_content'];
