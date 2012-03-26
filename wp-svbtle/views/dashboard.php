@@ -13,9 +13,9 @@ include('header.php')
 	
 	<div class=" module">
 		<div class="ideas">
-			<h2><a href="?page=new_post" class="button new-entry">New entry</a>Ideas</h2>
+			<h2><a href="?page=whatever" class="button new-entry">New entry</a>Ideas</h2>
 			
-				<form action="new_post_submit" class="form-idea" method="post" accept-charset="utf-8">
+				<form action="whatever_submit" class="form-idea" method="post" accept-charset="utf-8">
 					<input type="text" name="" value="" class="start_typing" id="" placeholder="Start typing an idea here...">
 				</form>
 			
@@ -23,7 +23,7 @@ include('header.php')
 
 			<?php foreach ($ideas_posts as $memberpost): ?>
 				<p>
-					<a href="?page=new_post&id=<?php echo $memberpost->ID ?>"><?php echo $memberpost->post_title ?></a>
+					<a href="?page=whatever&id=<?php echo $memberpost->ID ?>"><?php echo $memberpost->post_title ?></a>
 				</p>
 			<?php endforeach ?>
 		</div><!-- .ideas -->		
@@ -36,7 +36,7 @@ include('header.php')
 		
 		<?php foreach ($published_posts as $memberpost): ?>
 			<p>
-				<a href="?page=new_post&id=<?php echo $memberpost->ID ?>"><span class="word-count"><?php echo str_word_count($memberpost->post_content) ?></span><?php echo $memberpost->post_title ?></a>
+				<a href="?page=whatever&id=<?php echo $memberpost->ID ?>"><span class="word-count"><?php echo str_word_count($memberpost->post_content) ?></span><?php echo $memberpost->post_title ?></a>
 			</p>
 		<?php endforeach ?>
 	</div><!-- .name -->
