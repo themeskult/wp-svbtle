@@ -8,7 +8,7 @@ global $current_user;
 nocache_headers();
 include('header.php')
 ?>
-<p class="clear clearfix"><a href="#" class="button logout"><img src="logout.png" width="16" height="18" alt="Logout"></a></p>
+<a href="#" class="button logout"><img src="logout.png" width="16" height="18" alt="Logout"></a>
 <div class="wrap">
 	
 	<div class=" module">
