@@ -20,9 +20,6 @@ if (isset($_POST['action']) && $_POST['action'] == 'post' && wp_verify_nonce($_P
 	if ($post_title == "") {
 		$err .= __('Please fill in Post Title field') . "<br />";
 	}
-	if ($post_content == "") {
-		$err .= __('Please fill in Post Content field') . "<br />";
-	}
 
 	if ( $err == "" ) {
 		$post_id = wp_insert_post( array(
@@ -50,9 +47,6 @@ if (isset($_POST['action']) && $_POST['action'] == 'post' && wp_verify_nonce($_P
 
 		if ($post_title == "") {
 			$err .= __('Please fill in Post Title field') . "<br />";
-		}
-		if ($post_content == "") {
-			$err .= __('Please fill in Post Content field') . "<br />";
 		}
 
 		if ( $err == "" ) {
