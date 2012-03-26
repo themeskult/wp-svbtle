@@ -274,6 +274,8 @@ textarea{font-size: .8em; line-height: 1.4em; bottom: 100px; padding-right: 2em;
 input.text:focus, textarea:focus{outline: 0}
 #post_title{font-size: 2em; margin-top: 1.6em; font-weight: bold;}
 
+.wps-notice{width: 80%; margin: auto}
+
 /* ==|== media queries ======================================================
    EXAMPLE Media Query for Responsive Design.
    This example overrides the primary ('mobile first') styles
