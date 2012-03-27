@@ -8,8 +8,8 @@ Just move wp-svbtle folder to your Wordpress path and then log in. Enjoy!
 
 ![][1]
 
- [2]: https://github.com/gravityonmars/wp-svbtle/raw/master/wp-svbtle/screenshot-2.png
- [1]: https://github.com/gravityonmars/wp-svbtle/raw/master/wp-svbtle/screenshot-1.png
+ [2]: https://github.com/gravityonmars/wp-svbtle/raw/master/screenshot-2.png
+ [1]: https://github.com/gravityonmars/wp-svbtle/raw/master/screenshot-1.png
 
 
 #### Todo
