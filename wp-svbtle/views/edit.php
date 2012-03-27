@@ -46,7 +46,7 @@ include('header.php');
 
 	<div class="buttons">
 		<?php if (!empty($_GET['id'])): ?>
-			<a href="<?php echo get_permalink($post_id) ?>" class="button">Preview</a>
+			<a href="<?php echo get_permalink($post_id) ?>" target="_blank" class="button">Preview</a>
 		<?php endif ?>
 		<!-- <a href="#" class="button">Option</a> -->
 		
