@@ -14,10 +14,10 @@ include('header.php');
 	<?php elseif ($_GET['success'] == "success"): ?>
 		<?php echo "<p class='wps-notice'>Your post was successfully submitted.</p>" ?>
 	<?php elseif ($_GET['edit'] == "success"): ?>
-		<?php echo "<p class='wps-notice'>Your post was successfully edited.</p>" ?>					
+		<?php echo "<p class='wps-notice'>Your post was successfully updated.</p>" ?>					
 	<?php endif ?>
 
-	<div class="wrap" style="display:none;">
+	<div class="wrap">
 
 		<?php if (is_user_logged_in()): // checking weather or not the user has logged in.?>
 			<?php if(isset($post_id)): ?>
@@ -34,7 +34,7 @@ include('header.php');
 			</p>
 
 			<p>
-				<textarea name="post_content" id="post_content" placeholder="Write post here" cols=88 rows=20 tabindex="2"><?php echo $post_content; ?></textarea>
+				<textarea name="post_content" id="post_content" placeholder="Write post here"  tabindex="2"><?php echo $post_content ?></textarea>
 			</p>
 
 		<?php else: ?>
@@ -45,8 +45,10 @@ include('header.php');
 	</div><!-- .wrap -->
 
 	<div class="buttons">
-		<a href="#" class="button">Preview</a>
-		<a href="#" class="button">Option</a>
+		<?php if (!empty($_GET['id'])): ?>
+			<a href="<?php echo get_permalink($post_id) ?>" class="button">Preview</a>
+		<?php endif ?>
+		<!-- <a href="#" class="button">Option</a> -->
 		
 		<div class="double">
 			<input type="radio" class="RadioClass" name="post_status" value="draft" <?php if($post_status == 'draft'): ?>checked="checked"<?php endif; ?> id="">
@@ -55,9 +57,10 @@ include('header.php');
 			<input type="radio" class="RadioClass" name="post_status" value="publish" <?php if($post_status == 'publish'): ?>checked="checked"<?php endif; ?> id="">
 			<a href="#" class="button <?php if($post_status == 'publish'): ?>checked<?php endif; ?>"><span class="tick">&#10004;</span> Public</a>
 		</div>
+		<a href="?page=edit&action=del&id=<?php echo $_GET['id'] ?>" class="button remove">Remove</a>
 		
 		<input type="submit" class="button" value="Save"/>
-		<a href="?page=dashboard" class="button">Dashboard</a>
+		<!-- <a href="?page=dashboard" class="button">Dashboard</a> -->
 
 	</div><!-- .buttons -->
 </form>
@@ -66,12 +69,8 @@ include('header.php');
 	$(document).ready(function() {
 		$notice = $('p.wps-notice');
 		if($notice.length) {
-			$notice.fadeOut(3000, function() {
-				$('form div.wrap').fadeIn(500);
-			});
-		} else {
-			$('form div.wrap').show();
-		}
+			$notice.fadeOut(2000);
+		} 
 	});
 </script>
 
