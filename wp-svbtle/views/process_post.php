@@ -14,7 +14,7 @@ if(!empty($_GET['id']) and ($_GET['action'] == 'del')) {
 	exit;
 
 // Si en cambio estoy en un nuevo post	
-}elseif(isset($_POST['action']) && $_POST['action'] == 'post' && wp_verify_nonce($_POST['_wpnonce'],'new-post')) {
+} elseif(isset($_POST['action']) && $_POST['action'] == 'post' && wp_verify_nonce($_POST['_wpnonce'],'new-post')) {
 	if ( !is_user_logged_in() ){
 		wp_redirect( get_bloginfo( 'url' ) . '/' );
 		exit;
@@ -121,7 +121,5 @@ if(!empty($_GET['id']) and ($_GET['action'] == 'del')) {
 } else {
 	$post_status = 'draft';
 }
-
-echo $_GET['post_status'];
 
 ?>
