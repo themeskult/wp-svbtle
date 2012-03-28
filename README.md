@@ -1,5 +1,5 @@
 # wp-svbtle
-### Wordpress admin area alternative inspired by svbtle.com
+### Wordpress admin & Theme inspired by svbtle.com
 
 #### Installation
 Just move wp-svbtle folder to your Wordpress path and then log in. Enjoy!
