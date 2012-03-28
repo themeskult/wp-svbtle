@@ -11,8 +11,13 @@ get_header(); ?>
 <?php if ( have_posts() ) while ( have_posts() ) : the_post(); ?>
 
 				<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+					
+					<div class="entry-meta" >
+						<?php boilerplate_posted_on(); ?>
+					</div><!-- .entry-meta -->
+					
 					<h2 class="entry-title"><a href="<?php echo the_permalink() ?>"><?php the_title(); ?></a></h2>
-
+					
 					<div class="entry-content">
 						<?php the_content(); ?>
 						<?php wp_link_pages( array( 'before' => '' . __( 'Pages:', 'boilerplate' ), 'after' => '' ) ); ?>
