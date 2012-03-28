@@ -7,6 +7,8 @@
 3. Move wp-svbtle to the root of your wordpress installation.
 4. Log in to yourdomain.com/wp-svbtle for a new blogging experience!
 
+## Screenshots 
+
 ![][1]
 
 ![][2]
