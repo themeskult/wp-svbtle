@@ -8,7 +8,7 @@ global $current_user;
 nocache_headers();
 include('header.php')
 ?>
-<a href="#" class="button logout"><img src="logout.png" width="16" height="18" alt="Logout"></a>
+<a href="<?php echo wp_logout_url( home_url()  ); ?>" class="button logout"><img src="logout.png" width="16" height="18" alt="Logout"></a>
 <div class="wrap">
 	
 	<div class="module">

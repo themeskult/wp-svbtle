@@ -14,7 +14,8 @@ require_once(dirname(dirname(__FILE__)) . '/wp-blog-header.php');
  */
 if (!is_user_logged_in()) { auth_redirect(); }
 
-if(!current_user_can('administrator')){die('You don not have access to this area');}
+if(!current_user_can('publish_posts') or !current_user_can('edit_posts')){die('You don not have access to this area');}
+
 
 /* 
  * Definition of WP-SVBTLE path
