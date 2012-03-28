@@ -1,7 +1,7 @@
 # wp-svbtle
-### Wordpress admin & Theme inspired by svbtle.com
+#### Wordpress admin & Theme inspired by svbtle.com
 
-#### Installation
+## Installation
 1. Move the folder <> into wp-content/themes/
 2. Enable the theme from the admin panel
 3. Move wp-svbtle to the root of your wordpress installation.
@@ -18,11 +18,11 @@
  [3]: https://github.com/gravityonmars/wp-svbtle/raw/master/wp-svbtle/screenshot-2.png
 
 
-#### Todo
+## Todo
 * Add external links to post title.
 * Autosave 
 
-#### License 
+## License 
 
 (The MIT License)
 
