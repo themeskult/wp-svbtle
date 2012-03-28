@@ -7,7 +7,11 @@ set_time_limit(0);
 $current_page   = "?page=" . $_GET['page'];
 
 if(!empty($_GET['id']) and ($_GET['action'] == 'del')) {
-
+	
+	if(!current_user_can('delete_posts')){
+		die('You do not have sufficient permissions to access this page.');
+	}
+	
 	$post_id = wp_delete_post( $_GET['id']);
 	
 	wp_redirect( '?page=dashboard' );
