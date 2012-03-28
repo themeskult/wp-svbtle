@@ -32,6 +32,12 @@ if(!empty($_GET['id']) and ($_GET['action'] == 'del')) {
 	}
 
 	if ( $err == "" ) {
+		
+		if(!current_user_can('publish_posts')){
+			die('You do not have sufficient permissions to access this page.');
+		}
+		
+		
 		$post_id = wp_insert_post( array(
 			'post_author'	=> $user_id,
 			'post_title'	=> $post_title,
@@ -63,6 +69,11 @@ if(!empty($_GET['id']) and ($_GET['action'] == 'del')) {
 		}
 
 		if ( $err == "" ) {
+			
+			if(!current_user_can('edit_posts')){
+				die('You do not have sufficient permissions to access this page.');
+			}
+			
 			$post_id = wp_update_post( array(
 				'ID'	=> $post_id,
 				'post_title'	=> $post_title,
