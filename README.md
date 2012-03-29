@@ -1,6 +1,7 @@
 # wp-svbtle
-#### Wordpress admin & Theme inspired by svbtle.com. 
+#### Wordpress admin & Theme inspired by svbtle.com. [Follow us on twitter][].
 
+  [Follow us on twitter]: http://twitter.com/gravityonmars
 ## Installation
 1. Move the folder wp-content/themes/svbltle into wp-content/themes/
 2. Enable the theme from the admin panel
