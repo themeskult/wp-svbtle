@@ -60,7 +60,7 @@ include('header.php');
 		<a href="?page=edit&action=del&id=<?php echo $_GET['id'] ?>" class="button remove">Remove</a>
 		
 		<input type="submit" class="button" value="Save"/>
-		<!-- <a href="?page=dashboard" class="button">Dashboard</a> -->
+		<a href="?page=dashboard" class="button">Dashboard</a>
 
 	</div><!-- .buttons -->
 </form>
