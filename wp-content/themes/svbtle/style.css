@@ -235,23 +235,23 @@ html{ -webkit-font-smoothing:antialiased; }
 body{font-size: 92%; color: #4D4D4D}
 a, a:visited{color: black; text-decoration: none;}
 a:hover{color: #0184ca}
-#wrap{width: 860px;  border-right: 1px solid #f1f1f1; }
+#wrap{  border-right: 1px solid #e2e2e2; }
 header{float: left;  padding: 2em; position: fixed; color: #999; }
 header h1 a, h1,h2,h3,h4,h5{color: black; }
-#content{margin-left: 30%;  border-left: 1px solid #f1f1f1; }
+#content{margin-left: 250px;  border-left: 1px solid #e2e2e2; }
 
 
 
-article {border-bottom: 1px solid #f1f1f1; }
-article .entry-title, article .entry-content, article .entry-meta{padding: 3em 8%}
+article {border-bottom: 1px solid #e2e2e2; }
+article .entry-title, article .entry-content, article .entry-meta{padding: 3em 50px}
 article .entry-title{margin-top: 0; font-size: 2.3em; padding-top: 1em; padding-bottom: 0em}
 article .entry-title h2{margin: 0; padding: 0}
 article .entry-title a{display: inline-block;}
 article .entry-title a:hover{color: #0184ca}
 /*article .entry-title a.link { border-bottom: 1px solid #ccc; } */
-article .entry-meta {border-bottom: 1px solid #f1f1f1; color: black; text-transform: uppercase; font-weight: bold; padding-top: 4em; padding-bottom: 4em; font-size: .9em}
-body.blog #content article .entry-meta {display: none;}
-body.blog #content > article .entry-meta {display: block;}
+article .entry-meta {border-bottom: 1px solid #e2e2e2; color: black; text-transform: uppercase; font-weight: bold; padding-top: 4em; padding-bottom: 4em; font-size: .9em}
+body #content article .entry-meta {display: none;}
+body #content article:first-child .entry-meta {display: block;}
 article .entry-content {padding-top: 0em}
 article .entry-content p{line-height: 1.9em}
 article .entry-content a{border-bottom: 1px solid #ccc; padding-bottom: 2px}
@@ -267,7 +267,7 @@ a.back-to-blog{color: white; display: inline-block;  background: black; border-r
 a.back-to-blog:hover{background-color: #0184ca}
 
 #nav-above, .entry-utility{display: none;}
-.navigation {padding: 6% 8%; overflow: hidden; border-bottom: 1px solid #f1f1f1}
+.navigation {padding: 6% 8%; overflow: hidden; border-bottom: 1px solid #e2e2e2}
 .home .navigation a{background: black; color: white; font-weight: bold; border-radius: 100px; display: inline-block; padding: .4em 1em; text-transform: uppercase; font-size: .9em}
 .home .navigation .next{float: right;}
 .home .navigation a:hover{opacity: .8}
