@@ -2,7 +2,6 @@
 
 require_once WPSVBTLE_PATH . "includes/markdown.php";
 
-set_time_limit(0);
 //ver de manejar mejor esto, con _wp_http_referer a lo mejor
 $current_page   = "?page=" . $_GET['page'];
 
