@@ -8,6 +8,8 @@
 3. Move wp-svbtle to the root of your wordpress installation.
 4. Log in to yourdomain.com/wp-svbtle for a new blogging experience!
 
+Admin area & theme are 100% independent from each other! 
+
 ## Screenshots 
 
 ![][1]
