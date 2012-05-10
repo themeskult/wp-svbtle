@@ -41,7 +41,7 @@ require_once WPSVBTLE_PATH . "includes/wps-functions.php";
 $page = $_GET['page'] ? $_GET['page'] : '';
 
 if($page === '') {
-	wp_redirect($current_page . '?page=dashboard');
+	wp_redirect($current_page . 'index.php?page=dashboard');
 }
 
 wp_svbtle_render($page);

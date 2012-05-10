@@ -3,7 +3,7 @@
 require_once WPSVBTLE_PATH . "includes/markdown.php";
 
 //ver de manejar mejor esto, con _wp_http_referer a lo mejor
-$current_page   = "?page=" . $_GET['page'];
+$current_page   = "index.php?page=" . $_GET['page'];
 
 if(!empty($_GET['id']) and ($_GET['action'] == 'del')) {
 	
@@ -13,7 +13,7 @@ if(!empty($_GET['id']) and ($_GET['action'] == 'del')) {
 	
 	$post_id = wp_delete_post( $_GET['id']);
 	
-	wp_redirect( '?page=dashboard' );
+	wp_redirect( 'index.php?page=dashboard' );
 	exit;
 
 // Si en cambio estoy en un nuevo post	

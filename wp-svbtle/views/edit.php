@@ -57,10 +57,10 @@ include('header.php');
 			<input type="radio" class="RadioClass" name="post_status" value="publish" <?php if($post_status == 'publish'): ?>checked="checked"<?php endif; ?> id="">
 			<a href="#" class="button <?php if($post_status == 'publish'): ?>checked<?php endif; ?>"><span class="tick">&#10004;</span> Public</a>
 		</div>
-		<a href="?page=edit&action=del&id=<?php echo $_GET['id'] ?>" class="button remove">Remove</a>
+		<a href="index.php?page=edit&action=del&id=<?php echo $_GET['id'] ?>" class="button remove">Remove</a>
 		
 		<input type="submit" class="button" value="Save"/>
-		<a href="?page=dashboard" class="button">Dashboard</a>
+		<a href="index.php?page=dashboard" class="button">Dashboard</a>
 
 	</div><!-- .buttons -->
 </form>

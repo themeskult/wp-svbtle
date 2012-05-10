@@ -13,9 +13,9 @@ include('header.php')
 	
 	<div class="module">
 		<div class="ideas">
-			<h2><a href="?page=edit" class="button new-entry">New entry</a>Ideas</h2>
+			<h2><a href="index.php?page=edit" class="button new-entry">New entry</a>Ideas</h2>
 			
-				<form action="?page=edit" class="form-idea" method="post" accept-charset="utf-8">
+				<form action="index.php?page=edit" class="form-idea" method="post" accept-charset="utf-8">
 					<input type="hidden" name="action" value="dashboard_submit" />
 					<?php wp_nonce_field( 'new-post' ); ?>
 					<input type="text" name="idea_title" value="" class="start_typing" id="idea_title" placeholder="Start typing an idea here...">
@@ -25,7 +25,7 @@ include('header.php')
 
 			<?php foreach ($ideas_posts as $memberpost): ?>
 				<p>
-					<a href="?page=edit&id=<?php echo $memberpost->ID ?>"><?php echo $memberpost->post_title ?></a>
+					<a href="index.php?page=edit&id=<?php echo $memberpost->ID ?>"><?php echo $memberpost->post_title ?></a>
 				</p>
 			<?php endforeach ?>
 		</div><!-- .ideas -->		
@@ -38,7 +38,7 @@ include('header.php')
 		
 		<?php foreach ($published_posts as $memberpost): ?>
 			<p>
-				<a href="?page=edit&id=<?php echo $memberpost->ID ?>"><span class="word-count"><?php echo str_word_count($memberpost->post_content) ?></span><?php echo $memberpost->post_title ?></a>
+				<a href="index.php?page=edit&id=<?php echo $memberpost->ID ?>"><span class="word-count"><?php echo str_word_count($memberpost->post_content) ?></span><?php echo $memberpost->post_title ?></a>
 			</p>
 		<?php endforeach ?>
 	</div><!-- .name -->
