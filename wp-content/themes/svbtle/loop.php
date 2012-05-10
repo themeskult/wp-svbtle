@@ -84,7 +84,7 @@
 	<?php else : ?>
 		<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 			<div class="entry-meta">
-				<?php boilerplate_posted_on(); ?>
+				<?php echo date('M d, y'); ?>
 			</div><!-- .entry-meta -->
 			
 			<h2 class="entry-title"><?php print_post_title(); ?></h2>
