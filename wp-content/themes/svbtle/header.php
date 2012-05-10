@@ -37,7 +37,9 @@
 			<div class="links">
 				<p><a href="<?php bloginfo('home'); ?>"><?php echo str_replace('http://', '', $site_url) ?></a></p>
 				<!-- <p><a href="http://twitter.com/gravityonmars">@gravityonmars</a> 		</p> -->
-				<p><a href=mailto:"<?php echo get_settings('admin_email') ?>">say hello</a>    </p>
+				<?php if (get_settings('admin_email')): ?>
+					<p><a href=mailto:"<?php echo get_settings('admin_email') ?>">say hello</a>    </p>
+				<?php endif ?>
 				<p><a href="<?php bloginfo('rss2_url'); ?>">rss feed</a>     </p>
 			</div><!-- .links -->
 		</header>
