@@ -84,7 +84,7 @@
 	<?php else : ?>
 		<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 			<div class="entry-meta">
-				<?php echo date('M d, y'); ?>
+				<?php echo date('M d, Y'); ?>
 			</div><!-- .entry-meta -->
 			
 			<h2 class="entry-title"><?php print_post_title(); ?></h2>
