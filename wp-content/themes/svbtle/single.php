@@ -13,7 +13,7 @@ get_header(); ?>
 				<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 					
 					<div class="entry-meta" >
-						<?php boilerplate_posted_on(); ?>
+						POSTED <?php boilerplate_posted_on(); ?>
 					</div><!-- .entry-meta -->
 					
 					<h2 class="entry-title"><a href="<?php echo the_permalink() ?>"><?php the_title(); ?></a></h2>
