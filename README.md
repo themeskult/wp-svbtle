@@ -3,9 +3,9 @@
 
   [Follow us on twitter]: http://twitter.com/gravityonmars
 
-[Demo][]
+[View Demo][]
 
-  [Demo]: http://wp-svbtle.bootstrapthem.es/
+  [View Demo]: http://wp-svbtle.bootstrapthem.es/
   
 ## Installation
 1. Move the folder wp-content/themes/svbltle into wp-content/themes/
