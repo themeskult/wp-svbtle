@@ -62,7 +62,7 @@
 			
 			<div class="links">
 				<?php if (isset($options['twitter_username'])): ?>
-					<p><a href="http://twitter.com/<?php echo $options['twitter_username'] ?>">@<?php echo $options['twitter_username'] ?></a> 		</p>
+					<p><a target="_blank" href="http://twitter.com/<?php echo $options['twitter_username'] ?>">@<?php echo $options['twitter_username'] ?></a> 		</p>
 				<?php endif ?>
 				<?php if (get_option('admin_email')): ?>
 					<p><a href=mailto:"<?php echo get_option('admin_email') ?>">say hello</a>    </p>
