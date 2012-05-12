@@ -18,9 +18,15 @@ Admin area & theme are 100% independent from each other!
 
 ![][3]
 
+![][4]
+
+![][5]
+
  [1]: https://github.com/gravityonmars/wp-svbtle/raw/master/wp-svbtle/screenshot-1.png
  [2]: https://github.com/gravityonmars/wp-svbtle/raw/master/wp-svbtle/screenshot-2.png
  [3]: https://github.com/gravityonmars/wp-svbtle/raw/master/wp-svbtle/screenshot-3.png
+ [4]: https://github.com/gravityonmars/wp-svbtle/raw/master/wp-svbtle/screenshot-3.png
+ [5]: https://github.com/gravityonmars/wp-svbtle/raw/master/wp-svbtle/screenshot-3.png
 
 
 ## Todo
