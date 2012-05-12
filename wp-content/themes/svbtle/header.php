@@ -14,9 +14,28 @@
 
 		if ( is_singular() && get_option( 'thread_comments' ) )
 			wp_enqueue_script( 'comment-reply' );
-
-		wp_head();
 ?>
+
+<?php add_action( 'wp_enqueue_scripts', 'main_css' );  ?>
+<?php wp_head(); ?>
+<?php $options = get_option ( 'svbtle_options' ); ?>
+<?php echo $options['google_analytics'];?>
+<?php if(isset($options['color'])){
+	$color = $options['color'];
+}else {
+	$color = '#ff0000';
+}?>
+
+
+
+<style type="text/css" media="screen">
+	a:hover, article .entry-title a:hover, article .entry-title a:hover{color: <?php echo $color ?>}
+	.links a:hover, article .entry-content blockquote {border-color: <?php echo $color ?>}
+	.home .navigation a, a.back-to-blog{ color: <?php echo $color ?>; border-color: <?php echo $color ?>;}
+	.home .navigation a:hover, a.back-to-blog:hover,  section#cover,figure#user_logo div.logo{background-color: <?php echo $color ?>;}
+</style>
+
+
 	<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
 
 	</head>
@@ -25,20 +44,28 @@
 	<div id="wrap">
 		
 		<header role="banner">
+			
+		 	<figure id="user_logo">
+			    <a href="<?php echo site_url(); ?>">
+			      <div class="logo">&nbsp;</div>
+			    </a>
+			  </figure>
+		
+			
 			<h1><a href="<?php echo home_url( '/' ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
 			<p><?php bloginfo( 'description' ); ?></p>
 			
 			<?php 
 			ob_start(); 
-			bloginfo('home');
+			get_option('home');
 			$site_url = ob_get_clean(); 
 			?>
 			
 			<div class="links">
-				<p><a href="<?php bloginfo('home'); ?>"><?php echo str_replace('http://', '', $site_url) ?></a></p>
+				<!-- <p><a href="<?php home_url('/'); ?>"><?php echo str_replace('http://', '', $site_url) ?></a></p> -->
 				<!-- <p><a href="http://twitter.com/gravityonmars">@gravityonmars</a> 		</p> -->
-				<?php if (get_settings('admin_email')): ?>
-					<p><a href=mailto:"<?php echo get_settings('admin_email') ?>">say hello</a>    </p>
+				<?php if (get_option('admin_email')): ?>
+					<p><a href=mailto:"<?php echo get_option('admin_email') ?>">say hello</a>    </p>
 				<?php endif ?>
 				<p><a href="<?php bloginfo('rss2_url'); ?>">rss feed</a>     </p>
 			</div><!-- .links -->

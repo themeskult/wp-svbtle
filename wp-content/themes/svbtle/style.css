@@ -240,6 +240,75 @@ header{float: left;  padding: 2em; position: fixed; color: #999; }
 header h1 a, h1,h2,h3,h4,h5{color: black; }
 #content{margin-left: 260px;  border-left: 1px solid #e2e2e2; }
 
+figure#user_logo {
+
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    border: 5px solid #f8f8f8;
+}
+figure#user_logo a {
+    display: block;
+    height: 120px;
+    width: 120px;
+    border: none;
+    position: absolute;
+}
+figure#user_logo div.logo {
+    position: absolute;
+    border-radius: 50%;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    left: 50%;
+    top: 50%;
+    margin-top: -42px;
+    margin-left: -42px;
+    border: 2px solid #fff;
+    background-size: 100%;
+    -moz-background-size: 100%;
+    background: #000 url(http://mysterious.s3.amazonaws.com/bolt_large.png) center center no-repeat;
+}
+figure#user_logo div.logo {
+    background-size: 100%;
+    -moz-background-size: 100%;
+}
+figure#user_logo div.pulse {
+    position: absolute;
+    border-radius: 50%;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    border: 10px solid #fff;
+    left: 50%;
+    top: 50%;
+    margin-top: -70px;
+    margin-left: -70px;
+    -webkit-transform: scale(0.55);
+}
+
+article{position: relative}
+article a.kudos{position:absolute;top:60px;right:40px;width:100px;height:100px;text-align:center;border:none}
+article div.circle{background-color:#fff;width:40px;height:40px;border-radius:50%;margin:0 auto;border:4px solid #000;position:relative}
+article div.circle div.filled{background-color:#000;width:10px;height:10px;border-radius:50%;position:absolute;top:50%;left:50%;margin-left:-5px;margin-top:-5px;-webkit-transition-property:margin,width,height,color;-webkit-transition-duration:1s;-webkit-transition-timing-function:ease-in-out;-moz-transition-property:margin,width,height,color;-moz-transition-duration:1s;-moz-transition-timing-function:ease-in-out}
+article a.kudos.animate div.circle div.filled{-webkit-animation-name:hoverPulse;-moz-animation-name:hoverPulse;-webkit-animation-duration:5s;-moz-animation-duration:5s;-webkit-animation-iteration-count:infinite;-moz-animation-iteration-count:infinite;-webkit-animation-timing-function:linear;-moz-animation-timing-function:linear;-webkit-transform:translateZ(0)}
+article a.kudos.filling div.circle div.filled{width:42px;height:42px;margin-left:-21px;margin-top:-21px}
+article a.kudos.completed div.circle div.filled{width:42px;height:42px;margin-left:-21px;margin-top:-21px;background:#000 url(/wp-content/themes/svbtle/images/bolt.png) center center no-repeat;background-size:80%;-moz-background-size:80%}
+article a.kudos p{width:auto;display:block;text-transform:uppercase;line-height:18px;font-family:"freight-sans-pro",sans-serif;font-weight:900;font-size:20px;margin-top:5px;color:#000}
+article a.kudos p span{font-size:11px;font-weight:800;letter-spacing:1px;line-height:11px;display:block;margin-top:5px}
+article a.kudos p span.dont-move{font-size:18px;text-transform:none;line-height:22px;width:200px;margin-left:-50px;margin-top:8px;letter-spacing:0}
+@-webkit-keyframes 'hoverPulse'{0%{opacity:1}
+50%{opacity:.5}
+100%{opacity:1}
+}
+@-moz-keyframes hoverPulse{0%{opacity:1}
+50%{opacity:.5}
+100%{opacity:1}
+}
 
 
 article {border-bottom: 1px solid #e2e2e2; }

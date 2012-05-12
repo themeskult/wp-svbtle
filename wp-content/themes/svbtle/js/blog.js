@@ -1,36 +1,3 @@
-<?php
-/**
- * The template for displaying the footer.
- *
- * Contains the closing of the id=main div and all content
- * after.  Calls sidebar-footer.php for bottom widgets.
- *
- * @package WordPress
- * @subpackage Boilerplate
- * @since Boilerplate 1.0
- */
-?>
-		</section><!-- #main -->
-
-<?php
-	wp_footer();
-?>
-
-<?php $options = get_option ( 'svbtle_options' ); ?>
-
-<script data-cfasync="false" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
-
-<script>
-function buildUser(){
-	$.user = {};
-	$.user.appdomain = "<?php echo substr_replace(home_url(), '', 0, 7); ?>";
-	$.user.cdomain = "<?php echo substr_replace(home_url(), '', 0, 7); ?>";
-	$.user.username = "<?php bloginfo( 'name' ); ?>";
-	$.user.icon = "bolt";
-	$.user.ccolor = "<?php echo substr_replace($options['color'], '', 0, 1); ?>";
-}
-
-
 (function(a, b) {
     var c;
     a.rails = c = {linkClickSelector: "a[data-confirm], a[data-method], a[data-remote], a[data-disable-with]",inputChangeSelector: "select[data-remote], input[data-remote], textarea[data-remote]",formSubmitSelector: "form",formInputClickSelector: "form input[type=submit], form input[type=image], form button[type=submit], form button:not(button[type])",disableSelector: "input[data-disable-with], button[data-disable-with], textarea[data-disable-with]",enableSelector: "input[data-disable-with]:disabled, button[data-disable-with]:disabled, textarea[data-disable-with]:disabled",requiredInputSelector: "input[name][required]:not([disabled]),textarea[name][required]:not([disabled])",fileInputSelector: "input:file",linkDisableSelector: "a[data-disable-with]"/*,CSRFProtection: function(b) {
@@ -203,7 +170,7 @@ function buildUser(){
         }, 1e3), a.hasClass("kudoable") && (a.removeClass("filling").addClass("animate"), a.parent("figure").removeClass("filling"), a.children("p.count").hide().html(a.oldKudoText), a.children("p.notice").remove(), a.children("p.count").fadeIn("slow"))
     }
     function n(b) {
-        b.flag = !0, b.article = b.closest("article").attr("id"), a.post("<?php echo get_template_directory_uri(); ?>/kudos.php", {article: b.article,cooking: h}), b.removeClass("animate").removeClass("kudoable").removeClass("filling").addClass("completed"), b.parent("figure").removeClass("filling"), a.cookie(b.article, !0), newnum = parseInt(b.oldKudoText) + 1, b.newtext = newnum + " " + '<span class="identifier">Kudos</span>', b.children("p.notice").hide().remove(), b.children("p.count").html(b.newtext).fadeIn()
+        b.flag = !0, b.article = b.closest("article").attr("id"), a.post("/kudos.php", {article: b.article,cooking: h}), b.removeClass("animate").removeClass("kudoable").removeClass("filling").addClass("completed"), b.parent("figure").removeClass("filling"), a.cookie(b.article, !0), newnum = parseInt(b.oldKudoText) + 1, b.newtext = newnum + " " + '<span class="identifier">Kudos</span>', b.children("p.notice").hide().remove(), b.children("p.count").html(b.newtext).fadeIn()
     }
     var b = function() {
         var a = 0;
@@ -236,10 +203,3 @@ function buildUser(){
         k = a(this), m(k), b.preventDefault()
     })
 }(jQuery);
-
-</script>
-
-
-		</div><!-- #wrap -->
-	</body>
-</html>
