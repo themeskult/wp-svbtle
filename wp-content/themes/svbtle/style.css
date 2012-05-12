@@ -326,8 +326,7 @@ article img, article object, article iframe {
 margin-top: 20px;
 margin-bottom: 15px;
 margin-left: -50px;
-max-width: 100%;
-width: auto;
+max-width: 550px;
 height: auto;
 }
 article .entry-content p{line-height: 1.9em; color: #4D4D4D}
