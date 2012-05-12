@@ -35,7 +35,9 @@ function theme_options_do_page() {
 			<?php settings_fields( 'sample_options' ); ?>
 			<?php $options = get_option( 'svbtle_options' ); ?>
 
-	
+				<h3><?php _e( 'Twitter Username', 'wordpress-svbtle' ); ?></h3>
+				<input class="regular-text" type="text" name="svbtle_options[twitter_username]" value="<?php esc_attr_e( $options['twitter_username'] ); ?>" /><div id="color_picker_color1"></div>
+				
 				
 				<h3><?php _e( 'Blog color', 'wordpress-svbtle' ); ?></h3>
 				<p>

@@ -61,8 +61,9 @@
 			?>
 			
 			<div class="links">
-				<!-- <p><a href="<?php home_url('/'); ?>"><?php echo str_replace('http://', '', $site_url) ?></a></p> -->
-				<!-- <p><a href="http://twitter.com/gravityonmars">@gravityonmars</a> 		</p> -->
+				<?php if (isset($options['twitter_username'])): ?>
+					<p><a href="http://twitter.com/<?php echo $options['twitter_username'] ?>">@<?php echo $options['twitter_username'] ?></a> 		</p>
+				<?php endif ?>
 				<?php if (get_option('admin_email')): ?>
 					<p><a href=mailto:"<?php echo get_option('admin_email') ?>">say hello</a>    </p>
 				<?php endif ?>
