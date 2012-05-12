@@ -14,9 +14,7 @@
 	</article><!-- #post-0 -->
 <?php endif; ?>
 
-<div class="entry-meta">
-	<?php echo date('M d, Y'); ?>
-</div><!-- .entry-meta -->
+
 
 <?php while ( have_posts() ) : the_post(); ?>
 	<?php $options = get_option ( 'svbtle_options' ); ?>
