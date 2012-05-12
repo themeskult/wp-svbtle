@@ -322,12 +322,18 @@ article .entry-title a:hover{color: #ff0000}
 body #content article .entry-meta {display: none;}
 body #content article:first-child .entry-meta {display: block;}
 article .entry-content {padding-top: 0em; width: 500px}
-article .entry-content img{max-width: 100%; width: auto; }
+article img, article object, article iframe {
+margin-top: 20px;
+margin-bottom: 15px;
+margin-left: -50px;
+max-width: 100%;
+width: auto;
+height: auto;
+}
 article .entry-content p{line-height: 1.9em; color: #4D4D4D}
 article .entry-content a{border-bottom: 1px solid #ccc; padding-bottom: 2px}
 article .entry-content blockquote{border-left: 10px solid #ff0000; margin-left: 0; padding-left: 1.4em}
 
-article .entry-content img{max-width: 100%; width: auto; height: auto}
 
 .links {margin-top: 2em}
 .links a{display: inline-block; color: #999;  clear: both; border: 3px solid #f8f8f8; border-radius: 100px; padding: .4em 1em}
