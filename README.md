@@ -2,6 +2,11 @@
 #### Wordpress admin & Theme inspired by svbtle.com. [Follow us on twitter][]
 
   [Follow us on twitter]: http://twitter.com/gravityonmars
+
+[View Demo][]
+
+  [View Demo]: http://wp-svbtle.bootstrapthem.es/
+  
 ## Installation
 1. Move the folder wp-content/themes/svbltle into wp-content/themes/
 2. Enable the theme from the admin panel
