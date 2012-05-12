@@ -35,36 +35,21 @@ function theme_options_do_page() {
 			<?php settings_fields( 'sample_options' ); ?>
 			<?php $options = get_option( 'svbtle_options' ); ?>
 
-			<table class="form-table">
-
-				<tr valign="top"><th scope="row"><?php _e( 'Display logo pulse animation?', 'wordpress-svbtle' ); ?></th>
-					<td>
-						<input id="svbtle_options[pulse]" name="svbtle_options[pulse]" type="checkbox" value="1" <?php checked( '1', $options['pulse'] ); ?> />
-					</td>
-				</tr>
+	
 				
-				<tr valign="top"><th scope="row"><?php _e( 'Display anchors?', 'wordpress-svbtle' ); ?></th>
-					<td>
-						<input id="svbtle_options[anchor]" name="svbtle_options[anchor]" type="checkbox" value="1" <?php checked( '1', $options['anchor'] ); ?> />
-					</td>
-				</tr>
-
-				<tr valign="top"><th scope="row"><?php _e( 'Blog color', 'wordpress-svbtle' ); ?></th>
-					<td>
+				<h3><?php _e( 'Blog color', 'wordpress-svbtle' ); ?></h3>
+				<p>
 						<input id="color1" class="regular-text" type="text" name="svbtle_options[color]" value="<?php esc_attr_e( $options['color'] ); ?>" /><div id="color_picker_color1"></div>
-					</td>
-				</tr>
-
-				<tr valign="top"><th scope="row"><?php _e( 'Google Analytics // Typekit', 'wordpress-svbtle' ); ?></th>
-					<td>
-						<textarea id="svbtle_options[google_analytics]" class="large-text" cols="50" rows="10" name="svbtle_options[google_analytics]"><?php echo esc_textarea( $options['google_analytics'] ); ?></textarea>
-					</td>
-				</tr>
-			</table>
-
-			<p class="submit">
-				<input type="submit" class="button-primary" value="<?php _e( 'Save Options', 'wordpress-svbtle' ); ?>" />
-			</p>
+				</p>
+				<h3><?php _e( 'Google Analytics // Typekit', 'wordpress-svbtle' ); ?></h3>
+				<p>
+					<textarea id="svbtle_options[google_analytics]" class="large-text" cols="50" rows="10" name="svbtle_options[google_analytics]"><?php echo esc_textarea( $options['google_analytics'] ); ?></textarea>
+				</p>
+			
+				<p class="submit">
+					<input type="submit" class="button-primary" value="<?php _e( 'Save Options', 'wordpress-svbtle' ); ?>" />
+				</p>
+	
 		</form>
 	</div>
 	<?php
@@ -73,13 +58,13 @@ function theme_options_do_page() {
 function theme_options_validate( $input ) {
 	global $select_options, $radio_options;
 
-	if ( ! isset( $input['anchor'] ) )
-		$input['anchor'] = null;
-	$input['anchor'] = ( $input['anchor'] == 1 ? 1 : 0 );
-	
-	if ( ! isset( $input['pulse'] ) )
-		$input['pulse'] = null;
-	$input['pulse'] = ( $input['pulse'] == 1 ? 1 : 0 );
+	// if ( ! isset( $input['anchor'] ) )
+	// 	$input['anchor'] = null;
+	// $input['anchor'] = ( $input['anchor'] == 1 ? 1 : 0 );
+	// 
+	// if ( ! isset( $input['pulse'] ) )
+	// 	$input['pulse'] = null;
+	// $input['pulse'] = ( $input['pulse'] == 1 ? 1 : 0 );
 
 	$input['color'] = wp_filter_nohtml_kses( $input['color'] );
 
