@@ -14,6 +14,9 @@
 	</article><!-- #post-0 -->
 <?php endif; ?>
 
+<div class="entry-meta">
+	<?php echo date('M d, Y'); ?>
+</div><!-- .entry-meta -->
 
 <?php while ( have_posts() ) : the_post(); ?>
 	<?php $options = get_option ( 'svbtle_options' ); ?>
@@ -21,10 +24,8 @@
 	<?php $kudos = get_post_meta($post->ID, '_wp-svbtle-kudos', true); 
 				if ($kudos > "") { $kudos = $kudos; } else { $kudos = "0"; } ?>
 				
-		<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-			<div class="entry-meta">
-				<?php echo date('M d, Y'); ?>
-			</div><!-- .entry-meta -->
+		<article id="<?php the_ID(); ?>" <?php post_class(); ?>>
+
 			
 			<figure class="kudo">	
 				<a class="kudos kudoable animate" id="<?php the_ID(); ?>">

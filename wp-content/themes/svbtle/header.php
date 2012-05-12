@@ -27,7 +27,6 @@
 }?>
 
 
-
 <style type="text/css" media="screen">
 	a:hover, article .entry-title a:hover, article .entry-title a:hover{color: <?php echo $color ?>}
 	.links a:hover, article .entry-content blockquote {border-color: <?php echo $color ?>}

@@ -292,7 +292,7 @@ figure#user_logo div.pulse {
 }
 
 article{position: relative}
-article a.kudos{position:absolute;top:60px;right:40px;width:100px;height:100px;text-align:center;border:none}
+article a.kudos{position:absolute;top:60px;right:50px;width:100px;height:100px;text-align:center;border:none}
 article div.circle{background-color:#fff;width:40px;height:40px;border-radius:50%;margin:0 auto;border:4px solid #000;position:relative}
 article div.circle div.filled{background-color:#000;width:10px;height:10px;border-radius:50%;position:absolute;top:50%;left:50%;margin-left:-5px;margin-top:-5px;-webkit-transition-property:margin,width,height,color;-webkit-transition-duration:1s;-webkit-transition-timing-function:ease-in-out;-moz-transition-property:margin,width,height,color;-moz-transition-duration:1s;-moz-transition-timing-function:ease-in-out}
 article a.kudos.animate div.circle div.filled{-webkit-animation-name:hoverPulse;-moz-animation-name:hoverPulse;-webkit-animation-duration:5s;-moz-animation-duration:5s;-webkit-animation-iteration-count:infinite;-moz-animation-iteration-count:infinite;-webkit-animation-timing-function:linear;-moz-animation-timing-function:linear;-webkit-transform:translateZ(0)}
@@ -312,13 +312,13 @@ article a.kudos p span.dont-move{font-size:18px;text-transform:none;line-height:
 
 
 article {border-bottom: 1px solid #e2e2e2; }
-article .entry-title, article .entry-content, article .entry-meta, .navigation {padding: 3em 50px}
+article .entry-title, article .entry-content,  .entry-meta, .navigation {padding: 3em 50px}
 article .entry-title{margin-top: 0; font-size: 2.3em; padding-top: 1em; padding-bottom: 0em}
 article .entry-title h2{margin: 0; padding: 0}
 article .entry-title a{display: inline-block;}
 article .entry-title a:hover{color: #ff0000}
 /*article .entry-title a.link { border-bottom: 1px solid #ccc; } */
-article .entry-meta {border-bottom: 1px solid #e2e2e2; color: black; text-transform: uppercase; font-weight: bold; padding-top: 4em; padding-bottom: 4em; font-size: 1em}
+.entry-meta {border-bottom: 1px solid #e2e2e2; color: black; text-transform: uppercase; font-weight: bold; padding-top: 4em; padding-bottom: 4em; font-size: 1em}
 body #content article .entry-meta {display: none;}
 body #content article:first-child .entry-meta {display: block;}
 article .entry-content {padding-top: 0em; width: 500px}

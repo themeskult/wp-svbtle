@@ -203,7 +203,7 @@ function buildUser(){
         }, 1e3), a.hasClass("kudoable") && (a.removeClass("filling").addClass("animate"), a.parent("figure").removeClass("filling"), a.children("p.count").hide().html(a.oldKudoText), a.children("p.notice").remove(), a.children("p.count").fadeIn("slow"))
     }
     function n(b) {
-        b.flag = !0, b.article = b.closest("article").attr("id"), a.post("<?php echo get_template_directory_uri(); ?>/kudos.php", {article: b.article,cooking: h}), b.removeClass("animate").removeClass("kudoable").removeClass("filling").addClass("completed"), b.parent("figure").removeClass("filling"), a.cookie(b.article, !0), newnum = parseInt(b.oldKudoText) + 1, b.newtext = newnum + " " + '<span class="identifier">Kudos</span>', b.children("p.notice").hide().remove(), b.children("p.count").html(b.newtext).fadeIn()
+        b.flag = !0, b.article = b.closest("article").attr("id"), a.post("<?php echo site_url(); ?>/wp-admin/admin-ajax.php", {action:'my_special_action',article: b.article,cooking: h}), b.removeClass("animate").removeClass("kudoable").removeClass("filling").addClass("completed"), b.parent("figure").removeClass("filling"), a.cookie(b.article, !0), newnum = parseInt(b.oldKudoText) + 1, b.newtext = newnum + " " + '<span class="identifier">Kudos</span>', b.children("p.notice").hide().remove(), b.children("p.count").html(b.newtext).fadeIn()
     }
     var b = function() {
         var a = 0;
