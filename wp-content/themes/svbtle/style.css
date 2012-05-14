@@ -345,6 +345,8 @@ article .entry-content blockquote{border-left: 10px solid #ff0000; margin-left: 
 .home .navigation .next{float: right;}
 .home .navigation a:hover, a.back-to-blog:hover{background: #ff0000; color: white}
 .home .single .navigation{}
+	
+body.page .kudos{display: none;}
 
 /* ==|== media queries ======================================================
    EXAMPLE Media Query for Responsive Design.

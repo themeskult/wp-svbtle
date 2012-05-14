@@ -61,6 +61,20 @@
 			?>
 			
 			<div class="links">
+				<?php
+					$mypages = get_pages( array( 'sort_column' => 'post_date', 'sort_order' => 'desc' ) );
+
+					foreach( $mypages as $page ) {		
+						$content = $page->post_content;
+						if ( ! $content ) // Check for empty page
+							continue;
+
+						$content = apply_filters( 'the_content', $content );
+					?>
+						<p><a href="<?php echo get_page_link( $page->ID ); ?>"><?php echo $page->post_title; ?></a></p>
+					<?php
+					}	
+				?>
 				<?php if (isset($options['twitter_username'])): ?>
 					<p><a target="_blank" href="http://twitter.com/<?php echo $options['twitter_username'] ?>">@<?php echo $options['twitter_username'] ?></a> 		</p>
 				<?php endif ?>
