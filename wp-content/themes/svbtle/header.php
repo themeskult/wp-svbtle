@@ -35,7 +35,7 @@
 </style>
 
 
-	<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<script src="<?= get_template_directory_uri() ?>/js/html5.js"></script>
 
 	</head>
 	<body <?php body_class(); ?>>
