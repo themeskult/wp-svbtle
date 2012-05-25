@@ -329,6 +329,7 @@ margin-left: -50px;
 max-width: 500px;
 height: auto;
 }
+article img.wp-smiley{margin: auto}
 article .entry-content p{line-height: 1.9em; color: #4D4D4D}
 article .entry-content a{border-bottom: 1px solid #ccc; padding-bottom: 2px}
 article .entry-content blockquote{border-left: 10px solid #ff0000; margin-left: 0; padding-left: 1.4em}
