@@ -4,8 +4,7 @@
  * Including wp-functions
  *
  */
-require_once(dirname(dirname(__FILE__)) . '/wp-load.php');
-require_once(dirname(dirname(__FILE__)) . '/wp-config.php');
+
 require_once(dirname(dirname(__FILE__)) . '/wp-blog-header.php');
 
 /* 

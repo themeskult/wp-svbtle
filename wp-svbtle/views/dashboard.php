@@ -45,4 +45,4 @@ include('header.php')
 	
 </div><!-- .wrap -->
 
-
+<?php include('footer.php') ?>
