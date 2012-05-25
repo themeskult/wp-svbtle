@@ -12,9 +12,9 @@ include('header.php');
 	<?php if ($err != ""): ?>
 		<?php echo "<p class='wps-notice'>".$err."</p>" ?>
 	<?php elseif ($_GET['success'] == "success"): ?>
-		<?php echo "<p class='wps-notice'>Your post was successfully submitted.</p>" ?>
+		<?php echo "<p class='wps-notice'>" . __('Your post was successfully submitted') . "</p>" ?>
 	<?php elseif ($_GET['edit'] == "success"): ?>
-		<?php echo "<p class='wps-notice'>Your post was successfully updated.</p>" ?>					
+		<?php echo "<p class='wps-notice'>" . __('Your post was successfully updated') . "</p>" ?>					
 	<?php endif ?>
 
 	<div class="wrap">
@@ -39,7 +39,7 @@ include('header.php');
 
 		<?php else: ?>
 			<?php // a lo mejor convendría un redirect? ?>
-			<p>Sorry, you don't have permission to post new article!</p>
+			<p><?php __('Sorry, you don\'t have permission to post a new article!') ?></p>
 		<?php endif ?>
 			
 	</div><!-- .wrap -->
