@@ -17,11 +17,11 @@ Admin area & theme are 100% independent from each other!
 
 ## Screenshots 
 
+![][3]
+
 ![][1]
 
 ![][2]
-
-![][3]
 
 ![][4]
 
