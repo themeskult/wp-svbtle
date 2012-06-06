@@ -20,12 +20,13 @@
 <?php wp_head(); ?>
 <?php $options = get_option ( 'svbtle_options' ); ?>
 <?php echo $options['google_analytics'];?>
-<?php if(isset($options['color'])){
+<?php 
+if( isset( $options['color'] ) && '' != $options['color'] ) {
 	$color = $options['color'];
-}else {
+} else {
 	$color = '#ff0000';
-}?>
-
+} 
+?>
 
 <style type="text/css" media="screen">
 	a:hover, article .entry-title a:hover, article .entry-title a:hover{color: <?php echo $color ?>}
