@@ -343,8 +343,8 @@ echo '<a class="is_link_"'.$is_link.'" href="'.$link.'" rel="bookmark" title="'.
 function implement_ajax() {
 	global $wpdb;
 
-	$post_id = $_POST['article'];
-	$cooking = $_POST['cooking'];
+	$post_id = mysql_real_escape_string($_POST['article']);
+	$cooking = mysql_real_escape_string($_POST['cooking']);
 
 	$kudos = get_post_meta( $post_id , '_wp-svbtle-kudos', true );
 	$new_kudos = $kudos + 1;
