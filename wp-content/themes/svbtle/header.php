@@ -80,7 +80,7 @@ if( isset( $options['color'] ) && '' != $options['color'] ) {
 					<p><a target="_blank" href="http://twitter.com/<?php echo $options['twitter_username'] ?>">@<?php echo $options['twitter_username'] ?></a> 		</p>
 				<?php endif ?>
 				<?php if (get_option('admin_email')): ?>
-					<p><a href=mailto:"<?php echo get_option('admin_email') ?>">say hello</a>    </p>
+					<p><a href="mailto:<?php echo get_option('admin_email') ?>">say hello</a>    </p>
 				<?php endif ?>
 				<p><a href="<?php bloginfo('rss2_url'); ?>">rss feed</a>     </p>
 			</div><!-- .links -->
