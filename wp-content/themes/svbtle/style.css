@@ -334,6 +334,7 @@ article .entry-content p{line-height: 1.9em; color: #4D4D4D}
 article .entry-content a{border-bottom: 1px solid #ccc; padding-bottom: 2px}
 article .entry-content blockquote{border-left: 10px solid #ff0000; margin-left: 0; padding-left: 1.4em}
 
+#disqus_thread { width: 500px; display: block; padding: 20px 0 20px 50px; }
 
 .links {margin-top: 2em}
 .links a{display: inline-block; color: #999;  clear: both; border: 3px solid #f8f8f8; border-radius: 100px; padding: .4em 1em}

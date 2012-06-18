@@ -6,7 +6,7 @@
 <!--[if (gt IE 9)|!(IE)]><!--><html <?php language_attributes(); ?> class="no-js"><!--<![endif]-->
 	<head>
 		<meta charset="<?php bloginfo( 'charset' ); ?>" />
-		<title><?php bloginfo( 'name' ); ?></title>
+		<title><?php if ( is_singular() ) { echo trim(wp_title("")) . ' | '; } ?><?php bloginfo( 'name' ); ?></title>
 		<link rel="profile" href="http://gmpg.org/xfn/11" />
 		<link rel="stylesheet" href="<?php bloginfo( 'stylesheet_url' ); ?>" />
 		<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
@@ -80,7 +80,7 @@ if( isset( $options['color'] ) && '' != $options['color'] ) {
 					<p><a target="_blank" href="http://twitter.com/<?php echo $options['twitter_username'] ?>">@<?php echo $options['twitter_username'] ?></a> 		</p>
 				<?php endif ?>
 				<?php if (get_option('admin_email')): ?>
-					<p><a href=mailto:"<?php echo get_option('admin_email') ?>">say hello</a>    </p>
+					<p><a href="mailto:<?php echo get_option('admin_email') ?>">say hello</a>    </p>
 				<?php endif ?>
 				<p><a href="<?php bloginfo('rss2_url'); ?>">rss feed</a>     </p>
 			</div><!-- .links -->

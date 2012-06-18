@@ -4,6 +4,7 @@ Template Name: New Post
 */
 // process the collected data
 require_once WPSVBTLE_PATH . 'views/process_post.php'; 
+$md = new Markdownify;
 
 nocache_headers();
 include('header.php');
@@ -34,7 +35,7 @@ include('header.php');
 			</p>
 
 			<p>
-				<textarea name="post_content" id="post_content" placeholder="Write post here"  tabindex="2"><?php echo $post_content ?></textarea>
+				<textarea name="post_content" id="post_content" placeholder="Write post here"  tabindex="2"><?php echo $md->parseString($post_content); ?></textarea>
 			</p>
 
 		<?php else: ?>
