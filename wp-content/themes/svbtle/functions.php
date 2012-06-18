@@ -2,7 +2,7 @@
 
 function main_css()  
 {
-	wp_register_style( 'style', get_template_directory_uri() . '/style.css', array(), '20120417', 'all' );
+	wp_register_style( 'style', get_template_directory_uri() . '/style.css', array(), 'v4', 'all' );
 
 	wp_enqueue_style( 'style' );
 }
