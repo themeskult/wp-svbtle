@@ -313,7 +313,7 @@ article a.kudos.animate div.circle div.filled{-webkit-animation-name:hoverPulse;
 article a.kudos.filling div.circle div.filled{width:42px;height:42px;margin-left:-21px;margin-top:-21px}
 article a.kudos.completed div.circle div.filled{width:42px;height:42px;margin-left:-21px;margin-top:-21px;background:#000 url(/wp-content/themes/svbtle/images/bolt.png) center center no-repeat;background-size:80%;-moz-background-size:80%}
 article a.kudos p{width:auto;display:block;text-transform:uppercase;line-height:18px;font-family:"freight-sans-pro",sans-serif;font-weight:900;font-size:20px;margin-top:5px;color:#000}
-article a.kudos p span{font-size:11px;font-weight:800;letter-spacing:1px;line-height:11px;display:block;margin-top:5px}
+article a.kudos p span{font-size:12px;font-weight:800;letter-spacing:1px;line-height:11px;display:block;margin-top:5px}
 article a.kudos p span.dont-move{font-size:18px;text-transform:none;line-height:22px;width:200px;margin-left:-50px;margin-top:8px;letter-spacing:0}
 @-webkit-keyframes 'hoverPulse'{0%{opacity:1}
 50%{opacity:.5}
