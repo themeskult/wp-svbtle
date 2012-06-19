@@ -31,7 +31,7 @@ if( isset( $options['color'] ) && '' != $options['color'] ) {
 <style type="text/css" media="screen">
 	a:hover, article .entry-title a:hover, article .entry-title a:hover{color: <?php echo $color ?>}
 	.links a:hover, article .entry-content blockquote {border-color: <?php echo $color ?>}
-	.home .navigation a, a.back-to-blog{ color: <?php echo $color ?>; border-color: <?php echo $color ?>;}
+	.home .navigation a, a.back-to-blog, #respond input{ color: <?php echo $color ?>; border-color: <?php echo $color ?>;}
 	.home .navigation a:hover, a.back-to-blog:hover,  section#cover,figure#user_logo div.logo{background-color: <?php echo $color ?>;}
 </style>
 

@@ -312,8 +312,8 @@ article a.kudos p span.dont-move{font-size:18px;text-transform:none;line-height:
 
 
 article {border-bottom: 1px solid #e2e2e2; }
-article .entry-title, article .entry-content,  .entry-meta, #comments, #respond{padding-left: 50px; padding-right: 50px}
-article .entry-title{margin-top: 0; font-size: 2.3em; padding-top: 1em; padding-bottom: 0em}
+article .entry-title, article .entry-content,  .entry-meta, #comments, #respond, #nav-below{padding-left: 50px; padding-right: 50px}
+article .entry-title{margin-top: 0; font-size: 2.3em; padding-top: 40px; padding-bottom: 0em}
 article .entry-title h2{margin: 0; padding: 0}
 article .entry-title a{display: inline-block;}
 article .entry-title a:hover{color: #ff0000}
@@ -333,7 +333,7 @@ article img.wp-smiley{margin: auto}
 article .entry-content p{line-height: 1.9em; color: #4D4D4D}
 article .entry-content a{border-bottom: 1px solid #ccc; padding-bottom: 2px}
 article .entry-content blockquote{border-left: 10px solid #ff0000; margin-left: 0; padding-left: 1.4em}
-
+article .entry-content {padding-bottom: 50px}
 #disqus_thread { width: 500px; display: block; padding: 20px 0 20px 50px; }
 
 .links {margin-top: 2em}
@@ -349,10 +349,11 @@ article .entry-content blockquote{border-left: 10px solid #ff0000; margin-left: 
 .home .single .navigation{}
 	
 body.page .kudos{display: none;}
-
+body.home #nav-below{padding-top: 40px; padding-bottom: 40px}
 
 /* =Comments
 -------------------------------------------------------------- */
+.comments ol{padding-top: 20px}
 ol.commentlist{margin-top: 20px; padding-left: 50px}
 #comments {
 	clear: both;
@@ -479,8 +480,6 @@ input[type=submit] {
 	color: #333;
 }
 #respond {
-	border-top: 1px solid #e7e7e7;
-	margin: 24px 0;
 	overflow: hidden;
 	position: relative;
 }
@@ -520,10 +519,15 @@ h3#reply-title {
 }
 #respond input {
 	margin: 0 0 9px;
-	width: 98%;
+	border: 3px solid red;
+	border-radius: 100px;
+	padding: 10px 20px;
+	font-weight: bold;
+	background: white;
 }
 #respond textarea {
 	width: 98%;
+	margin-bottom: 10px;
 }
 #respond .form-allowed-tags {
 	color: #888;
