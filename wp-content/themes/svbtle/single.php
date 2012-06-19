@@ -18,4 +18,8 @@ get_template_part( 'loop', 'index' );
 <div class="comments">
 	<?php comments_template(); ?>
 </div><!-- .comments -->
+
+<div id="nav-below">
+	<a href="#" class="back-to-blog">←   Back to blog</a>
+</div><!-- .nav-below -->
 <?php get_footer(); ?>

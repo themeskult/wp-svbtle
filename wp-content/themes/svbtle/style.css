@@ -292,7 +292,7 @@ figure#user_logo div.pulse {
 }
 
 article{position: relative}
-article a.kudos{position:absolute;top:60px;right:50px;width:100px;height:100px;text-align:center;border:none}
+article a.kudos{position:absolute; text-align: center;top:60px;right:50px;width:100px;height:100px;text-align:center;border:none}
 article div.circle{background-color:#fff;width:40px;height:40px;border-radius:50%;margin:0 auto;border:4px solid #000;position:relative}
 article div.circle div.filled{background-color:#000;width:10px;height:10px;border-radius:50%;position:absolute;top:50%;left:50%;margin-left:-5px;margin-top:-5px;-webkit-transition-property:margin,width,height,color;-webkit-transition-duration:1s;-webkit-transition-timing-function:ease-in-out;-moz-transition-property:margin,width,height,color;-moz-transition-duration:1s;-moz-transition-timing-function:ease-in-out}
 article a.kudos.animate div.circle div.filled{-webkit-animation-name:hoverPulse;-moz-animation-name:hoverPulse;-webkit-animation-duration:5s;-moz-animation-duration:5s;-webkit-animation-iteration-count:infinite;-moz-animation-iteration-count:infinite;-webkit-animation-timing-function:linear;-moz-animation-timing-function:linear;-webkit-transform:translateZ(0)}
@@ -300,7 +300,7 @@ article a.kudos.filling div.circle div.filled{width:42px;height:42px;margin-left
 article a.kudos.completed div.circle div.filled{width:42px;height:42px;margin-left:-21px;margin-top:-21px;background:#000 url(/wp-content/themes/svbtle/images/bolt.png) center center no-repeat;background-size:80%;-moz-background-size:80%}
 article a.kudos p{width:auto;display:block;text-transform:uppercase;line-height:18px;font-family:"freight-sans-pro",sans-serif;font-weight:900;font-size:20px;margin-top:5px;color:#000}
 article a.kudos p span{font-size:11px;font-weight:800;letter-spacing:1px;line-height:11px;display:block;margin-top:5px}
-article a.kudos p span.dont-move{font-size:18px;text-transform:none;line-height:22px;width:200px;margin-left:-50px;margin-top:8px;letter-spacing:0}
+article a.kudos p span.dont-move{font-size:18px;text-transform:none;line-height:22px;width:200px;margin: auto; text-align: center;margin-top:8px;letter-spacing:0}
 @-webkit-keyframes 'hoverPulse'{0%{opacity:1}
 50%{opacity:.5}
 100%{opacity:1}
@@ -310,10 +310,9 @@ article a.kudos p span.dont-move{font-size:18px;text-transform:none;line-height:
 100%{opacity:1}
 }
 
-
 article {border-bottom: 1px solid #e2e2e2; }
 article .entry-title, article .entry-content,  .entry-meta, #comments, #respond, #nav-below{padding-left: 50px; padding-right: 50px}
-article .entry-title{margin-top: 0; font-size: 2.3em; padding-top: 40px; padding-bottom: 0em}
+article .entry-title{margin-top: 0; font-size: 30px; line-height: 38px; padding-top: 40px; padding-bottom: 0em}
 article .entry-title h2{margin: 0; padding: 0}
 article .entry-title a{display: inline-block;}
 article .entry-title a:hover{color: #ff0000}
@@ -349,7 +348,8 @@ article .entry-content {padding-bottom: 50px}
 .home .single .navigation{}
 	
 body.page .kudos{display: none;}
-body.home #nav-below{padding-top: 40px; padding-bottom: 40px}
+#nav-below{padding-top: 40px; padding-bottom: 40px; }
+body.single #nav-below{border-top: 1px solid #e2e2e2}
 
 /* =Comments
 -------------------------------------------------------------- */
@@ -358,6 +358,8 @@ ol.commentlist{margin-top: 20px; padding-left: 50px}
 #comments {
 	clear: both;
 }
+
+#comments{margin-top: 40px}
 #comments .navigation {
 	padding: 0 0 18px 0;
 }
@@ -517,13 +519,34 @@ h3#reply-title {
 	color: #888;
 	font-size: 12px;
 }
-#respond input {
+#respond input[type="text"] {
+	margin-bottom: 14px;
+	padding: 4px;
+	margin-right: 10px;
+	border: 0;
+	border-bottom: 1px solid #ccc;
+}
+
+#respond input[type="text"]:focus{
+	outline: 0;
+	border-color: #333;
+}
+
+#respond textarea{border-color: #ccc}
+#respond textarea:focus{
+	outline: 0;
+}
+
+#respond #submit {
 	margin: 0 0 9px;
-	border: 3px solid red;
-	border-radius: 100px;
+	background: black;
+	border-radius: 5px;
 	padding: 10px 20px;
 	font-weight: bold;
-	background: white;
+	width: auto;
+	border: 0;
+	color: white;
+	margin-bottom: 50px;
 }
 #respond textarea {
 	width: 98%;
@@ -590,6 +613,21 @@ h3#reply-title {
    Inlined to avoid required HTTP connection: h5bp.com/r
    ========================================================================== */
 
+@media only screen and (max-width:500px){
+	header{float: none; width: 100%; padding: 0; padding-top: 20px; position: static; text-align: center;}
+	figure#user_logo {margin: auto}
+	#content{margin: auto}
+	.links p{display: inline-block;}
+	.links .rss{display: none;}
+	.entry-meta{display: none;}
+	article a.kudos{position: static}
+	article .entry-title, article .entry-content, .entry-meta, #comments, #respond, #nav-below{padding-left: 10px; padding-right: 10px}
+	article .entry-content{width: auto}
+	article img, article object, article iframe {margin-left: 0; width: auto; max-width: 100%}
+	
+}
+
+
 @media print {
   * { background: transparent !important; color: black !important; box-shadow:none !important; text-shadow: none !important; filter:none !important; -ms-filter: none !important; } /* Black prints faster: h5bp.com/s */
   a, a:visited { text-decoration: underline; }
@@ -629,79 +667,6 @@ li#theme-switcher { background:#fff; border:10px solid red; padding:20px; positi
 /* ----------------------------------------- */
 
 h1, h2, h3, h4, h5, h6 { font-weight:bold } /* This helps to identify headings at the initial build stage, so I thought it'd be useful to have it */
-.alert { background:red; color:white } /* 'alert' has a basic style, since it's useful to have it standing out for testing purposes.
+.alert { background:red; color:white } /* 'alert' has a basic style, since it's useful to have it standing out for testing purposes. */
 
 
-
-/* Font stack options
-
-	The following represents a list of font stacks, as recommended by Nathan Ford in
-	http://unitinteractive.com/blog/2008/06/26/better-css-font-stacks/
-
-	I've added inverted commas around the relevant family names to ensure compatibility.
-	p = balanced for paragraphs or body copy
-	t = balanced for headlines or titles
-
-	- - - -
-
-Arial, "Helvetica Neue", Helvetica, sans-serif - p, t
-
-Baskerville, "Times New Roman", Times, serif - p
-Baskerville, "Times, Times New Roman", serif - t
-
-Cambria, Georgia, Times, "Times New Roman", serif - p, t
-"Century Gothic", "Apple Gothic", sans-serif - p, t
-
-Consolas, "Lucida Console", Monaco, monospace - p, t
-
-"Copperplate Light", "Copperplate Gothic Light", serif - p, t
-
-"Courier New", Courier, monospace - p, t
-
-"Franklin Gothic Medium", "Arial Narrow Bold", Arial, sans-serif - p, t
-
-Futura, "Century Gothic", "Apple Gothic", sans-serif - p, t
-
-Garamond, "Hoefler Text", "Times New Roman", Times, serif - p
-Garamond, "Hoefler Text", Palatino, "Palatino Linotype", serif - t
-
-Geneva, "Lucida Sans", "Lucida Grande", "Lucida Sans Unicode", Verdana, sans-serif - p
-Geneva, Verdana, "Lucida Sans", "Lucida Grande", "Lucida Sans Unicode", sans-serif - t
-
-Georgia, Palatino, "Palatino Linotype", Times, "Times New Roman", serif - p
-Georgia, Times, "Times New Roman", serif - t
-
-GillSans, Calibri, Trebuchet, sans-serif - p
-GillSans, Trebuchet, Calibri, sans-serif - t
-
-"Helvetica Neue", Arial, Helvetica, sans-serif - p
-Helvetica, "Helvetica Neue", Arial, sans-serif - t
-
-Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif - p, t
-
-"Lucida Sans", "Lucida Grande", "Lucida Sans Unicode", sans-serif - p, t
-
-Palatino, "Palatino Linotype", Georgia, Times, "Times New Roman", serif - p
-Palatino, "Palatino Linotype", "Hoefler Text", Times, "Times New Roman", serif - t
-
-Tahoma, Geneva, Verdana - p
-Tahoma, Verdana, Geneva - t
-
-Times, "Times New Roman", Georgia, serif - p, t
-
-Trebuchet, "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif - p
-Trebuchet, Tahoma, Arial, sans-serif - t
-
-Verdana, Geneva, Tahoma, sans-serif - p
-Verdana, Tahoma, Geneva, sans-serif - t
-
-*/
-
-/** END Starkers CSS **/
-
-/** START WordPress-Defined CSS Classes **/
-.wp-caption-text{}
-.gallery-caption{}
-.bypostauthor{}
-.sticky{}
-/** END WordPress-Defined CSS Classes **/

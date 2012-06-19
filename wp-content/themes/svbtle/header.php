@@ -31,7 +31,7 @@ if( isset( $options['color'] ) && '' != $options['color'] ) {
 <style type="text/css" media="screen">
 	a:hover, article .entry-title a:hover, article .entry-title a:hover{color: <?php echo $color ?>}
 	.links a:hover, article .entry-content blockquote {border-color: <?php echo $color ?>}
-	.home .navigation a, a.back-to-blog, #respond input{ color: <?php echo $color ?>; border-color: <?php echo $color ?>;}
+	.home .navigation a, a.back-to-blog{ color: <?php echo $color ?>; border-color: <?php echo $color ?>;}
 	.home .navigation a:hover, a.back-to-blog:hover,  section#cover,figure#user_logo div.logo{background-color: <?php echo $color ?>;}
 </style>
 
@@ -82,7 +82,7 @@ if( isset( $options['color'] ) && '' != $options['color'] ) {
 				<?php if (get_option('admin_email')): ?>
 					<p><a href="mailto:<?php echo get_option('admin_email') ?>">say hello</a>    </p>
 				<?php endif ?>
-				<p><a href="<?php bloginfo('rss2_url'); ?>">rss feed</a>     </p>
+				<p class="rss"><a href="<?php bloginfo('rss2_url'); ?>">rss feed</a>     </p>
 			</div><!-- .links -->
 		</header>
 		

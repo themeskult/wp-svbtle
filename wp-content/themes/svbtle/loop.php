@@ -25,13 +25,7 @@
 		<article id="<?php the_ID(); ?>" <?php post_class(); ?>>
 
 			
-			<figure class="kudo">	
-				<a class="kudos kudoable animate" id="<?php the_ID(); ?>">
-					<div class="circle"><div class="filled">&nbsp;</div></div>
-					<p class="count"><?php echo $kudos; ?> <span class="identifier">Kudos</p>
-				</a>
-				<div class="pbar"><div class="progress">&nbsp;</div></div>
-			</figure>
+
 			
 			<h2 class="entry-title"><?php print_post_title(); ?></h2>
 
@@ -48,7 +42,13 @@
 			</div><!-- .entry-content -->
 	<?php endif; ?>
 
-
+			<figure class="kudo">	
+				<a class="kudos kudoable animate" id="<?php the_ID(); ?>">
+					<div class="circle"><div class="filled">&nbsp;</div></div>
+					<p class="count"><?php echo $kudos; ?> <span class="identifier">Kudos</p>
+				</a>
+				<div class="pbar"><div class="progress">&nbsp;</div></div>
+			</figure>
 		</article><!-- #post-## -->
 
 
