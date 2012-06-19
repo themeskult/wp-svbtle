@@ -15,5 +15,7 @@ get_header(); ?>
 get_template_part( 'loop', 'index' );
 
 ?>
-<?php comments_template(); ?>
+<div class="comments">
+	<?php comments_template(); ?>
+</div><!-- .comments -->
 <?php get_footer(); ?>
