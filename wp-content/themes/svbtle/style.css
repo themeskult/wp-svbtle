@@ -238,6 +238,14 @@ a:hover{color: #ff0000}
 #wrap{  border-right: 1px solid #e2e2e2; }
 header{float: left; width: 200px; padding: 2em; position: fixed; color: #999; }
 header h1 a, h1,h2,h3,h4,h5{color: black; }
+header h1{
+	font-weight: 900;
+	font-size: 38px;
+	line-height: 38px;
+	border: none;
+	display: block;
+	margin-bottom: 20px;
+}
 header h2{font-weight: 300;
 margin: 0;
 margin-top: 0;
@@ -344,7 +352,7 @@ article img.wp-smiley{margin: auto}
 article .entry-content p{line-height: 1.9em; color: #4D4D4D}
 article .entry-content a{border-bottom: 1px solid #ccc; padding-bottom: 2px}
 article .entry-content blockquote{border-left: 10px solid #ff0000; margin-left: 0; padding-left: 1.4em}
-article .entry-content {padding-bottom: 50px}
+article .entry-content {padding-bottom: 30px}
 #disqus_thread { width: 500px; display: block; padding: 20px 0 20px 50px; }
 
 .links {margin-top: 2em}
