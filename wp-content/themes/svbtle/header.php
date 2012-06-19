@@ -36,7 +36,7 @@ if( isset( $options['color'] ) && '' != $options['color'] ) {
 </style>
 
 
-	<script src="<?= get_template_directory_uri() ?>/js/html5.js"></script>
+	<script src="<?php bloginfo( 'stylesheet_directory' ); ?>/js/html5.js"></script>
 
 	</head>
 	<body <?php body_class(); ?>>
