@@ -333,7 +333,11 @@ margin-bottom: 15px;
 margin-left: -50px;
 max-width: 500px;
 height: auto;
-min-height: 300px;
+}
+
+article object, article iframe {
+	min-height: 300px;
+	
 }
 
 article img.wp-smiley{margin: auto}

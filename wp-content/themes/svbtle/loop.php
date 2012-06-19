@@ -24,9 +24,6 @@
 				
 		<article id="<?php the_ID(); ?>" <?php post_class(); ?>>
 
-			
-
-			
 			<h2 class="entry-title"><?php print_post_title(); ?></h2>
 
 
