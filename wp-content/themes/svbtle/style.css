@@ -238,7 +238,21 @@ a:hover{color: #ff0000}
 #wrap{  border-right: 1px solid #e2e2e2; }
 header{float: left; width: 200px; padding: 2em; position: fixed; color: #999; }
 header h1 a, h1,h2,h3,h4,h5{color: black; }
-#content{margin-left: 260px;  border-left: 1px solid #e2e2e2; }
+header h1{
+	font-weight: 900;
+	font-size: 38px;
+	line-height: 38px;
+	border: none;
+	display: block;
+	margin-bottom: 20px;
+}
+header h2{font-weight: 300;
+margin: 0;
+margin-top: 0;
+font-size: 18px;
+line-height: 25px;
+color: #585C60;}
+#content{margin-left: 260px;  border-left: 1px solid #e2e2e2; min-width: 710px;}
 
 figure#user_logo {
 
@@ -299,7 +313,7 @@ article a.kudos.animate div.circle div.filled{-webkit-animation-name:hoverPulse;
 article a.kudos.filling div.circle div.filled{width:42px;height:42px;margin-left:-21px;margin-top:-21px}
 article a.kudos.completed div.circle div.filled{width:42px;height:42px;margin-left:-21px;margin-top:-21px;background:#000 url(/wp-content/themes/svbtle/images/bolt.png) center center no-repeat;background-size:80%;-moz-background-size:80%}
 article a.kudos p{width:auto;display:block;text-transform:uppercase;line-height:18px;font-family:"freight-sans-pro",sans-serif;font-weight:900;font-size:20px;margin-top:5px;color:#000}
-article a.kudos p span{font-size:11px;font-weight:800;letter-spacing:1px;line-height:11px;display:block;margin-top:5px}
+article a.kudos p span{font-size:12px;font-weight:800;letter-spacing:1px;line-height:11px;display:block;margin-top:5px}
 article a.kudos p span.dont-move{font-size:18px;text-transform:none;line-height:22px;width:200px;margin-left:-50px;margin-top:8px;letter-spacing:0}
 @-webkit-keyframes 'hoverPulse'{0%{opacity:1}
 50%{opacity:.5}
@@ -310,10 +324,9 @@ article a.kudos p span.dont-move{font-size:18px;text-transform:none;line-height:
 100%{opacity:1}
 }
 
-
 article {border-bottom: 1px solid #e2e2e2; }
-article .entry-title, article .entry-content,  .entry-meta, .navigation {padding: 3em 50px}
-article .entry-title{margin-top: 0; font-size: 2.3em; padding-top: 1em; padding-bottom: 0em}
+article .entry-title, article .entry-content,  .entry-meta, #comments, #respond, #nav-below{padding-left: 50px; padding-right: 50px}
+article .entry-title{margin-top: 0; font-size: 30px; line-height: 38px; padding-top: 40px; padding-bottom: 0em}
 article .entry-title h2{margin: 0; padding: 0}
 article .entry-title a{display: inline-block;}
 article .entry-title a:hover{color: #ff0000}
@@ -329,11 +342,18 @@ margin-left: -50px;
 max-width: 500px;
 height: auto;
 }
+
+article object, article iframe {
+	min-height: 300px;
+	
+}
+
 article img.wp-smiley{margin: auto}
 article .entry-content p{line-height: 1.9em; color: #4D4D4D}
 article .entry-content a{border-bottom: 1px solid #ccc; padding-bottom: 2px}
 article .entry-content blockquote{border-left: 10px solid #ff0000; margin-left: 0; padding-left: 1.4em}
-
+article .entry-content {padding-bottom: 30px}
+#disqus_thread { width: 500px; display: block; padding: 20px 0 20px 50px; }
 
 .links {margin-top: 2em}
 .links a{display: inline-block; color: #999;  clear: both; border: 3px solid #f8f8f8; border-radius: 100px; padding: .4em 1em}
@@ -341,24 +361,85 @@ article .entry-content blockquote{border-left: 10px solid #ff0000; margin-left: 
 
 
 #nav-above, .entry-utility{display: none;}
-.navigation {overflow: hidden; border-bottom: 1px solid #e2e2e2}
+/*.navigation {overflow: hidden; border-bottom: 1px solid #e2e2e2}*/
 .home .navigation a, a.back-to-blog{ color: #ff0000; border: 3px solid #ff0000; font-weight: bold; border-radius: 100px; display: inline-block; padding: 10px 20px; text-transform: uppercase; font-size: .9em}
 .home .navigation .next{float: right;}
 .home .navigation a:hover, a.back-to-blog:hover{background: #ff0000; color: white}
 .home .single .navigation{}
 	
 body.page .kudos{display: none;}
+#nav-below{padding-top: 40px; padding-bottom: 40px; }
+body.single #nav-below{border-top: 1px solid #e2e2e2}
 
-/* ==|== media queries ======================================================
-   EXAMPLE Media Query for Responsive Design.
-   This example overrides the primary ('mobile first') styles
-   Modify as content requires.
-   ========================================================================== */
+/* =Comments
+-------------------------------------------------------------- */
+.comments ol{padding-top:20px}
+ol.commentlist{margin-top:20px; padding-left:50px}
+#comments{clear:both}
 
-@media only screen and (min-width: 35em) {
-  /* Style adjustments for viewports that meet the condition */
-    header { position: relative;}
-}
+#comments{margin-top:40px}
+#comments .navigation{padding:0 0 18px 0}
+h3#comments-title, 
+h3#reply-title{color:#000; font-size:20px; font-weight:bold; margin-bottom:0}
+h3#comments-title{padding:24px 0}
+.commentlist{list-style:none; margin:0}
+.commentlist li.comment{border-bottom:1px solid #e7e7e7; line-height:24px; margin:0 0 24px 0; padding:0 0 0 56px; position:relative}
+.commentlist li:last-child{border-bottom:none; margin-bottom:0}
+#comments .comment-body ul, 
+#comments .comment-body ol{margin-bottom:18px}
+#comments .comment-body p:last-child{margin-bottom:6px}
+#comments .comment-body blockquote p:last-child{margin-bottom:24px}
+.commentlist ol{list-style:decimal}
+.commentlist .avatar{position:absolute; top:4px; left:0}
+.comment-author{}
+.comment-author cite{color:#000; font-style:normal; font-weight:bold}
+.comment-author .says{font-style:italic}
+.comment-meta{font-size:12px; margin:0 0 18px 0}
+.comment-meta a:link, 
+.comment-meta a:visited{color:#888; text-decoration:none}
+.comment-meta a:active, 
+.comment-meta a:hover{color:#ff4b33}
+.commentlist .even{}
+.commentlist .bypostauthor{}
+.reply{font-size:12px; padding:0 0 24px 0}
+.reply a, 
+a.comment-edit-link{color:#888}
+.reply a:hover, 
+a.comment-edit-link:hover{color:#ff4b33}
+.commentlist .children{list-style:none; margin:0}
+.commentlist .children li{border:none; margin:0}
+.nopassword, 
+.nocomments{display:none}
+#comments .pingback{border-bottom:1px solid #e7e7e7; margin-bottom:18px; padding-bottom:18px}
+.commentlist li.comment+li.pingback{margin-top:-6px}
+#comments .pingback p{color:#888; display:block; font-size:12px; line-height:18px; margin:0}
+#comments .pingback .url{font-size:13px; font-style:italic}
+
+input[type=submit]{color:#333}
+#respond{overflow:hidden; position:relative}
+#respond p{margin:0}
+#respond .comment-notes{margin-bottom:1em}
+.form-allowed-tags{line-height:1em}
+.children #respond{margin:0 48px 0 0}
+h3#reply-title{margin:18px 0}
+#comments-list #respond{margin:0 0 18px 0}
+#comments-list ul #respond{margin:0}
+#cancel-comment-reply-link{font-size:12px; font-weight:normal; line-height:18px}
+#respond .required{color:#ff4b33; font-weight:bold}
+#respond label{color:#888; font-size:12px}
+#respond input[type="text"]{margin-bottom:14px; padding:4px; margin-right:10px; border:0; border-bottom:1px solid #ccc}
+
+#respond input[type="text"]:focus{outline:0; border-color:#333}
+
+#respond textarea{border-color:#ccc}
+#respond textarea:focus{outline:0}
+
+#respond #submit{margin:0 0 9px; background:black; border-radius:5px; padding:10px 20px; font-weight:bold; width:auto; border:0; color:white; margin-bottom:50px}
+#respond textarea{width:98%; margin-bottom:10px}
+#respond .form-allowed-tags{color:#888; font-size:12px; line-height:18px}
+#respond .form-allowed-tags code{font-size:11px}
+#respond .form-submit{margin:12px 0}
+#respond .form-submit input{font-size:14px; width:auto}
 
 
 
@@ -393,6 +474,28 @@ body.page .kudos{display: none;}
    Print styles.
    Inlined to avoid required HTTP connection: h5bp.com/r
    ========================================================================== */
+
+@media only screen and (max-width:500px){
+	header{float: none; width: 100%; padding: 0; padding-top: 20px; position: static; text-align: center;}
+	figure#user_logo {margin: auto}
+	#content{margin: auto; min-width: 0}
+	.links p{display: inline-block;}
+	.links .rss{display: none;}
+	.entry-meta{display: none;}
+	
+	article a.kudos{position: static; margin: auto;}
+	article .entry-title, article .entry-content, .entry-meta, #comments, #respond, #nav-below{padding-left: 10px; padding-right: 10px}
+	article .entry-content{width: auto}
+	article img, article object, article iframe {margin-left: 0; width: auto; max-width: 100%}
+	article iframe, article object {
+	min-height: 250px;
+	min-width: 100%;
+	}
+	article p {font-size: 14px}
+	article a.kudos p span.dont-move{font-size:18px;text-transform:none;line-height:22px;width:200px; text-align: center; margin: auto; margin-top:8px;letter-spacing:0}
+	
+}
+
 
 @media print {
   * { background: transparent !important; color: black !important; box-shadow:none !important; text-shadow: none !important; filter:none !important; -ms-filter: none !important; } /* Black prints faster: h5bp.com/s */
@@ -433,79 +536,6 @@ li#theme-switcher { background:#fff; border:10px solid red; padding:20px; positi
 /* ----------------------------------------- */
 
 h1, h2, h3, h4, h5, h6 { font-weight:bold } /* This helps to identify headings at the initial build stage, so I thought it'd be useful to have it */
-.alert { background:red; color:white } /* 'alert' has a basic style, since it's useful to have it standing out for testing purposes.
+.alert { background:red; color:white } /* 'alert' has a basic style, since it's useful to have it standing out for testing purposes. */
 
 
-
-/* Font stack options
-
-	The following represents a list of font stacks, as recommended by Nathan Ford in
-	http://unitinteractive.com/blog/2008/06/26/better-css-font-stacks/
-
-	I've added inverted commas around the relevant family names to ensure compatibility.
-	p = balanced for paragraphs or body copy
-	t = balanced for headlines or titles
-
-	- - - -
-
-Arial, "Helvetica Neue", Helvetica, sans-serif - p, t
-
-Baskerville, "Times New Roman", Times, serif - p
-Baskerville, "Times, Times New Roman", serif - t
-
-Cambria, Georgia, Times, "Times New Roman", serif - p, t
-"Century Gothic", "Apple Gothic", sans-serif - p, t
-
-Consolas, "Lucida Console", Monaco, monospace - p, t
-
-"Copperplate Light", "Copperplate Gothic Light", serif - p, t
-
-"Courier New", Courier, monospace - p, t
-
-"Franklin Gothic Medium", "Arial Narrow Bold", Arial, sans-serif - p, t
-
-Futura, "Century Gothic", "Apple Gothic", sans-serif - p, t
-
-Garamond, "Hoefler Text", "Times New Roman", Times, serif - p
-Garamond, "Hoefler Text", Palatino, "Palatino Linotype", serif - t
-
-Geneva, "Lucida Sans", "Lucida Grande", "Lucida Sans Unicode", Verdana, sans-serif - p
-Geneva, Verdana, "Lucida Sans", "Lucida Grande", "Lucida Sans Unicode", sans-serif - t
-
-Georgia, Palatino, "Palatino Linotype", Times, "Times New Roman", serif - p
-Georgia, Times, "Times New Roman", serif - t
-
-GillSans, Calibri, Trebuchet, sans-serif - p
-GillSans, Trebuchet, Calibri, sans-serif - t
-
-"Helvetica Neue", Arial, Helvetica, sans-serif - p
-Helvetica, "Helvetica Neue", Arial, sans-serif - t
-
-Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif - p, t
-
-"Lucida Sans", "Lucida Grande", "Lucida Sans Unicode", sans-serif - p, t
-
-Palatino, "Palatino Linotype", Georgia, Times, "Times New Roman", serif - p
-Palatino, "Palatino Linotype", "Hoefler Text", Times, "Times New Roman", serif - t
-
-Tahoma, Geneva, Verdana - p
-Tahoma, Verdana, Geneva - t
-
-Times, "Times New Roman", Georgia, serif - p, t
-
-Trebuchet, "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif - p
-Trebuchet, Tahoma, Arial, sans-serif - t
-
-Verdana, Geneva, Tahoma, sans-serif - p
-Verdana, Tahoma, Geneva, sans-serif - t
-
-*/
-
-/** END Starkers CSS **/
-
-/** START WordPress-Defined CSS Classes **/
-.wp-caption-text{}
-.gallery-caption{}
-.bypostauthor{}
-.sticky{}
-/** END WordPress-Defined CSS Classes **/

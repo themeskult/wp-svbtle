@@ -4,6 +4,10 @@ if (!function_exists(Markdown)) {
   require_once WPSVBTLE_PATH . "includes/markdown.php";
 }
 
+if (!class_exists(Markdownify)) {
+  require_once WPSVBTLE_PATH . "includes/markdownify.php";
+}
+
 //ver de manejar mejor esto, con _wp_http_referer a lo mejor
 $current_page   = "index.php?page=" . $_GET['page'];
 
