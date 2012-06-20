@@ -326,7 +326,7 @@ article a.kudos p span.dont-move{font-size:18px;text-transform:none;line-height:
 
 article {border-bottom: 1px solid #e2e2e2; }
 article .entry-title, article .entry-content,  .entry-meta, #comments, #respond, #nav-below{padding-left: 50px; padding-right: 50px}
-article .entry-title{margin-top: 0; font-size: 30px; line-height: 38px; padding-top: 40px; padding-bottom: 0em}
+article .entry-title{margin-top: 0; font-size: 30px; line-height: 38px; padding-top: 40px; padding-bottom: 0em; max-width: 80%;}
 article .entry-title h2{margin: 0; padding: 0}
 article .entry-title a{display: inline-block;}
 article .entry-title a:hover{color: #ff0000}
@@ -485,6 +485,7 @@ h3#reply-title{margin:18px 0}
 	
 	article a.kudos{position: static; margin: auto;}
 	article .entry-title, article .entry-content, .entry-meta, #comments, #respond, #nav-below{padding-left: 10px; padding-right: 10px}
+	article .entry-title {max-width: 100%;}
 	article .entry-content{width: auto}
 	article img, article object, article iframe {margin-left: 0; width: auto; max-width: 100%}
 	article iframe, article object {
