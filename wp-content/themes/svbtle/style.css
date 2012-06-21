@@ -306,7 +306,7 @@ figure#user_logo div.pulse {
 }
 
 article{position: relative}
-article a.kudos{position:absolute;top:60px;right:50px;width:100px;height:100px;text-align:center;border:none}
+article a.kudos{position:absolute;top:50px;right:50px;width:100px;height:100px;text-align:center;border:none}
 article div.circle{background-color:#fff;width:40px;height:40px;border-radius:50%;margin:0 auto;border:4px solid #000;position:relative}
 article div.circle div.filled{background-color:#000;width:10px;height:10px;border-radius:50%;position:absolute;top:50%;left:50%;margin-left:-5px;margin-top:-5px;-webkit-transition-property:margin,width,height,color;-webkit-transition-duration:1s;-webkit-transition-timing-function:ease-in-out;-moz-transition-property:margin,width,height,color;-moz-transition-duration:1s;-moz-transition-timing-function:ease-in-out}
 article a.kudos.animate div.circle div.filled{-webkit-animation-name:hoverPulse;-moz-animation-name:hoverPulse;-webkit-animation-duration:5s;-moz-animation-duration:5s;-webkit-animation-iteration-count:infinite;-moz-animation-iteration-count:infinite;-webkit-animation-timing-function:linear;-moz-animation-timing-function:linear;-webkit-transform:translateZ(0)}
