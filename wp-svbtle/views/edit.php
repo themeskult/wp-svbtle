@@ -4,7 +4,6 @@ Template Name: New Post
 */
 // process the collected data
 require_once WPSVBTLE_PATH . 'views/process_post.php'; 
-$md = new Markdownify;
 
 nocache_headers();
 include('header.php');
@@ -13,9 +12,9 @@ include('header.php');
 	<?php if ($err != ""): ?>
 		<?php echo "<p class='wps-notice'>".$err."</p>" ?>
 	<?php elseif ($_GET['success'] == "success"): ?>
-		<?php echo "<p class='wps-notice'>" . __('Your post was successfully submitted') . "</p>" ?>
+		<?php echo "<p class='wps-notice'>Your post was successfully submitted.</p>" ?>
 	<?php elseif ($_GET['edit'] == "success"): ?>
-		<?php echo "<p class='wps-notice'>" . __('Your post was successfully updated') . "</p>" ?>					
+		<?php echo "<p class='wps-notice'>Your post was successfully updated.</p>" ?>					
 	<?php endif ?>
 
 	<div class="wrap">
@@ -35,12 +34,12 @@ include('header.php');
 			</p>
 
 			<p>
-				<textarea name="post_content" id="post_content" placeholder="Write post here"  tabindex="2"><?php echo $md->parseString($post_content); ?></textarea>
+				<textarea name="post_content" id="post_content" placeholder="Write post here"  tabindex="2"><?php echo $post_content ?></textarea>
 			</p>
 
 		<?php else: ?>
 			<?php // a lo mejor convendría un redirect? ?>
-			<p><?php __('Sorry, you don\'t have permission to post a new article!') ?></p>
+			<p>Sorry, you don't have permission to post new article!</p>
 		<?php endif ?>
 			
 	</div><!-- .wrap -->
