@@ -355,6 +355,19 @@ article .entry-content blockquote{border-left: 10px solid #ff0000; margin-left: 
 article .entry-content {padding-bottom: 30px}
 #disqus_thread { width: 500px; display: block; padding: 20px 0 20px 50px; }
 
+
+article blockquote{border-left:10px solid;padding-left:20px;display:inline-block;padding-bottom:0;margin-left:0;font-size:15px;line-height:25px;margin-top:5px;margin-bottom:10px;color:#4d4d4d;font-family:'proxima-nova',sans-serif;max-width:430px}
+article blockquote{color:#4d4d4d}
+article ul,article ol{display:block;list-style-type:disc;margin-left:10px;max-width:500px}
+article ul li,article ol li{font-size:15px;line-height:25px;margin:0;color:#4d4d4d;font-family:'proxima-nova',sans-serif;font-weight:400;display:list-item;padding-top:3px;padding-bottom:3px;margin-left:20px;list-style-position:outside}
+article ul li p:first-child{margin:0;padding:0;margin-bottom:15px}
+article ul li p:last-child{margin:0;margin-top:0;padding:0}
+article ul li p,article ol li p{margin:0;padding-bottom:10px;padding-top:8px}
+article ol{list-style-type:decimal;color:#ccc;margin-left:10px}
+article ol li{padding-left:0;border:none}
+article ol li{list-style-type:decimal;display:list-item}
+
+
 .links {margin-top: 2em}
 .links a{display: inline-block; color: #999;  clear: both; border: 3px solid #f8f8f8; border-radius: 100px; padding: .4em 1em}
 .links a:hover{border-color: #ff0000}
