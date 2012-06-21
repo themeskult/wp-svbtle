@@ -8,4 +8,22 @@ $(function() {
 	$(".remove").click(function(){
 		confirm('Are you sure?');
 	});
+
+     // preview in iframe on the edit page
+	$("a.button.preview").click(function(e){
+		// does the iframe exist already?
+		if ($("iframe.preview").length) {                
+               // stop the event propogation
+		     e.preventDefault();
+               // display the preview pane
+               $("div.preview").fadeIn(500);
+		} 
+	});
+
+     // close preview
+	$("a.close").click(function(e){
+          e.preventDefault();
+          $("div.preview").fadeOut(500);
+     });
+
 });
