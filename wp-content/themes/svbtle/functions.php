@@ -2,7 +2,9 @@
 
 function main_css()  
 {
-	wp_register_style( 'style', get_template_directory_uri() . '/style.css', array(), 'v4', 'all' );
+	// let's use the getlastmod date of the CSS style file for the version to help update cache
+	$version = filemtime(realpath(dirname(__FILE__)).'/style.css');
+	wp_register_style( 'style', get_template_directory_uri() . '/style.css', array(), $version, 'all' );
 
 	wp_enqueue_style( 'style' );
 }
