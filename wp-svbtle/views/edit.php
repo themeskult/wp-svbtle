@@ -5,15 +5,10 @@ Template Name: New Post
 // process the collected data
 require_once WPSVBTLE_PATH . 'views/process_post.php';
 
-//wp_enqueue_script('autosave');
-wp_enqueue_script('autosave-dev','/wp-includes/js/autosave.dev.js', array('schedule', 'wp-ajax-response'), '1.0', 1 );
-	wp_localize_script( 'autosave-dev', 'autosaveL10n', array(
-		'autosaveInterval' => AUTOSAVE_INTERVAL,
-		'savingText' => __('Saving Draft&#8230;'),
-		'saveAlert' => __('The changes you made will be lost if you navigate away from this page.')
-	) );
-
-//wp_just_in_time_script_localization();
+// get scripts and localization for autosave
+// script after include(header) is for ajaxurl
+wp_enqueue_script('autosave');
+wp_just_in_time_script_localization();
 
 nocache_headers();
 include('header.php');
@@ -26,13 +21,7 @@ var userSettings = {
 		'uid': '<?php if ( ! isset($current_user) ) $current_user = wp_get_current_user(); echo $current_user->ID; ?>',
 		'time':'<?php echo time() ?>'
 	},
-	ajaxurl = '<?php echo admin_url( 'admin-ajax.php', 'relative' ); ?>',
-	pagenow = '<?php echo $current_screen->id; ?>',
-	typenow = '<?php echo $current_screen->post_type; ?>',
-	adminpage = '<?php echo $admin_body_class; ?>',
-	thousandsSeparator = '<?php echo addslashes( $wp_locale->number_format['thousands_sep'] ); ?>',
-	decimalPoint = '<?php echo addslashes( $wp_locale->number_format['decimal_point'] ); ?>',
-	isRtl = <?php echo (int) is_rtl(); ?>;
+	ajaxurl = '<?php echo admin_url( 'admin-ajax.php', 'relative' ); ?>';
 </script>
 
 <form action="" method="post" enctype="multipart/form-data" id="post">
