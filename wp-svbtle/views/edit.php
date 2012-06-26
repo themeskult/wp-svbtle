@@ -3,12 +3,39 @@
 Template Name: New Post
 */
 // process the collected data
-require_once WPSVBTLE_PATH . 'views/process_post.php'; 
+require_once WPSVBTLE_PATH . 'views/process_post.php';
+
+//wp_enqueue_script('autosave');
+wp_enqueue_script('autosave-dev','/wp-includes/js/autosave.dev.js', array('schedule', 'wp-ajax-response'), '1.0', 1 );
+	wp_localize_script( 'autosave-dev', 'autosaveL10n', array(
+		'autosaveInterval' => AUTOSAVE_INTERVAL,
+		'savingText' => __('Saving Draft&#8230;'),
+		'saveAlert' => __('The changes you made will be lost if you navigate away from this page.')
+	) );
+
+//wp_just_in_time_script_localization();
 
 nocache_headers();
 include('header.php');
 ?>
-<form action="" method="post" enctype="multipart/form-data">
+
+<script type="text/javascript">
+addLoadEvent = function(func){if(typeof jQuery!="undefined")jQuery(document).ready(func);else if(typeof wpOnload!='function'){wpOnload=func;}else{var oldonload=wpOnload;wpOnload=function(){oldonload();func();}}};
+var userSettings = {
+		'url': '<?php echo SITECOOKIEPATH; ?>',
+		'uid': '<?php if ( ! isset($current_user) ) $current_user = wp_get_current_user(); echo $current_user->ID; ?>',
+		'time':'<?php echo time() ?>'
+	},
+	ajaxurl = '<?php echo admin_url( 'admin-ajax.php', 'relative' ); ?>',
+	pagenow = '<?php echo $current_screen->id; ?>',
+	typenow = '<?php echo $current_screen->post_type; ?>',
+	adminpage = '<?php echo $admin_body_class; ?>',
+	thousandsSeparator = '<?php echo addslashes( $wp_locale->number_format['thousands_sep'] ); ?>',
+	decimalPoint = '<?php echo addslashes( $wp_locale->number_format['decimal_point'] ); ?>',
+	isRtl = <?php echo (int) is_rtl(); ?>;
+</script>
+
+<form action="" method="post" enctype="multipart/form-data" id="post">
 	<?php if ($err != ""): ?>
 		<?php echo "<p class='wps-notice'>".$err."</p>" ?>
 	<?php elseif ($_GET['success'] == "success"): ?>
@@ -22,19 +49,20 @@ include('header.php');
 		<?php if (is_user_logged_in()): // checking weather or not the user has logged in.?>
 			<?php if(isset($post_id)): ?>
 				<input type="hidden" name="action" value="edit" />
-				<input type="hidden" name="id" value="<?php echo $post_id; ?>" />
+				<input type="hidden" name="id" id="post_ID" value="<?php echo $post_id; ?>" />
 				<?php wp_nonce_field( 'manage-post' ); ?>
+				<?php wp_nonce_field( 'autosave', 'autosavenonce', false ); ?>
 			<?php else: ?>
 				<input type="hidden" name="action" value="post" />
 				<?php wp_nonce_field( 'new-post' ); ?>
 			<?php endif; ?>
 
 			<p>
-				<input type="text" id="post_title" class="text" name="post_title" value="<?php echo $post_title;?>" placeholder="Title Here" size="60" tabindex="1"/>
+				<input type="text" id="title" class="text" name="post_title" value="<?php echo $post_title;?>" placeholder="Title Here" size="60" tabindex="1"/>
 			</p>
 
 			<p>
-				<textarea name="post_content" id="post_content" placeholder="Write post here"  tabindex="2"><?php echo $post_content ?></textarea>
+				<textarea name="content" id="content" placeholder="Write post here"  tabindex="2"><?php echo $post_content ?></textarea>
 			</p>
 
 		<?php else: ?>
