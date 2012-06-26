@@ -51,7 +51,7 @@ var userSettings = {
 			</p>
 
 			<p>
-				<textarea name="content" id="content" placeholder="Write post here"  tabindex="2"><?php echo $post_content ?></textarea>
+				<textarea name="post_content" id="content" placeholder="Write post here"  tabindex="2"><?php echo $post_content ?></textarea>
 			</p>
 
 		<?php else: ?>
