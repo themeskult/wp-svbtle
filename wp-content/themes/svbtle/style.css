@@ -495,6 +495,7 @@ h3#reply-title{margin:18px 0}
 	.links p{display: inline-block;}
 	.links .rss{display: none;}
 	.entry-meta{display: none;}
+  #wrap { padding: 20px; }
 	
 	article a.kudos{position: static; margin: auto;}
 	article .entry-title, article .entry-content, .entry-meta, #comments, #respond, #nav-below{padding-left: 10px; padding-right: 10px}
