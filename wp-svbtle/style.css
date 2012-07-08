@@ -265,7 +265,7 @@ a.button.new-entry{float: right; margin-top: .3em; font-size: 14px}
 
 .form-idea{padding: 0 5%; border-bottom: 1px solid #ccc; margin: 1em 0 0 0; padding-bottom: 1em}
 
-.buttons {position: absolute; right: 0; left: 10%; bottom: 0; padding-bottom: 1em; background: white; box-shadow: 0 0 10px 10px white}
+.buttons {position: absolute; z-index: 101; right: 0; left: 10%; bottom: 0; padding-bottom: 1em; background: white; box-shadow: 0 0 10px 10px white}
 .buttons .button{display: inline-block; padding: 10px 1.2em; margin: 5px}
 .buttons div.double{display: inline-block; border: 4px solid black; border-radius: 8px}
 .buttons div.double .RadioClass{display: none;}
@@ -275,6 +275,13 @@ input.text:focus, textarea:focus{outline: 0}
 #post_title{font-size: 2em; margin-top: 1.6em; font-weight: bold;}
 
 .wps-notice{width: 80%; margin: auto; position: absolute; left: 10%;}
+
+div.preview { position: absolute; z-index: 100; width: 480px; height: 80%; top: 25px; right: 50px; background: #fff; display: none; }
+
+div.preview iframe { width: 100%; height: 100%; border: 3px solid #000; }
+
+div.preview .close { margin: 0 0 5px; }
+
 
 /* ==|== media queries ======================================================
    EXAMPLE Media Query for Responsive Design.

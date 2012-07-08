@@ -46,7 +46,7 @@ include('header.php');
 
 	<div class="buttons">
 		<?php if (!empty($_GET['id'])): ?>
-			<a href="<?php echo get_permalink($post_id) ?>" target="_blank" class="button">Preview</a>
+			<a href="<?php echo get_permalink($post_id) ?>" target="_blank" class="button preview">Preview</a>
 		<?php endif ?>
 		<!-- <a href="#" class="button">Option</a> -->
 		
@@ -64,6 +64,14 @@ include('header.php');
 
 	</div><!-- .buttons -->
 </form>
+
+<?php if (!empty($_GET['id'])): ?>
+     <div class="preview">
+          <a href="#close" class="close button">HIDE</a>
+          <iframe class="preview" src="<?php echo get_permalink($post_id) ?>"></iframe>
+     </div>
+<?php endif ?>
+
 
 <script type="text/javascript">
 	$(document).ready(function() {
