@@ -6,7 +6,8 @@ $(function() {
 	});
 	
 	$(".remove").click(function(){
-		confirm('Are you sure?');
+		var answer = confirm('Are you sure?');
+		return answer;
 	});
 
      // preview in iframe on the edit page

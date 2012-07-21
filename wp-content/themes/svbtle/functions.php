@@ -342,22 +342,14 @@ echo '<a class="is_link_"'.$is_link.'" href="'.$link.'" rel="bookmark" title="'.
 }
 
 
-function implement_ajax() {
+function send_kudos() {
 	global $wpdb;
-
 	$post_id = mysql_real_escape_string($_POST['article']);
-	$cooking = mysql_real_escape_string($_POST['cooking']);
-
 	$kudos = get_post_meta( $post_id , '_wp-svbtle-kudos', true );
 	$new_kudos = $kudos + 1;
-
 	add_post_meta( $post_id, '_wp-svbtle-kudos', 1, true ) or update_post_meta( $post_id, '_wp-svbtle-kudos', $new_kudos );
-
 	header('HTTP/1.1 200 OK');
-
 }
-
-add_action('wp_ajax_my_special_action', 'implement_ajax');
-
-add_action('wp_ajax_nopriv_my_special_action', 'implement_ajax');//for users that are not logged in.
+add_action('wp_ajax_kudos', 'send_kudos');
+add_action('wp_ajax_nopriv_kudos', 'send_kudos');
 ?>

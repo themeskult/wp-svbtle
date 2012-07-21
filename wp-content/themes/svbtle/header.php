@@ -76,7 +76,7 @@ if( isset( $options['color'] ) && '' != $options['color'] ) {
 						$content = apply_filters( 'the_content', $content );
 					?>
 						<li class="link twitter">
-							<a href="<?php echo get_page_link( $page->ID ); ?>"><?php echo $page->post_title; ?></a>
+							<a href="<?php echo get_page_link( $page->ID ); ?>"><span class="link_logo"><span class="link_logo_inside">X</span></span><?php echo $page->post_title; ?></a>
 						</li>
 					<?php
 					}	

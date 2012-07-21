@@ -42,18 +42,18 @@
 
 			
 			
-			<aside class="kudo kudoable" id="kudo_eidOUhvCPtoHgo1d6TOVzaGynOUtevdX7ZlOQdXMAaX">
-		    <a href="?" class="kudobject">
-		      <div class="opening clearfix">
-		        <span class="circle">&nbsp;</span>
-		      </div>
-		    </a>
-
-		    <a href="?" class="counter">
-		      <span class="num"><?php echo $kudos; ?></span>
-		      <span class="txt">Kudos</span>
-		    </a>
-		  </aside>
+			<aside class="kudo kudoable" id="<?php the_ID(); ?>">
+				<a href="?" class="kudobject">
+					<div class="opening clearfix">
+						<span class="circle">&nbsp;</span>
+					</div>
+				</a>
+		
+				<a href="?" class="counter">
+					<span class="num"><?php echo $kudos; ?></span>
+					<span class="txt">Kudos</span>
+				</a>
+			</aside>
 		</article><!-- #post-## -->
 
 
