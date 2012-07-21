@@ -1,6 +1,6 @@
 <?php
 
-if (! function_exists(wp_svbtle_render)) {
+if (! function_exists('wp_svbtle_render')) {
 	function wp_svbtle_render($p) {
 		// available sections
 		$pages = array(

@@ -7,7 +7,7 @@
 	<head>
 		<meta charset="<?php bloginfo( 'charset' ); ?>" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.5, minimum-scale=0.5">
-		<title><?php if ( is_singular() ) { echo trim(wp_title("")) . ' | '; } ?><?php bloginfo( 'name' ); ?></title>
+		<title><?php bloginfo( 'name' ); ?></title>
 		<link rel="profile" href="http://gmpg.org/xfn/11" />
 		<link rel="stylesheet" href="<?php bloginfo( 'stylesheet_url' ); ?>" />
 		<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
@@ -25,44 +25,46 @@
 if( isset( $options['color'] ) && '' != $options['color'] ) {
 	$color = $options['color'];
 } else {
-	$color = '#ff0000';
+	$color = '<?php echo $color ?>';
 } 
 ?>
 
-<style type="text/css" media="screen">
-	a:hover, article .entry-title a:hover, article .entry-title a:hover{color: <?php echo $color ?>}
-	.links a:hover, article .entry-content blockquote {border-color: <?php echo $color ?>}
-	.home .navigation a, a.back-to-blog{ color: <?php echo $color ?>; border-color: <?php echo $color ?>;}
-	.home .navigation a:hover, a.back-to-blog:hover,  section#cover,figure#user_logo div.logo{background-color: <?php echo $color ?>;}
+<style>blockquote {border-color: <?php echo $color ?>;}aside#logo,aside#logo div a,ul#user_meta a:hover span.link_logo_inside,ul#user_meta a:hover span.link_logo,aside.kudo.complete span.circle {background-color: <?php echo $color ?>;}aside#logo div a,aside.kudo.complete span.circle {background-image: url(//mysterious.s3.amazonaws.com/bolt_large.png);}section.preview header#begin h2,ul#user_meta a:hover,nav.pagination span.next a,nav.pagination span.prev a {color: <?php echo $color ?>;}ul#user_meta a:hover,nav.pagination span.next a,nav.pagination span.prev a {border-color: <?php echo $color ?>;}::-moz-selection { background: <?php echo $color ?>; color: #fff; text-shadow: none;}::selection { background: <?php echo $color ?>; color: #fff; text-shadow: none;}
 </style>
 
 
-	<script src="<?= get_template_directory_uri() ?>/js/html5.js"></script>
-
+	<!--[if lt IE 9]>
+		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+	
 	</head>
 	<body <?php body_class(); ?>>
 	
 	<div id="wrap">
 		
-		<header role="banner">
-			
-		 	<figure id="user_logo">
-			    <a href="<?php echo site_url(); ?>">
-			      <div class="logo">&nbsp;</div>
-			    </a>
-			  </figure>
 		
-			
-			<h1><a href="<?php echo home_url( '/' ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-			<p><?php bloginfo( 'description' ); ?></p>
-			
-			<?php 
-			ob_start(); 
-			get_option('home');
-			$site_url = ob_get_clean(); 
-			?>
-			
-			<div class="links">
+		
+		
+		
+		<header id="sidebar">
+		  <aside id="logo" class="clearfix">
+		    <div class="clearfix">
+		      <a href="<?php echo home_url( '/' ); ?>"><?php bloginfo( 'name' ); ?></a>
+		    </div>
+		  </aside>
+		  <ul id="user_meta">
+		    <li class="blog_name">  
+		      <h1 id="blog_name">
+			      <a href="<?php echo home_url( '/' ); ?>"><?php bloginfo( 'name' ); ?></a>
+		      </h1>
+		    </li>
+		    <li class="tagline">
+		      <h2 id="tagline">
+		        <?php bloginfo( 'description' ); ?>
+		      </h2>
+		    </li>
+		
+		
 				<?php
 					$mypages = get_pages( array( 'sort_column' => 'post_date', 'sort_order' => 'desc' ) );
 
@@ -73,20 +75,41 @@ if( isset( $options['color'] ) && '' != $options['color'] ) {
 
 						$content = apply_filters( 'the_content', $content );
 					?>
-						<p><a href="<?php echo get_page_link( $page->ID ); ?>"><?php echo $page->post_title; ?></a></p>
+						<li class="link twitter">
+							<a href="<?php echo get_page_link( $page->ID ); ?>"><?php echo $page->post_title; ?></a>
+						</li>
 					<?php
 					}	
 				?>
+				
 				<?php if (isset($options['twitter_username'])): ?>
-					<p><a target="_blank" href="http://twitter.com/<?php echo $options['twitter_username'] ?>">@<?php echo $options['twitter_username'] ?></a> 		</p>
+					<li class="link twitter">
+						<a target="_blank" href="http://twitter.com/<?php echo $options['twitter_username'] ?>"><span class="link_logo"><span class="link_logo_inside">X</span></span>@<?php echo $options['twitter_username'] ?></a>
+					</li>
 				<?php endif ?>
 				<?php if (get_option('admin_email')): ?>
-					<p><a href="mailto:<?php echo get_option('admin_email') ?>">say hello</a>    </p>
+					<li class="link twitter">
+						<a href=mailto:"<?php echo get_option('admin_email') ?>">
+							<span class="link_logo"><span class="link_logo_inside">X</span></span>
+							say hello
+						</a>
+					</li>
 				<?php endif ?>
-				<p><a href="<?php bloginfo('rss2_url'); ?>">rss feed</a>     </p>
-			</div><!-- .links -->
+				
+		    <li class="link feed">
+		      <a href="http://feeds.feedburner.com/dcurtis">
+		        <span class="link_logo"><span class="link_logo_inside">X</span></span>
+		        rss feed
+		      </a>
+		    </li>
+		  </ul>
+		  <aside id="svbtle_linkback">
+		    <a href="https://github.com/gravityonmars/wp-svbtle">
+		      <span class="logo_square"><span class="logo_circle">&nbsp;</span></span>&nbsp;<span class="svbtle">wp-svbtle</span>
+		    </a>
+		  </aside>
 		</header>
 		
-		<section id="content" role="main">
+		<section id="river" role="main">
 	
 

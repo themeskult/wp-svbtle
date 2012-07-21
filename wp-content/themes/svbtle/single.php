@@ -8,9 +8,12 @@
  */
 
 get_header(); ?>
-<div class="entry-meta" >
-	POSTED <?php boilerplate_posted_on(); ?>
-</div><!-- .entry-meta -->
+
+
+<header id="begin">
+    <time datetime="<?php echo date('Y-m-d'); ?>" id="top_time"><?php boilerplate_posted_on(); ?></time>
+</header>
+
 <?php
 get_template_part( 'loop', 'index' );
 

@@ -1,12 +1,24 @@
 <?php
+global $current_user;
+get_currentuserinfo();
 
 require_once WPSVBTLE_PATH . "includes/markdown.php";
 
 //ver de manejar mejor esto, con _wp_http_referer a lo mejor
 $current_page   = "index.php?page=" . $_GET['page'];
 
-if(!empty($_GET['id']) and ($_GET['action'] == 'del')) {
+function wp_svbtle_security(){
+	// Security
+	if ( !is_user_logged_in() ){
+		wp_redirect( get_bloginfo( 'url' ) . '/' );
+		exit;
+	};
+
+}
+
+if(!empty($_GET['id']) and isset($_GET['action']) and ($_GET['action'] == 'del')) {
 	
+	wp_svbtle_security();
 	if(!current_user_can('delete_posts')){
 		die('You do not have sufficient permissions to access this page.');
 	}
@@ -17,123 +29,78 @@ if(!empty($_GET['id']) and ($_GET['action'] == 'del')) {
 	exit;
 
 // Si en cambio estoy en un nuevo post	
-} elseif(isset($_POST['action']) && $_POST['action'] == 'post' && wp_verify_nonce($_POST['_wpnonce'],'new-post')) {
-	if ( !is_user_logged_in() ){
-		wp_redirect( get_bloginfo( 'url' ) . '/' );
-		exit;
-	};
+}elseif ($_SERVER['REQUEST_METHOD'] == 'POST') {
+	
 	$err = "";
-	$user_id 		= $current_user->user_id;
-	$post_title 	= $_POST['post_title'];
-	$post_content 	= $_POST['post_content'];
-	$post_status 	= $_POST['post_status'];
+	// UPDATE OR EDIT
 
-	// $current_page   = $_POST['_wp_http_referer'];
-
-	if ($post_title == "") {
+	wp_svbtle_security();
+	if(!current_user_can('publish_posts')){
+		die('You do not have sufficient permissions to access this page.');
+	}
+	
+	// Validation
+	if (isset($_POST['post_title']) and ($_POST['post_title'] == "")) {
 		$err .= __('Please fill in Post Title field') . "<br />";
+		$post_title = "";
+		$post_content = "";
 	}
-
-	if ( $err == "" ) {
+	
+	if (isset($err) and $err == "" ) {
 		
-		if(!current_user_can('publish_posts')){
-			die('You do not have sufficient permissions to access this page.');
+		$post_status = 'draft';
+		
+		if (isset($_POST['post_status']))
+				$post_status 	= $_POST['post_status'];
+		
+	
+		$post =	array(
+				'ID'	=> $_POST['id'],
+				'post_title'	=> $_POST['post_title'],
+				'post_content'	=> Markdown($_POST['post_content']),
+				'post_status'	=> $_POST['post_status']
+		);
+		
+		if ($_GET['id']) {
+			wp_update_post($post);
+			update_post_meta( $_POST['id'], 'wp-svbtle-markdown', $_POST['post_content']);
+			$post_id = $_POST['id'];
+		}else {
+			$post_id = wp_insert_post($post);
+			add_post_meta($post_id, 'wp-svbtle-markdown', $_POST['post_content']);
 		}
 		
-		
-		$post_id = wp_insert_post( array(
-			'post_author'	=> $user_id,
-			'post_title'	=> $post_title,
-			'post_content'	=> Markdown($post_content),
-			'post_type'		=> "post",
-			'post_status'	=> $post_status // Idea=>draft || Public=>publish
-		) );
-
-		add_post_meta($post_id, 'wp-svbtle-markdown', $post_content, true);
-
 		$current_page .= (isset($post_id) ? "&id=" . $post_id : "");
-		wp_redirect( $current_page . '&success=success' );
-		exit;
+		wp_redirect($current_page . '&success=success' );
+		exit;		
+		
 	}
-// Si en cambio es un edit
-} elseif (isset($_GET['id'])) {
-	// En caso de un submit de un edit
-	if (isset($_POST['action']) && $_POST['action'] == 'edit' && wp_verify_nonce($_POST['_wpnonce'],'manage-post')) {
+	
+}else {
+	// View Post
+	$err = "";
 		
-		
-		$err = "";
-		$post_id		= $_POST['id'];
-		$post_title 	= $_POST['post_title'];
-		$post_content 	= $_POST['post_content'];
-		$post_status 	= $_POST['post_status'];
-
-		if ($post_title == "") {
-			$err .= __('Please fill in Post Title field') . "<br />";
-		}
-
-		if ( $err == "" ) {
-			
-			if(!current_user_can('edit_posts')){
-				die('You do not have sufficient permissions to access this page.');
-			}
-			
-			$post_id = wp_update_post( array(
-				'ID'	=> $post_id,
-				'post_title'	=> $post_title,
-				'post_content'	=> Markdown($post_content),
-				'post_status'	=> $post_status
-			) );
-		
-			if (get_post_meta($post_id, 'wp-svbtle-markdown', true)) {
-				update_post_meta($post_id, 'wp-svbtle-markdown', $post_content);
-			}else {
-				add_post_meta($post_id, 'wp-svbtle-markdown', $post_content, true);
-			}
-			
-			$current_page .= "&id=" . $_GET['id'];
-			wp_redirect( $current_page . '&edit=success' );
-			exit;
-		}
-	// En caso de entrar a ver el post 
-	} else {
-		$err = "";
-
+	
+	if (isset($_GET['id']) and (get_post($_GET['id']))) {
 		$post = get_post($_GET['id']);
 
 		$post_id 		= $post->ID;
 		$post_title 	= $post->post_title;
-		
-		if (get_post_meta($post_id, 'wp-svbtle-markdown', true)) {
-			$post_content = get_post_meta($post_id, 'wp-svbtle-markdown', true);
+
+		if (get_post_meta($_GET['id'], 'wp-svbtle-markdown', true)) {
+			$post_content = get_post_meta($_GET['id'], 'wp-svbtle-markdown', true);
 		}else {
 			$post_content 	= $post->post_content;
 		}
 
 		$post_status 	= $post->post_status;
 		
+	}else {
+		
+		$post_id = "";
+		$post_title = "";
+		$post_content = "";
+		$post_status = "";
+		
 	}
-
-} elseif (isset($_POST['action']) && $_POST['action'] == 'dashboard_submit' && wp_verify_nonce($_POST['_wpnonce'],'new-post')) {
-
-	$user_id 		= $current_user->user_id;
-	$post_title 	= $_POST['idea_title'];
-	// $post_content 	= $_POST['post_content'];
-	$post_status 	= 'draft';
-
-	$post_id = wp_insert_post( array(
-		'post_author'	=> $user_id,
-		'post_title'	=> $post_title,
-		// 'post_content'	=> $post_content,
-		'post_type'		=> "post",
-		'post_status'	=> $post_status // Idea=>draft || Public=>publish
-	) );
-
-	$current_page .= (isset($post_id) ? "&id=" . $post_id : "");
-	wp_redirect( $current_page . '&success=success' );
-	exit;
-
-} else {
-	$post_status = 'draft';
 }
-
-?>

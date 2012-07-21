@@ -5,8 +5,12 @@ get_header();
 ?>
 
 <div class="entry-meta">
-	<?php echo date('M d, Y'); ?>
+	
 </div><!-- .entry-meta -->
+
+<header id="begin">
+	<time datetime="<?php echo date('Y-m-d'); ?>" id="top_time"><?php echo date('M d, Y'); ?></time>
+</header>
 
 <?php
 

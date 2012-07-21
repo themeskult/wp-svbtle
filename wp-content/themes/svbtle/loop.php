@@ -39,13 +39,21 @@
 			</div><!-- .entry-content -->
 	<?php endif; ?>
 
-			<figure class="kudo">	
-				<a class="kudos kudoable animate" id="<?php the_ID(); ?>">
-					<div class="circle"><div class="filled">&nbsp;</div></div>
-					<p class="count"><?php echo $kudos; ?> <span class="identifier">Kudos</p>
-				</a>
-				<div class="pbar"><div class="progress">&nbsp;</div></div>
-			</figure>
+
+			
+			
+			<aside class="kudo kudoable" id="kudo_eidOUhvCPtoHgo1d6TOVzaGynOUtevdX7ZlOQdXMAaX">
+		    <a href="?" class="kudobject">
+		      <div class="opening clearfix">
+		        <span class="circle">&nbsp;</span>
+		      </div>
+		    </a>
+
+		    <a href="?" class="counter">
+		      <span class="num"><?php echo $kudos; ?></span>
+		      <span class="txt">Kudos</span>
+		    </a>
+		  </aside>
 		</article><!-- #post-## -->
 
 
@@ -53,10 +61,19 @@
 
 <?php /* Display navigation to next/previous pages when applicable */ ?>
 <?php if (  $wp_query->max_num_pages > 1 ) : ?>
-	<nav id="nav-below" class="navigation">
-		<?php next_posts_link( __( '&larr; Previous', 'boilerplate' ) ); ?>
-		<div class="next">
-			<?php previous_posts_link( __( 'Next &rarr;', 'boilerplate' ) ); ?>
-		</div>
-	</nav><!-- #nav-below -->
+
+	
+	
+	
+	<nav class="pagination">
+
+		<span class="prev">
+			<?php next_posts_link( __( '←&nbsp;&nbsp;&nbsp;Newer', 'boilerplate' ) ); ?>
+		</span>
+
+	  <span class="next">
+			<?php previous_posts_link( __( 'Continue&nbsp;&nbsp;&nbsp;→', 'boilerplate' ) ); ?>
+		</span>
+	
+	</nav>
 <?php endif; ?>

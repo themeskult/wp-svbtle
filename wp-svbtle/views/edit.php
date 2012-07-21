@@ -11,9 +11,9 @@ include('header.php');
 <form action="" method="post" enctype="multipart/form-data">
 	<?php if ($err != ""): ?>
 		<?php echo "<p class='wps-notice'>".$err."</p>" ?>
-	<?php elseif ($_GET['success'] == "success"): ?>
+	<?php elseif (isset($_GET['edit']) and ($_GET['success'] == "success")): ?>
 		<?php echo "<p class='wps-notice'>Your post was successfully submitted.</p>" ?>
-	<?php elseif ($_GET['edit'] == "success"): ?>
+	<?php elseif (isset($_GET['edit']) and ($_GET['edit'] == "success")): ?>
 		<?php echo "<p class='wps-notice'>Your post was successfully updated.</p>" ?>					
 	<?php endif ?>
 
