@@ -22,7 +22,9 @@ get_template_part( 'loop', 'index' );
 	<?php comments_template(); ?>
 </div><!-- .comments -->
 
-<div id="nav-below">
-	<a href="#" class="back-to-blog">←   Back to blog</a>
-</div><!-- .nav-below -->
+<nav class="pagination">
+    <span class="prev">
+      <a href="http://dcurt.is" class="back_to_blog">←&nbsp;&nbsp;&nbsp;Back to blog</a>
+    </span>
+  </nav>
 <?php get_footer(); ?>
