@@ -1482,3 +1482,6 @@ h3#reply-title{margin:18px 0}
 #respond .form-submit{margin:12px 0 0 100px}
 #respond .form-submit input{font-size:14px; width:auto}
 .form-allowed-tags{display: none;}
+
+
+article img{height: auto; max-height: 100%;}
