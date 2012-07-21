@@ -342,6 +342,69 @@ echo '<a class="is_link_"'.$is_link.'" href="'.$link.'" rel="bookmark" title="'.
 }
 
 
+if ( ! function_exists( 'wp_svbtle_comment' ) ) :
+
+function wp_svbtle_comment( $comment, $args, $depth ) {
+	$GLOBALS['comment'] = $comment;
+	switch ( $comment->comment_type ) :
+		case 'pingback' :
+		case 'trackback' :
+	?>
+	<li class="post pingback">
+		<p class="row">
+			<strong class="ping-label span1"><?php _e( 'Pingback:', 'the-bootstrap' ); ?></strong>
+			<span class="span7"><?php comment_author_link(); edit_comment_link( __( 'Edit', 'the-bootstrap' ), '<span class="sep">&nbsp;</span><span class="edit-link label">', '</span>' ); ?></span>
+		</p>
+	<?php
+			break;
+		default :
+			$offset	=	$depth - 1;
+			$span	=	7 - $offset;
+	?>
+	<li <?php comment_class(); ?> id="li-comment-<?php comment_ID(); ?>">
+		<article id="comment-<?php comment_ID(); ?>" class="comment row">
+			<div class="comment-author-avatar span1<?php if ($offset) echo " offset{$offset}"; ?>">
+				<?php echo get_avatar( $comment, 70 ); ?>
+			</div>
+			<footer class="comment-meta span<?php echo $span; ?>">
+				<div class="comment-author vcard">
+					<?php
+						/* translators: 1: comment author, 2: date and time */
+						printf( __( '%1$s <span class="says">said</span> on %2$s:', 'the-bootstrap' ),
+							sprintf( '<span class="fn">%s</span>', get_comment_author_link() ),
+							sprintf( '<a href="%1$s"><time pubdate datetime="%2$s">%3$s</time></a>',
+								esc_url( get_comment_link( $comment->comment_ID ) ),
+								get_comment_time( 'c' ),
+								/* translators: 1: date, 2: time */
+								sprintf( __( '%1$s at %2$s', 'the-bootstrap' ), get_comment_date(), get_comment_time() )
+							)
+						);
+						edit_comment_link( __( 'Edit', 'the-bootstrap' ), '<span class="sep">&nbsp;</span><span class="edit-link label">', '</span>' ); ?>
+				</div><!-- .comment-author .vcard -->
+
+				<?php if ( ! $comment->comment_approved ) : ?>
+				<div class="comment-awaiting-moderation alert alert-info"><em><?php _e( 'Your comment is awaiting moderation.', 'the-bootstrap' ); ?></em></div>
+				<?php endif; ?>
+
+			</footer>
+
+			<div class="comment-content span<?php echo $span; ?>">
+				<?php
+				comment_text();
+				comment_reply_link( array_merge( $args, array(
+					'reply_text'	=>	__( 'Reply <span>&darr;</span>', 'the-bootstrap' ),
+					'depth'			=>	$depth,
+					'max_depth'		=>	$args['max_depth']
+				) ) ); ?>
+			</div>
+
+		</article><!-- #comment-<?php comment_ID(); ?> -->
+	<?php
+			break;
+	endswitch;
+}
+endif; // ends check for wp_svbtle_comment()
+
 function implement_ajax() {
 	global $wpdb;
 

@@ -40,7 +40,6 @@ if( isset( $options['color'] ) && '' != $options['color'] ) {
 	</head>
 	<body <?php body_class(); ?>>
 	
-	<div id="wrap">
 		
 		
 		
