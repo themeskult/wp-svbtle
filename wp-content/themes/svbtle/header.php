@@ -96,7 +96,7 @@ if( isset( $options['color'] ) && '' != $options['color'] ) {
 				<?php endif ?>
 				
 		    <li class="link feed">
-		      <a href="http://feeds.feedburner.com/dcurtis">
+		      <a href="<?php bloginfo('rss_url'); ?>">
 		        <span class="link_logo"><span class="link_logo_inside">X</span></span>
 		        rss feed
 		      </a>
