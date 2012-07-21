@@ -27,7 +27,8 @@
 	        e.push(article)
 	    }),
 	    $.post("<?php echo site_url(); ?>/wp-admin/admin-ajax.php", {
-	        kudosList: e
+	        kudosList: e,
+					action:'my_special_action'
 	    },
 	    function(e) {
 	        $.each(e,
@@ -469,7 +470,8 @@
 	    function s(e) {
 	        var t = e.closest("article").attr("id");
 	        $.post("<?php echo site_url(); ?>/wp-admin/admin-ajax.php", {
-	            article: t
+	            article: t,
+							action:'my_special_action',
 	        },
 	        function() {
 	            $.jStorage.set(t, !0)
