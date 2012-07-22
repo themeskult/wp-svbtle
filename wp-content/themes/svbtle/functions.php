@@ -338,7 +338,7 @@ $is_link = 1;
 } else {
 $link = $perm;
 }
-echo '<a class="is_link_"'.$is_link.'" href="'.$link.'" rel="bookmark" title="'.$title.'">'.$title.'</a>';
+echo '<a class="no-link is_link_"'.$is_link.'" href="'.$link.'" rel="bookmark" title="'.$title.'">'.$title.'</a>';
 }
 
 
