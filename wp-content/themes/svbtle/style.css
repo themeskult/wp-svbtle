@@ -83,6 +83,11 @@ ol.commentlist li.comment.byuser #respond .form-submit{margin-left: 0}
 
 
 article img{height: auto; max-height: 100%;}
+article.post {overflow: visible}
 
 
+/* Wordpress.com Sharing  */
+.sharing{height: 30px !important}
 .sharing .share-twitter .twitter_button{height: 20px !important}
+.sharing-hidden li{height: 20px !important}
+li.share-end{display: none !important; clear: none !important;}
