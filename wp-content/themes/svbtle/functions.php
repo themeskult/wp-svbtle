@@ -376,8 +376,8 @@ $is_link = 1;
 $link = $perm;
 }
 if ($is_link): ?>
-	<a href="'.$link.'" class="title"><?php echo the_title() ?></a>
-	<a href="'.$link.'" class="anchor"><img src="<?php echo get_bloginfo('stylesheet_directory') ?>/images/anchor.png" class="scalable"></a>
+	<a href="<?php echo $link ?>" class="title"><?php echo the_title() ?></a>
+	<a href="<?php echo $link ?>" class="anchor"><img src="<?php echo get_bloginfo('stylesheet_directory') ?>/images/anchor.svg" class="scalable"></a>
 <?php else: ?>
 	<a href="<?php the_permalink(); ?>" class="no-link" title="<?php printf( esc_attr__( 'Permalink to %s', 'twentyten' ), the_title_attribute( 'echo=0' ) ); ?>" rel="bookmark"><?php the_title(); ?></a>
 
