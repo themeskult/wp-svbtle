@@ -364,7 +364,7 @@ if (!empty($post_keys)) {
 foreach ($post_keys as $pkey) {
 if ($pkey=='_wp_svbtle_external_url' || $pkey=='_wp_svbtle_external_url' || $pkey=='_wp_svbtle_external_url') {
 $post_val = get_post_custom_values($pkey);
-}http://dcurt.is/dear-marissa
+}
 }
 if (empty($post_val)) {
 $link = $perm;
