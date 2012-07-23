@@ -67,12 +67,12 @@
 	
 	<nav class="pagination">
 
-		<span class="prev">
-			<?php next_posts_link( __( '←&nbsp;&nbsp;&nbsp;Newer', 'boilerplate' ) ); ?>
+		<span class="next">
+			<?php next_posts_link( __( 'Continue&nbsp;&nbsp;&nbsp;→', 'boilerplate' ) ); ?>
 		</span>
 
-	  <span class="next">
-			<?php previous_posts_link( __( 'Continue&nbsp;&nbsp;&nbsp;→', 'boilerplate' ) ); ?>
+	  <span class="prev">
+			<?php previous_posts_link( __( '←&nbsp;&nbsp;&nbsp;Newer', 'boilerplate' ) ); ?>
 		</span>
 	
 	</nav>

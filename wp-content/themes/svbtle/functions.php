@@ -222,26 +222,12 @@ function theme_admin_header_image() {
     <?php
 }
 
-
-
-/*function widgets_init() {
-	register_sidebar(array(
-		'name' => __( 'Sidebar', 's' ),
-		'id' => 'sidebar',
-		'before_widget' => '<li>',
-		'after_widget' => '</li>',
-		'before_title' => '',
-		'after_title' => '',
-	));
-}
-add_action( 'init', 'widgets_init' );*/
-
 function content_nav( $nav_id ) {
 	global $wp_query;
 		if ( $wp_query->max_num_pages > 1 ) : ?>
 	<nav class="pagination">
-		<span class="prev"><?php previous_posts_link( '←   Newer' ); ?></span>
-		<span class="next"><?php next_posts_link( __( 'Continue   →') ); ?></span>
+		<span class="prev"><?php next_posts_link( __( '←   Newer') ); ?></span>
+		<span class="next"><?php previous_posts_link( 'Continue   →' ); ?></span>
   </nav>
 		<?php endif;
 }
@@ -264,6 +250,56 @@ add_action('init', 'load_theme_scripts');
 function load_theme_scripts() {
     wp_enqueue_style( 'farbtastic' );
     wp_enqueue_script( 'farbtastic' );
+}
+
+
+add_action( 'load-post.php', 'wp_svbtle_post_meta_boxes_setup' );
+add_action( 'load-post-new.php', 'wp_svbtle_post_meta_boxes_setup' );
+
+function wp_svbtle_external_url( $object, $box ) { ?>
+	<?php wp_nonce_field( basename( __FILE__ ), '_wp_svbtle_external_url' ); ?>
+	<p>
+		<input class="widefat" type="text" name="wp_svbtle_external_url" id="wp_svbtle_external_url" value="<?php echo esc_attr( get_post_meta( $object->ID, '_wp_svbtle_external_url', true ) ); ?>" size="30" />
+	</p>
+<?php }
+
+
+function wp_svbtle_post_meta_boxes_setup() {
+	add_action( 'add_meta_boxes', 'wp_svbtle_add_post_meta_boxes' );
+	add_action( 'save_post', 'wp_svbtle_save_post_class_meta', 10, 2 );
+}
+
+function wp_svbtle_add_post_meta_boxes() {
+	add_meta_box(
+		'wp_svbtle_external_url', esc_html__( 'External Url', 'example' ),
+		'wp_svbtle_external_url',
+		'post',
+		'side',
+		'high'
+	);
+}
+
+function wp_svbtle_save_post_class_meta( $post_id, $post ) {
+
+	if ( !isset( $_POST['_wp_svbtle_external_url'] ) || !wp_verify_nonce( $_POST['_wp_svbtle_external_url'], basename( __FILE__ ) ) )
+		return $post_id;
+
+	$post_type = get_post_type_object( $post->post_type );
+
+	if ( !current_user_can( $post_type->cap->edit_post, $post_id ) )
+		return $post_id;
+
+	$new_meta_value = ( isset( $_POST['wp_svbtle_external_url'] ) ? esc_url_raw( $_POST['wp_svbtle_external_url'] ) : '' );
+
+	$meta_key = '_wp_svbtle_external_url';
+	$meta_value = get_post_meta( $post_id, $meta_key, true );
+
+	if ( $new_meta_value && '' == $meta_value )
+		add_post_meta( $post_id, $meta_key, $new_meta_value, true );
+	elseif ( $new_meta_value && $new_meta_value != $meta_value )
+		update_post_meta( $post_id, $meta_key, $new_meta_value );
+	elseif ( '' == $new_meta_value && $meta_value )
+		delete_post_meta( $post_id, $meta_key, $meta_value );
 }
 
 add_theme_support( 'post-thumbnails', array( 'post' ) ); 
@@ -323,11 +359,12 @@ $perm = get_permalink($post_id);
 $post_keys = array(); $post_val = array();
 $post_keys = get_post_custom_keys($thePostID);
 $is_link = 0;
+
 if (!empty($post_keys)) {
 foreach ($post_keys as $pkey) {
-if ($pkey=='url1' || $pkey=='title_url' || $pkey=='url_title') {
+if ($pkey=='_wp_svbtle_external_url' || $pkey=='_wp_svbtle_external_url' || $pkey=='_wp_svbtle_external_url') {
 $post_val = get_post_custom_values($pkey);
-}
+}http://dcurt.is/dear-marissa
 }
 if (empty($post_val)) {
 $link = $perm;
@@ -338,7 +375,14 @@ $is_link = 1;
 } else {
 $link = $perm;
 }
-echo '<a class="no-link is_link_"'.$is_link.'" href="'.$link.'" rel="bookmark" title="'.$title.'">'.$title.'</a>';
+if ($is_link): ?>
+	<a href="'.$link.'" class="title"><?php echo the_title() ?></a>
+	<a href="'.$link.'" class="anchor"><img src="<?php echo get_bloginfo('stylesheet_directory') ?>/images/anchor.png" class="scalable"></a>
+<?php else: ?>
+	<a href="<?php the_permalink(); ?>" class="no-link" title="<?php printf( esc_attr__( 'Permalink to %s', 'twentyten' ), the_title_attribute( 'echo=0' ) ); ?>" rel="bookmark"><?php the_title(); ?></a>
+
+<?php endif; 
+
 }
 
 
@@ -404,6 +448,8 @@ function wp_svbtle_comment( $comment, $args, $depth ) {
 	endswitch;
 }
 endif; // ends check for wp_svbtle_comment()
+
+
 
 function implement_ajax() {
 	global $wpdb;
