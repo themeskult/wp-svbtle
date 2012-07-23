@@ -33,11 +33,6 @@ Admin area & theme are 100% independent from each other!
  [4]: https://github.com/gravityonmars/wp-svbtle/raw/master/wp-svbtle/screenshot-4.png
  [5]: https://github.com/gravityonmars/wp-svbtle/raw/master/wp-svbtle/screenshot-5.png
 
-
-## Todo
-* Add external links to post title.
-* Autosave 
-
 ## License 
 
 (The MIT License)
