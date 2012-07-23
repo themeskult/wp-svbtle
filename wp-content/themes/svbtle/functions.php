@@ -209,12 +209,12 @@ function theme_setup() {
 
 function theme_header_style() {
     ?><style type="text/css">
-        figure#user_logo div.logo, article a.kudos.completed div.circle div.filled, figure#cover_logo{background-image: url(<?php header_image(); ?>);}
+aside#logo div a,aside.kudo.complete span.circle{background-image: url(<?php header_image(); ?>);}
     </style><?php
 }
 function theme_admin_header_style() {
     ?><style type="text/css">
-        figure#user_logo div.logo, article a.kudos.completed div.circle div.filled, figure#cover_logo{background-image: url(<?php header_image(); ?>);}
+		aside#logo div a,aside.kudo.complete span.circle{background-image: url(<?php header_image(); ?>);}
     </style><?php
 }
 function theme_admin_header_image() {
