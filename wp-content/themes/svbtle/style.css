@@ -96,6 +96,28 @@ article img{height: auto; max-height: 100%;}
 article.post {overflow: visible}
 
 
+
+
+/* Wordpress aligment */
+/* Alignment */
+.alignleft {
+	display: inline;
+	float: left;
+	margin-right: 1.625em;
+}
+.alignright {
+	display: inline;
+	float: right;
+	margin-left: 1.625em;
+}
+.aligncenter {
+	clear: both;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+
 /* Wordpress.com Sharing  */
 .sharing{height: 30px !important}
 .sharing .share-twitter .twitter_button{height: 20px !important}
