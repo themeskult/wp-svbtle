@@ -459,13 +459,18 @@
 	    }
 	    function i(e) {
 	        var t = e.closest("article").attr("id");
-	        e.removeClass("complete deletable"),
-	        e.addClass("kudoable"),
-	        $.jStorage.set(t, !1);
+					$.post("<?php echo site_url(); ?>/wp-admin/admin-ajax.php", {
+	            article: t, action:'remove_kudos'
+	        },
+	        function() {
+	            $.jStorage.set(t, !1)
+	        });
 	        var n = parseInt(e.find("span.num").text().replace(/,/g, "")) - 1;
 	        e.find("span.num").text(n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")),
 	        e.children(".counter").children("span.txt").html("Kudos"),
-	        e.children(".counter").children("span.num").show()
+	        e.children(".counter").children("span.num").show(),
+	        e.removeClass("complete deletable"),
+	        e.addClass("kudoable")
 	    }
 	    function s(e) {
 	        var t = e.closest("article").attr("id");
