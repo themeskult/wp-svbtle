@@ -56,7 +56,7 @@ if(!empty($_GET['id']) and isset($_GET['action']) and ($_GET['action'] == 'del')
 	
 		$post =	array(
 				'ID'	=> $_POST['id'],
-				'post_title'	=> $_POST['post_title'],
+				'post_title'	=> $_POST['idea_title'] ? $_POST['idea_title'] : $_POST['post_title'],
 				'post_content'	=> Markdown($_POST['post_content']),
 				'post_status'	=> $_POST['post_status']
 		);
