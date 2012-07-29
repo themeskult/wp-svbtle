@@ -53,10 +53,13 @@ if(!empty($_GET['id']) and isset($_GET['action']) and ($_GET['action'] == 'del')
 		if (isset($_POST['post_status']))
 				$post_status 	= $_POST['post_status'];
 		
+		// If it's a new idea, use that title. Then escape quotes.
+		$post_title = $_POST['idea_title'] ? $_POST['idea_title'] : $_POST['post_title'] ;
+		$post_title = htmlentities( $post_title );
 	
 		$post =	array(
 				'ID'	=> $_POST['id'],
-				'post_title'	=> $_POST['post_title'],
+				'post_title'	=> $post_title,
 				'post_content'	=> Markdown($_POST['post_content']),
 				'post_status'	=> $_POST['post_status']
 		);
