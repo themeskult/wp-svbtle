@@ -50,6 +50,8 @@ if(!empty($_GET['id']) and isset($_GET['action']) and ($_GET['action'] == 'del')
 		
 		$post_status = 'draft';
 		
+
+		
 		if (isset($_POST['post_status']))
 				$post_status 	= $_POST['post_status'];
 		
@@ -67,10 +69,12 @@ if(!empty($_GET['id']) and isset($_GET['action']) and ($_GET['action'] == 'del')
 		if ($_GET['id']) {
 			wp_update_post($post);
 			update_post_meta( $_POST['id'], 'wp-svbtle-markdown', $_POST['post_content']);
+			update_post_meta( $_POST['id'], '_wp_svbtle_external_url', $_POST['external_url']);
 			$post_id = $_POST['id'];
 		}else {
 			$post_id = wp_insert_post($post);
 			add_post_meta($post_id, 'wp-svbtle-markdown', $_POST['post_content']);
+			add_post_meta($post_id, '_wp_svbtle_external_url', $_POST['external_url']);
 		}
 		
 		$current_page .= (isset($post_id) ? "&id=" . $post_id : "");
@@ -89,13 +93,20 @@ if(!empty($_GET['id']) and isset($_GET['action']) and ($_GET['action'] == 'del')
 
 		$post_id 		= $post->ID;
 		$post_title 	= $post->post_title;
-
+		
+		
 		if (get_post_meta($_GET['id'], 'wp-svbtle-markdown', true)) {
 			$post_content = get_post_meta($_GET['id'], 'wp-svbtle-markdown', true);
 		}else {
 			$post_content 	= $post->post_content;
 		}
-
+		
+		if (get_post_meta($_GET['id'], '_wp_svbtle_external_url', true)) {
+			$external_url = get_post_meta($_GET['id'], '_wp_svbtle_external_url', true);
+		}else {
+			$external_url 	= "";
+		}
+		
 		$post_status 	= $post->post_status;
 		
 	}else {

@@ -282,7 +282,21 @@ div.preview iframe { width: 100%; height: 100%; border: 3px solid #000; }
 
 div.preview .close { margin: 0 0 5px; }
 
+.overlay{
+	position: fixed;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	overflow: hidden;
+	display: none;
+	right: 0;
+	z-index: 8010;
+	background: rgba(0,0,0,.6);
+}
 
+#external-url{width: 340px; padding: 20px; border-radius: 5px; margin: auto;  margin-top: 20%; background: white}
+
+.button.close-fancy{margin: 0}
 /* ==|== media queries ======================================================
    EXAMPLE Media Query for Responsive Design.
    This example overrides the primary ('mobile first') styles

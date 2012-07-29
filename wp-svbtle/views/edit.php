@@ -48,7 +48,7 @@ include('header.php');
 		<?php if (!empty($_GET['id'])): ?>
 			<a href="<?php echo get_permalink($post_id) ?>" target="_blank" class="button preview">Preview</a>
 		<?php endif ?>
-		<!-- <a href="#" class="button">Option</a> -->
+		<a href="#external-url" class="open-external button">Option</a>
 		
 		<div class="double">
 			<input type="radio" class="RadioClass" name="post_status" value="draft" <?php if($post_status == 'draft'): ?>checked="checked"<?php endif; ?> id="">
@@ -59,10 +59,23 @@ include('header.php');
 		</div>
 		<a href="index.php?page=edit&action=del&id=<?php echo $_GET['id'] ?>" class="button remove">Remove</a>
 		
+		
+		<div class="overlay">
+			<div id="external-url" >
+				<label>External Url</label>
+				<p><input type="text" name="external_url" style="border: 1px solid black; padding: 4px; width: 300px" value="<?php echo $external_url ?>" id=""></p>
+				<input class="button close-fancy" type="button" value="OK" />
+			</div>
+		</div><!-- .overlay -->
+
+		
 		<input type="submit" class="button" value="Save"/>
 		<a href="index.php?page=dashboard" class="button">Dashboard</a>
 
 	</div><!-- .buttons -->
+	
+	
+
 </form>
 
 <?php if (!empty($_GET['id'])): ?>
@@ -79,6 +92,19 @@ include('header.php');
 		if($notice.length) {
 			$notice.fadeOut(2000);
 		} 
+		
+		$('.open-external').click(function(){
+			$('.overlay').show();
+		});
+		
+		$('.close-fancy').click(function(){
+			$('.overlay').hide();
+		});
+		
+		$('.overlay').click(function(){
+			$('.overlay').hide();
+		});
+		
 	});
 </script>
 
