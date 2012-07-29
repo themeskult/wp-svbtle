@@ -101,9 +101,9 @@ include('header.php');
 			$('.overlay').hide();
 		});
 		
-		$('.overlay').click(function(){
-			$('.overlay').hide();
-		});
+		// $('.overlay').click(function(){
+		// 	$('.overlay').hide();
+		// });
 		
 	});
 </script>
