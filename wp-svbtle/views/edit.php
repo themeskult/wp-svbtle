@@ -63,7 +63,7 @@ include('header.php');
 		<div class="overlay">
 			<div id="external-url" >
 				<label>External Url</label>
-				<p><input type="text" name="external_url" style="border: 1px solid black; padding: 4px; width: 300px" value="<?php echo $external_url ?>" id=""></p>
+				<p><input type="text" placeholder="http://your-url.com" name="external_url" style="border: 1px solid black; padding: 4px; width: 300px" value="<?php echo $external_url ?>" id=""></p>
 				<input class="button close-fancy" type="button" value="OK" />
 			</div>
 		</div><!-- .overlay -->
