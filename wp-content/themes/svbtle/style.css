@@ -11,6 +11,15 @@ article,aside,details,figcaption,figure,footer,header,hgroup,nav,section{display
 
 
 /* Start of Custom CSS */
+table{margin:0; padding:0}
+table th, 
+table td{padding:10px 20px; text-align:left; border-bottom:1px solid #ccc}
+table th{border-width:2px}
+table td{color:#666}
+table tr:last-child th, 
+table tr:last-child td{border-bottom:none}
+table tr:nth-child(even){background:#eee}
+
 
 /* =Comments
 -------------------------------------------------------------- */
