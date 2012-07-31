@@ -319,7 +319,7 @@ function boilerplate_posted_on() {
 	// d = 01–31
 	// printf( __( '<span class="%1$s">Posted on</span> <span class="entry-date">%2$s %3$s %4$s</span> <span class="meta-sep">by</span> %5$s', 'boilerplate' ),
 
-	printf( __( '<span class="entry-date">%2$s %3$s %4$s</span>', 'boilerplate' ),
+	printf( __( '<span class="entry-date">%2$s %3$s, %4$s</span>', 'boilerplate' ),
 		// %1$s = container class
 		'meta-prep meta-prep-author',
 		// %2$s = month: /yyyy/mm/
