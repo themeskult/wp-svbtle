@@ -7,51 +7,37 @@
 	<head>
 		<meta charset="<?php bloginfo( 'charset' ); ?>" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.5, minimum-scale=0.5">
-		<title><?php
-
-
-			wp_title( 'by', true, 'right' );
-
-			// Add the blog name.
-			bloginfo( 'name' );
-
-			?></title>
+		<title><?php wp_title( 'by', true, 'right' ); bloginfo( 'name' ); ?></title>
 		<link rel="profile" href="http://gmpg.org/xfn/11" />
 		<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
-<?php
+		<?php
 
-		if ( is_singular() && get_option( 'thread_comments' ) )
-			wp_enqueue_script( 'comment-reply' );
-?>
+			if ( is_singular() && get_option( 'thread_comments' ) )
+				wp_enqueue_script( 'comment-reply' );
 
-<?php add_action( 'wp_enqueue_scripts', 'main_css' );  ?>
-<?php wp_head(); ?>
-<?php $options = get_option ( 'svbtle_options' ); ?>
-<?php echo $options['google_analytics'];?>
-<?php 
-if( isset( $options['color'] ) && '' != $options['color'] ) {
-	$color = $options['color'];
-} else {
-	$color = '<?php echo $color ?>';
-} 
-?>
+			add_action( 'wp_enqueue_scripts', 'main_css' ); 
+			wp_head(); 
 
-<style>blockquote {border-color: <?php echo $color ?>;}aside#logo,aside#logo div a,ul#user_meta a:hover span.link_logo_inside,ul#user_meta a:hover span.link_logo,aside.kudo.complete span.circle {background-color: <?php echo $color ?>;}section.preview header#begin h2,ul#user_meta a:hover,nav.pagination span.next a,nav.pagination span.prev a {color: <?php echo $color ?>;}ul#user_meta a:hover,nav.pagination span.next a,nav.pagination span.prev a {border-color: <?php echo $color ?>;}::-moz-selection { background: <?php echo $color ?>; color: #fff; text-shadow: none;}::selection { background: <?php echo $color ?>; color: #fff; text-shadow: none;}
-</style>
+			$options = get_option ( 'svbtle_options' ); 
 
+			echo $options['google_analytics'];
+ 
+			if( isset( $options['color'] ) && '' != $options['color'] )
+				$color = $options['color'];
+			else 
+				$color = '<?php echo $color ?>';
+	
+		?>
 
-	<!--[if lt IE 9]>
-		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-	<![endif]-->
+		<style>blockquote {border-color: <?php echo $color ?>;}aside#logo,aside#logo div a,ul#user_meta a:hover span.link_logo_inside,ul#user_meta a:hover span.link_logo,aside.kudo.complete span.circle {background-color: <?php echo $color ?>;}section.preview header#begin h2,ul#user_meta a:hover,nav.pagination span.next a,nav.pagination span.prev a {color: <?php echo $color ?>;}ul#user_meta a:hover,nav.pagination span.next a,nav.pagination span.prev a {border-color: <?php echo $color ?>;}::-moz-selection { background: <?php echo $color ?>; color: #fff; text-shadow: none;}::selection { background: <?php echo $color ?>; color: #fff; text-shadow: none;}
+		</style>
+		
+		<!--[if lt IE 9]>
+			<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
 	
 	</head>
 	<body <?php body_class(); ?>>
-	
-		
-		
-		
-		
-		
 		<header id="sidebar">
 		  <aside id="logo" class="clearfix">
 		    <div class="clearfix">
@@ -117,5 +103,3 @@ if( isset( $options['color'] ) && '' != $options['color'] ) {
 		</header>
 		
 		<section id="river" role="main">
-	
-
