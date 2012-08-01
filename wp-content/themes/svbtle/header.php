@@ -8,23 +8,12 @@
 		<meta charset="<?php bloginfo( 'charset' ); ?>" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.5, minimum-scale=0.5">
 		<title><?php
-			/*
-			 * Print the <title> tag based on what is being viewed.
-			 */
-			global $page, $paged;
+
 
 			wp_title( 'by', true, 'right' );
 
 			// Add the blog name.
 			bloginfo( 'name' );
-
-			// Add the blog description for the home/front page.
-			$site_description = get_bloginfo( 'description', 'display' );
-
-
-			// Add a page number if necessary:
-			if ( $paged >= 2 || $page >= 2 )
-				echo ' by ' . sprintf( __( 'Page %s', 'twentyeleven' ), max( $paged, $page ) );
 
 			?></title>
 		<link rel="profile" href="http://gmpg.org/xfn/11" />
