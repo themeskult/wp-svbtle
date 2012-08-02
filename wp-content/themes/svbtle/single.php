@@ -11,7 +11,7 @@ get_header(); ?>
 
 
 <header id="begin">
-    <time datetime="<?php echo date('Y-m-d'); ?>" id="top_time"><?php boilerplate_posted_on(); ?></time>
+    <time datetime="<?php echo date('Y-m-d'); ?>" id="top_time"><?php the_time('F d, Y'); ?></time>
 </header>
 
 <?php
