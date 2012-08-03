@@ -1,14 +1,5 @@
 <?php
 
-function main_css()  
-{
-	// let's use the getlastmod date of the CSS style file for the version to help update cache
-	$version = filemtime(realpath(dirname(__FILE__)).'/style.css');
-	wp_register_style( 'style', get_template_directory_uri() . '/style.css', array(), $version, 'all' );
-
-	wp_enqueue_style( 'style' );
-}
-
 add_action( 'after_setup_theme', 'theme_setup' );
 
 function theme_setup() {
@@ -302,53 +293,6 @@ function wp_svbtle_save_post_class_meta( $post_id, $post ) {
 		delete_post_meta( $post_id, $meta_key, $meta_value );
 }
 
-add_theme_support( 'post-thumbnails', array( 'post' ) ); 
-
-if ( ! function_exists( 'boilerplate_posted_on' ) ) :
-/**
- * Prints HTML with meta information for the current post—date/time and author.
- *
- * @since Twenty Ten 1.0
- */
-function boilerplate_posted_on() {
-	// BP: slight modification to Twenty Ten function, converting single permalink to multi-archival link
-	// Y = 2012
-	// F = September
-	// m = 01–12
-	// j = 1–31
-	// d = 01–31
-	// printf( __( '<span class="%1$s">Posted on</span> <span class="entry-date">%2$s %3$s %4$s</span> <span class="meta-sep">by</span> %5$s', 'boilerplate' ),
-
-	printf( __( '<span class="entry-date">%2$s %3$s, %4$s</span>', 'boilerplate' ),
-		// %1$s = container class
-		'meta-prep meta-prep-author',
-		// %2$s = month: /yyyy/mm/
-		sprintf( '%3$s',
-			home_url() . '/' . get_the_date( 'Y' ) . '/' . get_the_date( 'm' ) . '/',
-			esc_attr( 'View Archives for ' . get_the_date( 'F' ) . ' ' . get_the_date( 'Y' ) ),
-			get_the_date( 'F' )
-		),
-		// %3$s = day: /yyyy/mm/dd/
-		sprintf( '%3$s',
-			home_url() . '/' . get_the_date( 'Y' ) . '/' . get_the_date( 'm' ) . '/' . get_the_date( 'd' ) . '/',
-			esc_attr( 'View Archives for ' . get_the_date( 'F' ) . ' ' . get_the_date( 'j' ) . ' ' . get_the_date( 'Y' ) ),
-			get_the_date( 'j' )
-		),
-		// %4$s = year: /yyyy/
-		sprintf( '%3$s',
-			home_url() . '/' . get_the_date( 'Y' ) . '/',
-			esc_attr( 'View Archives for ' . get_the_date( 'Y' ) ),
-			get_the_date( 'Y' )
-		),
-		// %5$s = author vcard
-		sprintf( '<span class="author vcard"><a class="url fn n" href="%1$s" title="%2$s">%3$s</a></span>',
-			get_author_posts_url( get_the_author_meta( 'ID' ) ),
-			sprintf( esc_attr__( 'View all posts by %s', 'boilerplate' ), get_the_author() ),
-			get_the_author()
-		)
-	);
-}
-endif;
 
 function print_post_title() {
 global $post;
