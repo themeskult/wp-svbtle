@@ -66,16 +66,21 @@ if(!empty($_GET['id']) and isset($_GET['action']) and ($_GET['action'] == 'del')
 				'post_status'	=> $_POST['post_status']
 		);
 		
+		
 		if ($_GET['id']) {
 			wp_update_post($post);
 			update_post_meta( $_POST['id'], 'wp-svbtle-markdown', $_POST['post_content']);
-			update_post_meta( $_POST['id'], '_wp_svbtle_external_url', $_POST['external_url']);
+			if (!empty($_POST['external_url']))
+				update_post_meta( $_POST['id'], '_wp_svbtle_external_url', $_POST['external_url']);
 			$post_id = $_POST['id'];
 		}else {
 			$post_id = wp_insert_post($post);
 			add_post_meta($post_id, 'wp-svbtle-markdown', $_POST['post_content']);
-			add_post_meta($post_id, '_wp_svbtle_external_url', $_POST['external_url']);
+			if (!empty($_POST['external_url']))
+				add_post_meta($post_id, '_wp_svbtle_external_url', $_POST['external_url']);
 		}
+	
+
 		
 		$current_page .= (isset($post_id) ? "&id=" . $post_id : "");
 		wp_redirect($current_page . '&success=success' );
