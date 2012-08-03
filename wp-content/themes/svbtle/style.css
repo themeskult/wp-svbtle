@@ -103,7 +103,7 @@ ol.commentlist li.comment.byuser #respond .form-submit{margin-left: 0}
 article img{height: auto; max-height: 100%;}
 article.post {overflow: visible}
 
-
+#respond .comment-subscription-form{margin-bottom: 10px}
 
 
 /* Wordpress aligment */
@@ -131,3 +131,7 @@ article.post {overflow: visible}
 .sharing .share-twitter .twitter_button{height: 20px !important}
 .sharing-hidden li{height: 20px !important}
 li.share-end{display: none !important; clear: none !important;}
+
+.sharedaddy {height: 24px!important; clear: both; overflow: hidden}
+.sharedaddy ul{margin: 0; padding: 0; list-style: none }
+.sharedaddy li{float: left; margin: 0 !important;  list-style: none !important; padding: 0 !important}
