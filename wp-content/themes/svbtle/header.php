@@ -9,13 +9,15 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.5, minimum-scale=0.5">
 		<title><?php wp_title( 'by', true, 'right' ); bloginfo( 'name' ); ?></title>
 		<link rel="profile" href="http://gmpg.org/xfn/11" />
+		<link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo( 'stylesheet_url' ); ?>" />
 		<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
+		<!--[if lt IE 9]>
+			<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
 		<?php
 
 			if ( is_singular() && get_option( 'thread_comments' ) )
 				wp_enqueue_script( 'comment-reply' );
-
-			add_action( 'wp_enqueue_scripts', 'main_css' ); 
 
 			$options = get_option ( 'svbtle_options' ); 
 
@@ -31,11 +33,8 @@
 		<style>blockquote {border-color: <?php echo $color ?>;}aside#logo,aside#logo div a,ul#user_meta a:hover span.link_logo_inside,ul#user_meta a:hover span.link_logo,aside.kudo.complete span.circle {background-color: <?php echo $color ?>;}section.preview header#begin h2,ul#user_meta a:hover,nav.pagination span.next a,nav.pagination span.prev a {color: <?php echo $color ?>;}ul#user_meta a:hover,nav.pagination span.next a,nav.pagination span.prev a {border-color: <?php echo $color ?>;}::-moz-selection { background: <?php echo $color ?>; color: #fff; text-shadow: none;}::selection { background: <?php echo $color ?>; color: #fff; text-shadow: none;}
 		</style>
 		
-		<!--[if lt IE 9]>
-			<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-		<![endif]-->
-		
 		<?php 	wp_head();  ?>
+
 		
 	</head>
 	<body <?php body_class(); ?>>
