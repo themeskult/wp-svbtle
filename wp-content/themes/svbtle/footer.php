@@ -1,24 +1,8 @@
-<?php
-/**
- * The template for displaying the footer.
- *
- * Contains the closing of the id=main div and all content
- * after.  Calls sidebar-footer.php for bottom widgets.
- *
- * @package WordPress
- * @subpackage Boilerplate
- * @since Boilerplate 1.0
- */
-?>
-		</section><!-- #main -->
-
-<?php
-	wp_footer();
-?>
+</section><!-- #main -->
 
 <?php $options = get_option ( 'svbtle_options' ); ?>
 
-<script data-cfasync="false" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+<script data-cfasync="false" src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
 <script type="text/javascript" charset="utf-8">
 	function getKudos() {
 	    var e = new Array;
@@ -561,5 +545,8 @@
 			});
 </script>
 		</div><!-- #wrap -->
+		
+		<?php wp_footer(); ?>
+		
 	</body>
 </html>

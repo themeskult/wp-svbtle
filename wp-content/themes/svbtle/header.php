@@ -16,7 +16,6 @@
 				wp_enqueue_script( 'comment-reply' );
 
 			add_action( 'wp_enqueue_scripts', 'main_css' ); 
-			wp_head(); 
 
 			$options = get_option ( 'svbtle_options' ); 
 
@@ -35,7 +34,9 @@
 		<!--[if lt IE 9]>
 			<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
 		<![endif]-->
-	
+		
+		<?php 	wp_head();  ?>
+		
 	</head>
 	<body <?php body_class(); ?>>
 		<header id="sidebar">
