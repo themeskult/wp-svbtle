@@ -81,7 +81,7 @@
 				<?php endif ?>
 				<?php if (get_option('admin_email')): ?>
 					<li class="link twitter">
-						<a href=mailto:"<?php echo get_option('admin_email') ?>">
+						<a href="mailto:<?php echo get_option('admin_email') ?>">
 							<span class="link_logo"><span class="link_logo_inside">X</span></span>
 							say hello
 						</a>
