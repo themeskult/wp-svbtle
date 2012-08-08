@@ -50,6 +50,11 @@
 			      <a href="<?php echo home_url( '/' ); ?>"><?php bloginfo( 'name' ); ?></a>
 		      </h1>
 		    </li>
+				<li class="blog_owner">  
+		      <h1 id="blog_owner">
+		        <a href="<?php echo home_url( '/' ); ?>"><?php $user_info = get_userdata(1); ?><?php echo $user_info->first_name ?> <?php echo $user_info->last_name ?></a>
+		      </h1>
+		    </li>
 		    <li class="tagline">
 		      <h2 id="tagline">
 		        <?php bloginfo( 'description' ); ?>
