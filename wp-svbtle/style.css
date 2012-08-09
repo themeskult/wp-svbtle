@@ -270,6 +270,7 @@ a.button.new-entry{float: right; margin-top: .3em; font-size: 14px}
 .buttons div.double{display: inline-block; border: 4px solid black; border-radius: 8px}
 .buttons div.double .RadioClass{display: none;}
 input.text, textarea{border: 0; width: 500px}
+#post_title{width: 90%}
 textarea{font-size: .8em; line-height: 1.4em; bottom: 100px; padding-right: 2em; position: absolute; top: 130px; padding-bottom: 200px;}
 input.text:focus, textarea:focus{outline: 0}
 #post_title{font-size: 2em; margin-top: 1.6em; font-weight: bold;}
