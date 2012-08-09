@@ -198,6 +198,18 @@ function theme_setup() {
 	) );
 }
 
+function widgets_init() {
+	register_sidebar(array(
+		'name' => __( 'Sidebar', 's' ),
+		'id' => 'sidebar',
+		'before_widget' => '',
+		'after_widget' => '',
+		'before_title' => '<span class="hidden">',
+		'after_title' => '</span>',
+	));
+}
+add_action( 'init', 'widgets_init' );
+
 function theme_header_style() {
     ?><style type="text/css">
 aside#logo div a,aside.kudo.complete span.circle{background-image: url(<?php header_image(); ?>);}

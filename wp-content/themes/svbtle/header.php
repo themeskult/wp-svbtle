@@ -99,6 +99,8 @@
 		        rss feed
 		      </a>
 		    </li>
+		
+				<?php get_sidebar() ?>
 		  </ul>
 		  <aside id="svbtle_linkback">
 		    <a href="https://github.com/gravityonmars/wp-svbtle">
