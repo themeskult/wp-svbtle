@@ -55,7 +55,7 @@
 		        <a href="<?php echo home_url( '/' ); ?>">
 						<?php 
 							$user = get_user_by('email', get_option('admin_email')); 
-						 	echo $user->first_name ?> <?php echo $user->last_name;
+						 	echo $user->first_name ." ". $user->last_name;
 						?></a>
 		      </h1>
 		    </li>
