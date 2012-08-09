@@ -52,7 +52,11 @@
 		    </li>
 				<li class="blog_owner">  
 		      <h1 id="blog_owner">
-		        <a href="<?php echo home_url( '/' ); ?>"><?php $user_info = get_userdata(1); ?><?php echo $user_info->first_name ?> <?php echo $user_info->last_name ?></a>
+		        <a href="<?php echo home_url( '/' ); ?>">
+						<?php 
+							$user = get_user_by('email', get_option('admin_email')); 
+						 	echo $user->first_name ?> <?php echo $user->last_name;
+						?></a>
 		      </h1>
 		    </li>
 		    <li class="tagline">
