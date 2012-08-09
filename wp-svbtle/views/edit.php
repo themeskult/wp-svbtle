@@ -1,13 +1,21 @@
 <?php
-/*
-Template Name: New Post
-*/
-// process the collected data
+
 require_once WPSVBTLE_PATH . 'views/process_post.php'; 
 
 nocache_headers();
+$page = "edit";
 include('header.php');
 ?>
+
+<aside id="logo" class="clearfix">
+		<a href="index.php?page=dashboard">
+			<?php if (1==1): ?>
+				<img src="../wp-content/themes/svbtle/images/icons/bolt_large.png" />
+			<?php endif ?>
+		</a>
+</aside>
+
+
 <form action="" method="post" enctype="multipart/form-data">
 	<?php if ($err != ""): ?>
 		<?php echo "<p class='wps-notice'>".$err."</p>" ?>
@@ -30,11 +38,11 @@ include('header.php');
 			<?php endif; ?>
 
 			<p>
-				<input type="text" id="post_title" class="text" name="post_title" value="<?php echo $post_title;?>" placeholder="Title Here" size="60" tabindex="1"/>
+				<textarea  id="post_title" class="text expand" name="post_title" placeholder="Title Here" size="60" tabindex="1"><?php echo $post_title;?></textarea>
 			</p>
 
 			<p>
-				<textarea name="post_content" id="post_content" placeholder="Write post here"  tabindex="2"><?php echo $post_content ?></textarea>
+				<textarea name="post_content" id="post_content" placeholder="Write post here" class="content expand"  tabindex="2"><?php echo $post_content ?></textarea>
 			</p>
 
 		<?php else: ?>
@@ -70,7 +78,6 @@ include('header.php');
 
 		
 		<input type="submit" class="button" value="Save"/>
-		<a href="index.php?page=dashboard" class="button">Dashboard</a>
 
 	</div><!-- .buttons -->
 	
