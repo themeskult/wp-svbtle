@@ -38,7 +38,7 @@ include('header.php')
 		
 		<?php foreach ($published_posts as $memberpost): ?>
 			<p>
-				<a href="index.php?page=edit&id=<?php echo $memberpost->ID ?>"><span class="word-count"><?php echo str_word_count($memberpost->post_content) ?></span><?php echo $memberpost->post_title ?></a>
+				<a href="index.php?page=edit&id=<?php echo $memberpost->ID ?>"><span class="word-count"><?php echo str_word_count(strip_tags($memberpost->post_content)) ?></span><?php echo $memberpost->post_title ?></a>
 			</p>
 		<?php endforeach ?>
 	</div><!-- .name -->
