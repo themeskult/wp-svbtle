@@ -26,7 +26,8 @@ table tr:nth-child(even){background:#eee}
 
 /* Sidebar */
 #searchform .screen-reader-text{display: none;}
-#searchform #s{border-radius: 100px; background: url('images/icon-search.png') 14px center no-repeat; border: 1px solid #e7e7e7; text-indent: 20px; padding: 10px 20px; width: 70%}
+#searchform #s{border-radius: 100px;  background: url('images/icon-search.png') 14px center no-repeat; border: 1px solid #e7e7e7; border-color: transparent; text-indent: 20px; padding: 10px 20px; width: 70%}
+#searchform #s:hover{border-color: #e7e7e7}
 #searchform #s:focus{outline: none; border-color: #333}
 #searchsubmit{display: none;}
 /* eo Sidebar */
