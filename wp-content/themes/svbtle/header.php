@@ -100,7 +100,7 @@
 		      </a>
 		    </li>
 		
-				<?php get_sidebar() ?>
+				<?php if ( is_active_sidebar( 'sidebar' ) ) dynamic_sidebar( 'sidebar' ); ?>
 		  </ul>
 		  <aside id="svbtle_linkback">
 		    <a href="https://github.com/gravityonmars/wp-svbtle">
