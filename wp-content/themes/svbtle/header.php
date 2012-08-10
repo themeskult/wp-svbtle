@@ -51,13 +51,13 @@
 		      </h1>
 		    </li>
 				<li class="blog_owner">  
-		      <h1 id="blog_owner">
+		      <h2 id="blog_owner">
 		        <a href="<?php echo home_url( '/' ); ?>">
 						<?php 
 							$user = get_user_by('email', get_option('admin_email')); 
 						 	echo $user->first_name ." ". $user->last_name;
 						?></a>
-		      </h1>
+		      </h2>
 		    </li>
 		    <li class="tagline">
 		      <h2 id="tagline">
@@ -77,7 +77,7 @@
 						$content = apply_filters( 'the_content', $content );
 					?>
 						<li class="link twitter">
-							<a href="<?php echo get_page_link( $page->ID ); ?>"><span class="link_logo"><span class="link_logo_inside">X</span></span><?php echo $page->post_title; ?></a>
+							<a href="<?php echo get_page_link( $page->ID ); ?>"><?php echo $page->post_title; ?></a>
 						</li>
 					<?php
 					}	
@@ -85,13 +85,13 @@
 				
 				<?php if (isset($options['twitter_username'])): ?>
 					<li class="link twitter">
-						<a target="_blank" href="http://twitter.com/<?php echo $options['twitter_username'] ?>"><span class="link_logo"><span class="link_logo_inside">X</span></span>@<?php echo $options['twitter_username'] ?></a>
+						<a target="_blank" href="http://twitter.com/<?php echo $options['twitter_username'] ?>">@<?php echo $options['twitter_username'] ?></a>
 					</li>
 				<?php endif ?>
 				<?php if (get_option('admin_email')): ?>
 					<li class="link twitter">
 						<a href="mailto:<?php echo get_option('admin_email') ?>">
-							<span class="link_logo"><span class="link_logo_inside">X</span></span>
+							
 							say hello
 						</a>
 					</li>
@@ -99,7 +99,7 @@
 				
 		    <li class="link feed">
 		      <a href="<?php bloginfo('rss_url'); ?>">
-		        <span class="link_logo"><span class="link_logo_inside">X</span></span>
+		        
 		        rss feed
 		      </a>
 		    </li>
