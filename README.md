@@ -36,9 +36,9 @@ Admin area & theme are 100% independent from each other!
 ## FAQ 
 
 ### Isn't this unoriginal?
-Yes, in the same way svbtle is unoriginal. [See the original http://drawar.com][]
+Yes, in the same way svbtle is unoriginal. [See the original][]
 
-[See the original http://drawar.com]: http://drawar.com
+[See the original]: http://drawar.com
 
 ## License 
 
