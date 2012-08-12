@@ -79,6 +79,10 @@
 						<li class="link twitter">
 							<a href="<?php echo get_page_link( $page->ID ); ?>"><?php echo $page->post_title; ?></a>
 						</li>
+						<li class="link github">
+							<a href="<?php echo get_page_link( $page->ID ); ?>"><?php echo $page->post_title; ?></a>
+						</li>
+						
 					<?php
 					}	
 				?>
@@ -88,6 +92,12 @@
 						<a target="_blank" href="http://twitter.com/<?php echo $options['twitter_username'] ?>">@<?php echo $options['twitter_username'] ?></a>
 					</li>
 				<?php endif ?>
+				<?php if (isset($options['github_username'])): ?>
+					<li class="link twitter">
+						<a target="_blank" href="http://github.com/<?php echo $options['githu_username'] ?>">@<?php echo $options['github_username'] ?></a>
+					</li>
+				<?php endif ?>
+				
 				<?php if (get_option('admin_email')): ?>
 					<li class="link twitter">
 						<a href="mailto:<?php echo get_option('admin_email') ?>">
