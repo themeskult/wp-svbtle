@@ -40,11 +40,10 @@ table tr:nth-child(even){background:#eee}
 .comments ol{padding-top:20px}
 #comments{clear:both}
 
-#comments{margin-top:40px; padding-left: 50px}
 #comments .navigation{padding:0 0 18px 0}
 h3#comments-title, 
 h3#reply-title{color:#000; font-size:20px; font-weight:bold; margin-bottom:0}
-h3#comments-title{padding:24px 0}
+h2#comments-title{padding:0 0; margin: 0}
 ol.commentlist{list-style:none; margin:0; padding: 0; max-width: 500px; }
 ol.commentlist li.comment{border-bottom:1px solid #e7e7e7; line-height:24px;  margin:0 0 24px 0; padding:0 0 24px 106px; position:relative}
 ol.commentlist li:last-child{border-bottom:none; margin-bottom:0}
@@ -79,7 +78,7 @@ a.comment-edit-link:hover{color:#ff4b33}
 #comments .pingback .url{font-size:13px; font-style:italic}
 
 input[type=submit]{color:#333}
-#respond{position:relative; width: 500px; padding-left: 50px}
+#respond{position:relative; width: 500px; }
 #respond p{margin:0}
 #respond .comment-notes{margin-bottom:1em}
 .form-allowed-tags{line-height:1em}

@@ -1,9 +1,3 @@
-<?php /* Display navigation to next/previous pages when applicable */ ?>
-<?php if ( $wp_query->max_num_pages > 1 ) : ?>
-
-<?php endif; ?>
-
-<?php /* If there are no posts to display, such as an empty archive page */ ?>
 <?php if ( ! have_posts() ) : ?>
 	<article id="post-0" class="post error404 not-found">
 		<h1 class="entry-title"><?php _e( 'Not Found', 'boilerplate' ); ?></h1>
@@ -22,7 +16,7 @@
 	<?php $kudos = get_post_meta($post->ID, '_wp-svbtle-kudos', true); 
 				if ($kudos > "") { $kudos = $kudos; } else { $kudos = "0"; } ?>
 				
-		<article id="<?php the_ID(); ?>" <?php post_class(); ?>>
+		<article id="<?php the_ID(); ?>" class="post">
 
 			<h2 class="entry-title"><?php print_post_title(); ?></h2>
 
@@ -59,12 +53,8 @@
 
 <?php endwhile; // End the loop. Whew. ?>
 
-<?php /* Display navigation to next/previous pages when applicable */ ?>
 <?php if (  $wp_query->max_num_pages > 1 ) : ?>
 
-	
-	
-	
 	<nav class="pagination">
 
 		<span class="next">
