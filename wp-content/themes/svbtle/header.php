@@ -91,7 +91,7 @@
 				<?php endif ?>
 				<?php if (isset($options['github_username'])): ?>
 					<li class="link twitter">
-						<a target="_blank" href="http://github.com/<?php echo $options['githu_username'] ?>">@<?php echo $options['github_username'] ?></a>
+						<a target="_blank" href="http://github.com/<?php echo $options['github_username'] ?>">Github</a>
 					</li>
 				<?php endif ?>
 				
