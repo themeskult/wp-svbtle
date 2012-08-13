@@ -33,6 +33,13 @@ Admin area & theme are 100% independent from each other!
  [4]: https://github.com/gravityonmars/wp-svbtle/raw/master/wp-svbtle/screenshot-4.png
  [5]: https://github.com/gravityonmars/wp-svbtle/raw/master/wp-svbtle/screenshot-5.png
 
+## FAQ 
+
+### Isn't this unoriginal?
+Yes, in the same way svbtle is unoriginal. [See the original][] ["inspiration" for svbtle].
+
+[See the original]: http://drawar.com
+
 ## License 
 
 (The MIT License)
