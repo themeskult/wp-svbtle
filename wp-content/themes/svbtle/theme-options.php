@@ -45,6 +45,9 @@ function theme_options_do_page() {
 				<h3><?php _e( 'Github Username', 'wordpress-svbtle' ); ?></h3>
 				<input class="regular-text" type="text" name="svbtle_options[github_username]" value="<?php esc_attr_e( $options['github_username'] ); ?>" />
 				
+				<h3><?php _e( 'Contact Email', 'wordpress-svbtle' ); ?></h3>
+				<input class="regular-text" type="text" name="svbtle_options[contact_email]" value="<?php esc_attr_e( $options['contact_email'] ); ?>" />
+				
 				<h3><?php _e( 'Blog color', 'wordpress-svbtle' ); ?></h3>
 				<p>
 					<div id="color_picker_color1"></div>

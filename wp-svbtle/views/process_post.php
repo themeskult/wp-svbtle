@@ -65,7 +65,7 @@ if(!empty($_GET['id']) and isset($_GET['action']) and ($_GET['action'] == 'del')
 				'post_content'	=> Markdown($_POST['post_content']),
 				'post_status'	=> $_POST['post_status']
 		);
-		
+
 		
 		if ($_GET['id']) {
 			wp_update_post($post);
@@ -98,14 +98,14 @@ if(!empty($_GET['id']) and isset($_GET['action']) and ($_GET['action'] == 'del')
 
 		$post_id 		= $post->ID;
 		$post_title 	= $post->post_title;
-		
+
 		
 		if (get_post_meta($_GET['id'], 'wp-svbtle-markdown', true)) {
 			$post_content = get_post_meta($_GET['id'], 'wp-svbtle-markdown', true);
 		}else {
 			$post_content 	= $post->post_content;
 		}
-		
+
 		if (get_post_meta($_GET['id'], '_wp_svbtle_external_url', true)) {
 			$external_url = get_post_meta($_GET['id'], '_wp_svbtle_external_url', true);
 		}else {
