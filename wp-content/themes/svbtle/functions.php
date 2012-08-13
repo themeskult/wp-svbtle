@@ -180,6 +180,11 @@ function theme_setup() {
 			'thumbnail_url' => '%s/images/icons/thumbs/radio.png',
 			'description' => 'radio'
 		),
+		'paperplane' => array(
+			'url' => '%s/images/icons/paperplane_large.png',
+			'thumbnail_url' => '%s/images/icons/thumbs/paperplane.png',
+			'description' => 'radio'
+		),
 		'robot_square' => array(
 			'url' => '%s/images/icons/robot_square_large.png',
 			'thumbnail_url' => '%s/images/icons/thumbs/robot_square.png',
@@ -189,6 +194,36 @@ function theme_setup() {
 			'url' => '%s/images/icons/soccer_shoe_large.png',
 			'thumbnail_url' => '%s/images/icons/thumbs/soccer_shoe.png',
 			'description' => 'soccer_shoe'
+		),
+		'automobile' => array(
+			'url' => '%s/images/icons/automobile_large.png',
+			'thumbnail_url' => '%s/images/icons/thumbs/automobile.png',
+			'description' => 'automobile'
+		),
+		'guitar' => array(
+			'url' => '%s/images/icons/guitar_large.png',
+			'thumbnail_url' => '%s/images/icons/thumbs/guitar.png',
+			'description' => 'guitar'
+		),
+		'acting' => array(
+			'url' => '%s/images/icons/acting_large.png',
+			'thumbnail_url' => '%s/images/icons/thumbs/acting.png',
+			'description' => 'acting'
+		),
+		'cloudrain' => array(
+			'url' => '%s/images/icons/cloudrain_large.png',
+			'thumbnail_url' => '%s/images/icons/thumbs/cloudrain.png',
+			'description' => 'cloudrain'
+		),
+		'whale' => array(
+			'url' => '%s/images/icons/whale_large.png',
+			'thumbnail_url' => '%s/images/icons/thumbs/whale.png',
+			'description' => 'whale'
+		),
+		'money' => array(
+			'url' => '%s/images/icons/money_large.png',
+			'thumbnail_url' => '%s/images/icons/thumbs/money.png',
+			'description' => 'money'
 		),
 		'sunrise' => array(
 			'url' => '%s/images/icons/sunrise_large.png',
