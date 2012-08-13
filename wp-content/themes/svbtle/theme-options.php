@@ -43,6 +43,8 @@ function theme_options_do_page() {
 				<h3><?php _e( 'Twitter Username', 'wordpress-svbtle' ); ?></h3>
 				<input class="regular-text" type="text" name="svbtle_options[twitter_username]" value="<?php esc_attr_e( $options['twitter_username'] ); ?>" />
 				
+				<h3><?php _e( 'Contact Email', 'wordpress-svbtle' ); ?></h3>
+				<input class="regular-text" type="text" name="svbtle_options[contact_email]" value="<?php esc_attr_e( $options['contact_email'] ); ?>" />
 				
 				<h3><?php _e( 'Blog color', 'wordpress-svbtle' ); ?></h3>
 				<p>

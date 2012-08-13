@@ -83,17 +83,16 @@
 					}	
 				?>
 				
-				<?php if (isset($options['twitter_username'])): ?>
+				<?php if (!empty($options['twitter_username'])): ?>
 					<li class="link twitter">
 						<a target="_blank" href="http://twitter.com/<?php echo $options['twitter_username'] ?>">@<?php echo $options['twitter_username'] ?></a>
 					</li>
 				<?php endif ?>
-				<?php if (get_option('admin_email')): ?>
+				
+				<?php if (!empty($options['contact_email'])): ?>
 					<li class="link twitter">
-						<a href="mailto:<?php echo get_option('admin_email') ?>">
-							
-							say hello
-						</a>
+						<a href="mailto:<?php echo $options['contact_email'] ?>">
+							say hello</a> 
 					</li>
 				<?php endif ?>
 				
