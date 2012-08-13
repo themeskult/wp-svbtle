@@ -97,7 +97,7 @@
 				
 				<?php if (!empty($options['contact_email'])): ?>
 					<li class="link twitter">
-						<a href="mailto:<?php echo $options['contact_email'] ?>">
+						<a href="mailto:<?php echo $options['contact_email'] ?>">						
 							say hello</a> 
 					</li>
 				<?php endif ?>
