@@ -76,7 +76,7 @@
 
 						$content = apply_filters( 'the_content', $content );
 					?>
-						<li class="link twitter">
+						<li class="link">
 							<a href="<?php echo get_page_link( $page->ID ); ?>"><?php echo $page->post_title; ?></a>
 						</li>
 						
@@ -90,13 +90,13 @@
 					</li>
 				<?php endif ?>
 				<?php if (!empty($options['github_username'])): ?>
-					<li class="link twitter">
+					<li class="link github">
 						<a target="_blank" href="http://github.com/<?php echo $options['github_username'] ?>">Github</a>
 					</li>
 				<?php endif ?>
 				
 				<?php if (!empty($options['contact_email'])): ?>
-					<li class="link twitter">
+					<li class="link email">
 						<a href="mailto:<?php echo $options['contact_email'] ?>">						
 							say hello</a> 
 					</li>
