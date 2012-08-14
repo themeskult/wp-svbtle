@@ -57,7 +57,7 @@ if(!empty($_GET['id']) and isset($_GET['action']) and ($_GET['action'] == 'del')
 		
 		// If it's a new idea, use that title. Then escape quotes.
 		$post_title = $_POST['idea_title'] ? $_POST['idea_title'] : $_POST['post_title'] ;
-		$post_title = htmlentities( $post_title );
+		$post_title = htmlentities($post_title, ENT_QUOTES, 'UTF-8');
 	
 		$post =	array(
 				'ID'	=> $_POST['id'],
