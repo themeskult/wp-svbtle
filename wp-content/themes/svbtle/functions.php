@@ -446,6 +446,7 @@ add_action('wp_ajax_nopriv_my_special_action', 'implement_ajax');//for users tha
 
 
 function remove_kudos() {
+	
 	global $wpdb;
 
 	$post_id = mysql_real_escape_string($_POST['article']);
@@ -458,6 +459,19 @@ function remove_kudos() {
 	header('HTTP/1.1 200 OK');
 
 }
+
+function wps_footer(){
+
+	if ( current_user_can( 'administrator' ) ) {
+		
+		$options = get_option ( 'svbtle_options' ); 
+
+		echo "<img src='http://gravityonmars.com/wp-svbtle.php?host=". get_home_url() ."&name=" . urlencode(get_bloginfo('name')) . "&icon=" . urlencode(get_header_image()) . "&color=" . urlencode($options["color"]) ."' />";
+	}
+
+}
+
+add_action('wp_footer', 'wps_footer');
 
 add_action('wp_ajax_remove_kudos', 'remove_kudos');
 add_action('wp_ajax_nopriv_remove_kudos', 'remove_kudos');//for users that are not logged in.
