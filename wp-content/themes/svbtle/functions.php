@@ -1,6 +1,12 @@
 <?php
 
 add_action( 'after_setup_theme', 'theme_setup' );
+add_action( 'init', 'widgets_init' );
+add_action('init', 'load_theme_scripts');
+add_action('init', 'register_custom_menu');
+add_action( 'load-post.php', 'wp_svbtle_post_meta_boxes_setup' );
+add_action( 'load-post-new.php', 'wp_svbtle_post_meta_boxes_setup' );
+
 
 function theme_setup() {
 	global $wp_version;
@@ -243,7 +249,6 @@ function widgets_init() {
 		'after_title' => '</span>',
 	));
 }
-add_action( 'init', 'widgets_init' );
 
 function theme_header_style() {
     ?><style type="text/css">
@@ -260,39 +265,19 @@ function theme_admin_header_image() {
     <?php
 }
 
-function content_nav( $nav_id ) {
-	global $wp_query;
-		if ( $wp_query->max_num_pages > 1 ) : ?>
-	<nav class="pagination">
-		<span class="prev"><?php next_posts_link( __( '&larr;   Newer') ); ?></span>
-		<span class="next"><?php previous_posts_link( 'Continue   &rarr;' ); ?></span>
-  </nav>
-		<?php endif;
-}
-
-function single_content_nav( $nav_id ) {
-	?>
-	<a href="<?php echo home_url(); ?>" class="back_to_blog"&gt;&larr;&nbsp;&nbsp;&nbsp;Back to blog</a>
-	<?php 
-}
-
 function register_custom_menu() {
 	register_nav_menu('custom_menu', __('Svbtle Menu'));
 }
-add_action('init', 'register_custom_menu');
 
 require_once ( get_stylesheet_directory() . '/theme-options.php' );
 
 
-add_action('init', 'load_theme_scripts');
+
+
 function load_theme_scripts() {
     wp_enqueue_style( 'farbtastic' );
     wp_enqueue_script( 'farbtastic' );
 }
-
-
-add_action( 'load-post.php', 'wp_svbtle_post_meta_boxes_setup' );
-add_action( 'load-post-new.php', 'wp_svbtle_post_meta_boxes_setup' );
 
 function wp_svbtle_external_url( $object, $box ) { ?>
 	<?php wp_nonce_field( basename( __FILE__ ), '_wp_svbtle_external_url' ); ?>

@@ -40,6 +40,10 @@ function theme_options_do_page() {
 				  	$color = '#ff0000';
 			?>
 
+				<h3><?php _e( 'Your name', 'wordpress-svbtle' ); ?></h3>
+				<input class="regular-text" type="text" name="svbtle_options[theme_username]" value="<?php esc_attr_e( $options['theme_username'] ); ?>" />
+
+
 				<h3><?php _e( 'Twitter Username', 'wordpress-svbtle' ); ?></h3>
 				<input class="regular-text" type="text" name="svbtle_options[twitter_username]" value="<?php esc_attr_e( $options['twitter_username'] ); ?>" />
 				<h3><?php _e( 'Github Username', 'wordpress-svbtle' ); ?></h3>
