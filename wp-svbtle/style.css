@@ -274,13 +274,13 @@ a.button.new-entry{float: right; margin-top: .3em; font-size: 14px}
 
 .form-idea{padding: 0 5%; border-bottom: 1px solid #ccc; margin: 1em 0 0 0; padding-bottom: 1em}
 
-.buttons {position: absolute; text-align: right; z-index: 101; right: 1.4em; left: 200px; bottom: 0; padding-bottom: 1em; background: white; box-shadow: 0 -50px 30px 10px white}
+.buttons {position: absolute; text-align: right; z-index: 101; right: 1.4em; left: 200px; bottom: 0; padding-bottom: 1em; background: white;}
 .buttons .button{display: inline-block; padding: 10px 1.2em; margin: 5px}
 .buttons div.double{display: inline-block; border: 4px solid black; border-radius: 8px}
 .buttons div.double .RadioClass{display: none;}
 textarea.text, textarea{border: 0; width: 500px}
 #post_title{width: 90%}
-textarea.content{font-size: .8em; line-height: 1.4em; resize: none; padding-right: 20px; padding-bottom:50px !important;}
+textarea.content{font-size: .8em; line-height: 1.4em; resize: none; padding-right: 20px}
 input.text:focus, textarea:focus{outline: 0}
 #post_title{font-size: 2em; font-weight: bold;}
 
