@@ -1,8 +1,10 @@
 $(function() {
  	$(".double a.button").click(function(){  
-    $(".double a.button.checked").removeClass("checked");  
+    	$(".double a.button").removeClass("checked");  
+		$("input.RadioClass").attr("checked",null);
+
 		$(this).prev("input.RadioClass").attr("checked","checked");
-    $(this).addClass("checked");
+	    $(this).addClass("checked");
 	});
 	
 	$(".remove").click(function(){
