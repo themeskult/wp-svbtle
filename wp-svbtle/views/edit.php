@@ -37,9 +37,7 @@ include('header.php');
 				<?php wp_nonce_field( 'new-post' ); ?>
 			<?php endif; ?>
 
-			<p>
 				<textarea  id="post_title" class="text expand" name="post_title" placeholder="Title Here" size="60" tabindex="1"><?php echo $post_title;?></textarea>
-			</p>
 
 			<p>
 				<textarea name="post_content" id="post_content" placeholder="Write post here" class="content expand"  tabindex="2"><?php echo $post_content ?></textarea>
@@ -108,7 +106,10 @@ include('header.php');
 			$('.overlay').hide();
 		});
 		
+		$('.expand').autosize();
 	});
 </script>
+
+
 
 <?php include('footer.php'); ?>
