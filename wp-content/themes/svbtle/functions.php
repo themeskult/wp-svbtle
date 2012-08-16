@@ -7,6 +7,7 @@ add_action('init', 'register_custom_menu');
 add_action( 'load-post.php', 'wp_svbtle_post_meta_boxes_setup' );
 add_action( 'load-post-new.php', 'wp_svbtle_post_meta_boxes_setup' );
 
+include('vendor/UCF-Theme-Updater/updater.php');
 
 function theme_setup() {
 	global $wp_version;

@@ -1,0 +1,47 @@
+/* Github Theme Updater */
+.plugin-update-tr .update-message-gtu {
+	font-weight:bold;
+	margin:5px;
+	padding:3px 5px;
+	border-width:1px;
+	border-style:solid;
+	-moz-border-radius:5px;
+	-khtml-border-radius:5px;
+	-webkit-border-radius:5px;
+	border-radius:5px;
+	
+	background:#fffbe4;
+	background:-moz-linear-gradient(bottom,  #FFEFDC,  #FFFCEC);
+	background:-webkit-gradient(linear, left bottom, left top, from(#FFEFDC), to(#FFFCEC));
+	border-color:#D7CBBB;
+}
+	
+.plugin-update-tr .update-error {
+	border-color:#B89FA0;
+	background: #D7C3C4;
+	background:-moz-linear-gradient(bottom,  #D7C3C4,  #FFEAEA);
+	background:-webkit-gradient(linear, left bottom, left top, from(#D7C3C4), to(#FFEAEA));
+	color:#650000;
+}
+
+.plugin-update-tr .update-error a { 
+	color: #650000; 
+	text-decoration:underline;
+}
+
+.plugin-update-tr .update-error .error {
+	color:#BC0B0B;
+}
+
+
+.plugin-update-tr .update-ok {
+	font-weight:normal;
+	border-color:#B0C5B3;
+	background: #CBD8CC;
+	background:-moz-linear-gradient(bottom,  #CBD6CC,  #F5FFF6);
+	background:-webkit-gradient(linear, left bottom, left top, from(#CBD6CC), to(#F5FFF6));
+}
+
+.plugin-update-tr .update-ok a {
+	font-weight:bold;
+}
