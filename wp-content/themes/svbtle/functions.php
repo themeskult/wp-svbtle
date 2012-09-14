@@ -493,4 +493,32 @@ function unregister_default_wp_widgets() {
 	unregister_widget('WP_Widget_Tag_Cloud');
 }
 add_action('widgets_init', 'unregister_default_wp_widgets', 1);
+
+
+
+//Play around with the priority of add_action to see how the item's position can be changed within the location groups
+ 
+add_action('admin_bar_menu', 'add_items',  100);
+function add_items($admin_bar)
+{
+ 	global $post;
+
+    $args = array(
+            'id'    => 'wp-svbtle-editor',
+            'title' => 'wp-svbtle editor',
+            'href'  => '/wp-svbtle/wp-svbtle',
+            'meta'  => array(
+                    'title' => __('wp-svbtle editor')
+                    )
+            );
+ 
+ 	if (is_single()) {
+ 		$args['href'] = get_bloginfo('url') . 'index.php?page=edit&id='.$post->ID;
+ 		$args['title'] = 'Edit post with wp-svbtle';
+ 	}
+
+    //This is where the magic works.
+    $admin_bar->add_menu( $args);
+}
+
 ?>
