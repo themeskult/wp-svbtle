@@ -85,6 +85,7 @@
 						<a target="_blank" href="http://twitter.com/<?php echo $options['twitter_username'] ?>">@<?php echo $options['twitter_username'] ?></a>
 					</li>
 				<?php endif ?>
+				
 				<?php if (!empty($options['github_username'])): ?>
 					<li class="link github">
 						<a target="_blank" href="http://github.com/<?php echo $options['github_username'] ?>">Github</a>
@@ -97,15 +98,15 @@
 							say hello</a> 
 					</li>
 				<?php endif ?>
-				
-		    <li class="link feed">
-		      <a href="<?php bloginfo('rss_url'); ?>">
-		        
-		        rss feed
-		      </a>
-		    </li>
+			
+				<?php if ($options['rss-link']): ?>
+					<li class="link feed">
+				      <a href="<?php bloginfo('rss_url'); ?>">feed</a>
+				    </li>		
+				<?php endif ?>		
 		
 				<?php if ( is_active_sidebar( 'sidebar' ) ) dynamic_sidebar( 'sidebar' ); ?>
+
 		  </ul>
 		  <aside id="svbtle_linkback">
 		    <a href="https://github.com/gravityonmars/wp-svbtle">

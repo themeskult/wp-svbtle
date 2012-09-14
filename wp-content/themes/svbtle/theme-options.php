@@ -64,6 +64,18 @@ function theme_options_do_page() {
 					</tr>
 
 					<tr>
+						<th><?php _e( 'Show RSS Link', 'wordpress-svbtle' ); ?></th>
+						<td>
+							<input type="checkbox" name="svbtle_options[rss-link]" value="1"
+
+							<?php if ($options['rss-link'] == 1): ?>
+								checked="checked"
+							<?php endif ?>
+							>
+						</td>
+					</tr>
+
+					<tr>
 						<th><?php _e( 'Blog color', 'wordpress-svbtle' ); ?></th>
 						<td>
 							<input id="color1" class="regular-text" type="text" name="svbtle_options[color]" value="<?php echo $color; ?>" />
