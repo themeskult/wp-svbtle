@@ -514,8 +514,8 @@ function add_items($admin_bar)
                     )
             );
  
- 	if (is_single()) {
- 		$args['href'] = get_bloginfo('url') . 'index.php?page=edit&id='.$post->ID;
+ 	if (is_single() or is_page()) {
+ 		$args['href'] = get_bloginfo('url') . '/wp-svbtle/index.php?page=edit&id='.$post->ID;
  		$args['title'] = 'Edit post with wp-svbtle';
  	}
 
