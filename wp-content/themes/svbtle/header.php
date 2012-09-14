@@ -26,7 +26,7 @@
 			if( isset( $options['color'] ) && '' != $options['color'] )
 				$color = $options['color'];
 			else 
-				$color = '<?php echo $color ?>';
+				$color = "#ff0000";
 	
 		?>
 
@@ -63,7 +63,7 @@
 		
 		
 				<?php
-					$mypages = get_pages( array( 'sort_column' => 'post_date', 'sort_order' => 'desc' ) );
+					$mypages = get_pages( );
 
 					foreach( $mypages as $page ) {		
 						$content = $page->post_content;

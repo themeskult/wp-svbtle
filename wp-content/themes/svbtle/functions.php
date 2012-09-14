@@ -2,7 +2,7 @@
 
 add_action( 'after_setup_theme', 'theme_setup' );
 add_action( 'init', 'widgets_init' );
-add_action('init', 'load_theme_scripts');
+add_action('admin_head', 'load_theme_scripts');
 add_action('init', 'register_custom_menu');
 add_action( 'load-post.php', 'wp_svbtle_post_meta_boxes_setup' );
 add_action( 'load-post-new.php', 'wp_svbtle_post_meta_boxes_setup' );
@@ -477,4 +477,20 @@ add_action('wp_footer', 'wps_footer');
 
 add_action('wp_ajax_remove_kudos', 'remove_kudos');
 add_action('wp_ajax_nopriv_remove_kudos', 'remove_kudos');//for users that are not logged in.
+
+
+
+// unregister all default WP Widgets
+function unregister_default_wp_widgets() {
+	unregister_widget('WP_Widget_Calendar');
+	unregister_widget('WP_Widget_Archives');
+	unregister_widget('WP_Widget_Links');
+	unregister_widget('WP_Widget_Meta');
+	unregister_widget('WP_Widget_Categories');
+	unregister_widget('WP_Widget_Recent_Posts');
+	unregister_widget('WP_Widget_Recent_Comments');
+	unregister_widget('WP_Widget_RSS');
+	unregister_widget('WP_Widget_Tag_Cloud');
+}
+add_action('widgets_init', 'unregister_default_wp_widgets', 1);
 ?>
