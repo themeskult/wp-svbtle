@@ -24,7 +24,7 @@ get_template_part( 'loop', 'index' );
 
 <nav class="pagination">
   <span class="prev">
-    <a href="<?php echo home_url( '/' ); ?>" class="back_to_blog">←&nbsp;&nbsp;&nbsp;Back to blog</a>
+    <a href="<?php echo home_url( '/' ); ?>" class="back_to_blog">←&nbsp;&nbsp;&nbsp;read more</a>
   </span>
 </nav>
 <?php get_footer(); ?>

@@ -12,6 +12,8 @@ article,aside,details,figcaption,figure,footer,header,hgroup,nav,section{display
 article h2 img.scalable {background-image:url("images/anchor.png");}
 aside.kudo.complete span.circle{background-image:url("images/bolt_large.png");}
 aside#logo div a{background:#000 url("images/bolt_large.png") center center no-repeat;}
+ol li ol { padding-left: 40px; }
+
 
 /* http://pea.rs/content/data-table */
 table{margin:0; padding:0}
