@@ -12,11 +12,8 @@ endif;
 
 if ( have_comments() ) : ?>
 <div id="comments">
-	<h2 id="comments-title">
-		<legend>
-		<?php printf( _n( 'One thought on &ldquo;%2$s&rdquo;', '%1$s thoughts on &ldquo;%2$s&rdquo;', get_comments_number(), 'the-bootstrap' ),
-				number_format_i18n( get_comments_number() ), '<span>' . get_the_title() . '</span>' ); ?>
-		</legend>
+	<h2>
+		Comments
 	</h2>
 
 	<?php if ( get_comment_pages_count() > 1 AND get_option( 'page_comments' ) ) : // are there comments to navigate through ?>
