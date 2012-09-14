@@ -14,7 +14,7 @@ aside.kudo.complete span.circle{background-image:url("images/bolt_large.png");}
 aside#logo div a{background:#000 url("images/bolt_large.png") center center no-repeat;}
 ol li ol { padding-left: 40px; }
 
-
+body.page article.post{border-top: 0;}
 /* http://pea.rs/content/data-table */
 table{margin:0; padding:0}
 table th, 
