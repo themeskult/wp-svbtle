@@ -60,32 +60,13 @@
 		        <?php bloginfo( 'description' ); ?>
 		      </h2>
 		    </li>
-		
-		
-				<?php
-					$mypages = get_pages( );
-
-					foreach( $mypages as $page ) {		
-						$content = $page->post_content;
-						if ( ! $content ) // Check for empty page
-							continue;
-
-						$content = apply_filters( 'the_content', $content );
-					?>
-						<li class="link">
-							<a href="<?php echo get_page_link( $page->ID ); ?>"><?php echo $page->post_title; ?></a>
-						</li>
-						
-					<?php
-					}	
-				?>
-				
+			
 				<?php if (!empty($options['twitter_username'])): ?>
 					<li class="link twitter">
 						<a target="_blank" href="http://twitter.com/<?php echo $options['twitter_username'] ?>">@<?php echo $options['twitter_username'] ?></a>
 					</li>
 				<?php endif ?>
-				
+
 				<?php if (!empty($options['github_username'])): ?>
 					<li class="link github">
 						<a target="_blank" href="http://github.com/<?php echo $options['github_username'] ?>">Github</a>

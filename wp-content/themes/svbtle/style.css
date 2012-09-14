@@ -27,8 +27,9 @@ table tr:nth-child(even){background:#eee}
 
 
 /* Sidebar */
+#searchform {margin-bottom: 15px}
 #searchform .screen-reader-text{display: none;}
-#searchform #s{border-radius: 100px; margin-left: -15px; margin-top: 20px;  background: url('images/icon-search.png') 14px center no-repeat; border: 1px solid #e7e7e7; border-color: #f1f1f1; text-indent: 20px; padding: 10px 20px; width: 60%}
+#searchform #s{border-radius: 100px; margin-left: -15px;  background: url('images/icon-search.png') 14px center no-repeat; border: 1px solid #e7e7e7; border-color: #f1f1f1; text-indent: 20px; padding: 10px 20px; width: 60%}
 #searchform #s:hover{border-color: #e7e7e7}
 #searchform #s:focus{outline: none; width: 80%; border-color: #333}
 #searchsubmit{display: none;}
