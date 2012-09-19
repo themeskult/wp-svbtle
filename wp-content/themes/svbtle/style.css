@@ -13,7 +13,7 @@ article,aside,details,figcaption,figure,footer,header,hgroup,nav,section{display
 
 article h2 img.scalable {background-image:url("images/anchor.png");}
 aside.kudo.complete span.circle{background-image:url("images/bolt_large.png");}
-aside#logo div a{background:#000 url("images/bolt_large.png") center center no-repeat;}
+aside#logo div a{background-image: url("images/bolt_large.png");}
 ol li ol { padding-left: 40px; }
 
 body.page article.post{border-top: 0;}
