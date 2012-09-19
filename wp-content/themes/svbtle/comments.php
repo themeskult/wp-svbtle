@@ -1,6 +1,4 @@
 <?php
-
-
 if ( post_password_required() ) : ?>
 <div id="comments">
 	<p class="nopassword"><?php _e( 'This post is password protected. Enter the password to view any comments.', 'the-bootstrap' ); ?></p>
@@ -8,7 +6,6 @@ if ( post_password_required() ) : ?>
 <?php
 	return;
 endif;
-
 
 if ( have_comments() ) : ?>
 <div id="comments">
@@ -43,7 +40,3 @@ if ( ! comments_open() AND ! is_page() AND post_type_supports( get_post_type(), 
 	<p class="nocomments"><?php _e( 'Comments are closed.', 'the-bootstrap' ); ?></p>
 <?php endif;
 comment_form();
-
-
-/* End of file comments.php */
-/* Location: ./wp-content/themes/the-bootstrap/comments.php */

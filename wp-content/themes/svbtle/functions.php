@@ -464,22 +464,8 @@ function remove_kudos() {
 
 }
 
-function wps_footer(){
-
-	if ( current_user_can( 'administrator' ) ) {
-		
-		$options = get_option ( 'svbtle_options' ); 
-
-		echo "<img src='http://gravityonmars.com/wp-svbtle.php?host=". get_home_url() ."&name=" . urlencode(get_bloginfo('name')) . "&icon=" . urlencode(get_header_image()) . "&color=" . urlencode($options["color"]) ."' />";
-	}
-
-}
-
-add_action('wp_footer', 'wps_footer');
-
 add_action('wp_ajax_remove_kudos', 'remove_kudos');
 add_action('wp_ajax_nopriv_remove_kudos', 'remove_kudos');//for users that are not logged in.
-
 
 
 // unregister all default WP Widgets
@@ -496,9 +482,6 @@ function unregister_default_wp_widgets() {
 }
 add_action('widgets_init', 'unregister_default_wp_widgets', 1);
 
-
-
-//Play around with the priority of add_action to see how the item's position can be changed within the location groups
  
 add_action('admin_bar_menu', 'add_items',  100);
 function add_items($admin_bar)
@@ -509,9 +492,7 @@ function add_items($admin_bar)
             'id'    => 'wp-svbtle-editor',
             'title' => 'wp-svbtle editor',
             'href'  => '/wp-svbtle/wp-svbtle',
-            'meta'  => array(
-                    'title' => __('wp-svbtle editor')
-                    )
+            'meta'  => array('title' => __('wp-svbtle editor'))
             );
  
  	if (is_single() or is_page()) {

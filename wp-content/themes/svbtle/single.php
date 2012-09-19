@@ -9,15 +9,12 @@
 
 get_header(); ?>
 
-
 <header id="begin">
     <time datetime="<?php echo date('Y-m-d'); ?>" id="top_time"><?php the_time('F d, Y'); ?></time>
 </header>
 
-<?php
-get_template_part( 'loop', 'index' );
+<?php get_template_part( 'loop', 'index' ); ?>
 
-?>
 <div class="comments">
 	<?php comments_template(); ?>
 </div><!-- .comments -->
@@ -27,4 +24,5 @@ get_template_part( 'loop', 'index' );
     <a href="<?php echo home_url( '/' ); ?>" class="back_to_blog">←&nbsp;&nbsp;&nbsp;read more</a>
   </span>
 </nav>
+
 <?php get_footer(); ?>
