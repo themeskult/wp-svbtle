@@ -7,5 +7,5 @@
  * @since Boilerplate 1.0
  */
 
-wp_redirect(get_bloginfo('wpurl'),302);
+wp_redirect(get_bloginfo('url').'?not_found=1',302);
 exit;
