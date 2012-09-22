@@ -34,15 +34,15 @@
 	    800)
 	}
 	function startCode() {
-	    // $("code").addClass("prettyprint"),
-	    // $.getScript("/wp-content/themes/svbtle/vendor/prettify.js").done(function(e, t) {
-	    //     var n = "/wp-content/themes/svbtle/css/prettify.css";
-	    //     $.get(n,
-	    //     function(e) {
-	    //         $('<style type="text/css"></style>').html(e).appendTo("head")
-	    //     }),
-	    //     prettyPrint()
-	    // })
+	    $("code").addClass("prettyprint"),
+	    $.getScript("<?php echo get_bloginfo('stylesheet_directory'); ?>/js/prettify.js").done(function(e, t) {
+	        var n = "<?php echo get_bloginfo('stylesheet_directory'); ?>/css/prettify.css";
+	        $.get(n,
+	        function(e) {
+	            $('<style type="text/css"></style>').html(e).appendTo("head")
+	        }),
+	        prettyPrint();
+	    })
 	} (function(e, t) {
 	    var n;
 	    e.rails = n = {
