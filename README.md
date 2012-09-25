@@ -1,5 +1,5 @@
 # wp-svbtle
-#### Wordpress admin & Theme inspired by svbtle.com. [Follow us on twitter][]
+#### Wordpress admin & Theme stolen from svbtle.com. [Follow us on twitter][]
 
   [Follow us on twitter]: http://twitter.com/gravityonmars
 
@@ -10,7 +10,7 @@
 ## Installation
 1. Move the folder wp-content/themes/svbltle into wp-content/themes/
 2. Enable the theme from the admin panel
-3. Move wp-svbtle to the root of your wordpress installation.
+3. Move the stolen design (wp-svbtle) to the root of your wordpress installation.
 4. Log in to yourdomain.com/wp-svbtle for a new blogging experience!
 
 Admin area & theme are 100% independent from each other! 
@@ -36,7 +36,9 @@ Admin area & theme are 100% independent from each other!
 ## FAQ 
 
 ### Isn't this unoriginal?
-Yes, in the same way svbtle is unoriginal. [See the original][] ["inspiration" for svbtle].
+
+Yes, in the same way svbtle is unoriginal. [See the original] "inspiration" for svbtle. This makes it okay to carbon-copy svbtle.
+
 
 [See the original]: http://drawar.com
 
@@ -44,7 +46,7 @@ Yes, in the same way svbtle is unoriginal. [See the original][] ["inspiration" f
 
 (The MIT License)
 
-Copyright (c) 2011 Ricardo Rauch &lt;ricardo@gravityonmars.com&gt;
+Copyright (c) 2011 Dustin Curtis
 
 Permission is hereby granted, free of charge, to any person obtaining
 a copy of this software and associated documentation files (the
