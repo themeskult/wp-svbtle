@@ -140,3 +140,16 @@ li.share-end{display: none !important; clear: none !important;}
 .sharedaddy {height: 24px!important; clear: both; overflow: hidden}
 .sharedaddy ul{margin: 0; padding: 0; list-style: none }
 .sharedaddy li{float: left; margin: 0 !important;  list-style: none !important; padding: 0 !important}
+
+
+/* Responsive Comments */
+@media (max-width: 630px) {
+	.comments {padding-top: 25px; padding-left: 25px; padding-right: 25px;}
+	#respond .comment-form-author label, #respond .comment-form-email label, 
+	#respond .comment-form-url label, #respond .comment-form-comment label {width: inherit; padding-right: 10px;}
+	#respond .required {margin-left: inherit;}
+	#respond, #respond textarea {width: inherit; max-width: 98%;}
+	
+	ol.commentlist li.comment {padding: inherit;}
+	.comment-author-avatar {visibility: hidden;}
+}
