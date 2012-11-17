@@ -544,7 +544,6 @@
 			    $("li.text_field").removeClass("active"), $("li.text_field").first().addClass("active")
 			});
 </script>
-		</div><!-- #wrap -->
 		
 		<?php wp_footer(); ?>
 	</body>
