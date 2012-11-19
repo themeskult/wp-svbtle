@@ -52,7 +52,7 @@ table tr:nth-child(even){background:#eee}
 h3#comments-title, 
 h3#reply-title{color:#000; font-size:20px; font-weight:bold; margin-bottom:0}
 h2#comments-title{padding:0 0; margin: 0}
-ol.commentlist{list-style:none; margin:0; padding: 0; max-width: 500px; }
+ol.commentlist{list-style:none; margin:0; padding: 0; max-width: 100%; }
 ol.commentlist li.comment{border-bottom:1px solid #e7e7e7; line-height:24px;  margin:0 0 24px 0; padding:0 0 24px 106px; position:relative}
 ol.commentlist li:last-child{border-bottom:none; margin-bottom:0}
 #comments .comment-body ul, 
