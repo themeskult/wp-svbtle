@@ -137,7 +137,7 @@ article.post {overflow: visible}
 .sharing-hidden li{height: 20px !important}
 li.share-end{display: none !important; clear: none !important;}
 
-.sharedaddy {height: 24px!important; clear: both; overflow: hidden}
+.sharedaddy {clear: both; overflow: hidden}
 .sharedaddy ul{margin: 0; padding: 0; list-style: none }
 .sharedaddy li{float: left; margin: 0 !important;  list-style: none !important; padding: 0 !important}
 
