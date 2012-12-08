@@ -16,6 +16,12 @@ include('header.php');
 </aside>
 
 
+
+
+<div class="wrap">
+	
+	<div class="module"><!-- .post content -->
+
 <form action="" method="post" enctype="multipart/form-data">
 	<?php if ($err != ""): ?>
 		<?php echo "<p class='wps-notice'>".$err."</p>" ?>
@@ -25,9 +31,7 @@ include('header.php');
 		<?php echo "<p class='wps-notice'>Your post was successfully updated.</p>" ?>					
 	<?php endif ?>
 
-	<div class="wrap">
-
-		<?php if (is_user_logged_in()): // checking weather or not the user has logged in.?>
+	<?php if (is_user_logged_in()): // checking weather or not the user has logged in.?>
 			<?php if(isset($post_id)): ?>
 				<input type="hidden" name="action" value="edit" />
 				<input type="hidden" name="id" value="<?php echo $post_id; ?>" />
@@ -40,17 +44,15 @@ include('header.php');
 				<textarea  id="post_title" class="text expand" name="post_title" placeholder="Title Here" size="60" tabindex="1"><?php echo $post_title;?></textarea>
 
 			<p>
-				<textarea name="post_content" id="post_content" placeholder="Write post here" class="content expand"  tabindex="2"><?php echo $post_content ?></textarea>
+				<textarea name="post_content" id="post_content" placeholder="Write post here" class="content"  tabindex="2"><?php echo $post_content ?></textarea>
 			</p>
 
 		<?php else: ?>
 			<?php // a lo mejor convendría un redirect? ?>
 			<p>Sorry, you don't have permission to post new article!</p>
 		<?php endif ?>
-			
-	</div><!-- .wrap -->
 
-	<div class="buttons">
+		<div class="buttons">
 		<?php if (!empty($_GET['id'])): ?>
 			<a href="<?php echo get_permalink($post_id) ?>" target="_blank" class="button preview">Preview</a>
 		<?php endif ?>
@@ -78,17 +80,15 @@ include('header.php');
 		<input type="submit" class="button" value="Save"/>
 
 	</div><!-- .buttons -->
-	
-	
+	</form>
 
-</form>
+	</div><!-- .post content -->
 
-<?php if (!empty($_GET['id'])): ?>
-     <div class="preview">
-          <a href="#close" class="close button">HIDE</a>
-          <iframe class="preview" src="<?php echo get_permalink($post_id) ?>"></iframe>
-     </div>
-<?php endif ?>
+	<div class=" module">
+		    <div id="preview"> </div>
+	</div><!-- .name -->
+</div><!-- .wrap -->
+
 
 
 <script type="text/javascript">
@@ -106,10 +106,25 @@ include('header.php');
 			$('.overlay').hide();
 		});
 		
-		$('.expand').autosize();
+		$('textarea').autosize();
+
+		$('#post_content').bind('input', function() {
+			Editor(document.getElementById("post_content"), document.getElementById("preview"));
+		});
 	});
 </script>
-
+<script src="js/markdown.js"></script>
+<script>
+      function Editor(input, preview)
+      {
+        this.update = function () {
+          preview.innerHTML = markdown.toHTML(input.value);
+        }
+        input.editor = this;
+        this.update();
+      }
+      new Editor(document.getElementById("post_content"), document.getElementById("preview"));
+</script>
 
 
 <?php include('footer.php'); ?>
