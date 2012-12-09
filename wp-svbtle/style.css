@@ -466,3 +466,58 @@ Verdana, Tahoma, Geneva, sans-serif - t
 .bypostauthor{}
 .sticky{}
 /** END WordPress-Defined CSS Classes **/
+
+#preview pre code {
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    background-color: #F8F8F8;
+    border-color: #D2D2D2 -moz-use-text-color;
+    border-image: none;
+    border-style: solid none;
+    border-width: 1px medium;
+    display: block;
+    font-size: 13px;
+    margin-left: -50px;
+    margin-right: 0;
+    padding-bottom: 10px;
+    padding-left: 50px;
+    padding-top: 10px;
+    width: auto;
+}
+#preview code {
+    background-color: #F8F8F8;
+    border: 1px solid #D2D2D2;
+    display: inline;
+    font-size: 13px;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+#preview pre,#preview code,#preview kbd,#preview samp {
+    font-family: monospace,serif;
+    font-size: 1em;
+}
+
+#preview blockquote {
+    border-left: 10px solid #000000;
+    display: inline-block;
+    font-size: 15px;
+    line-height: 25px;
+    margin-bottom: 0;
+    margin-left: 0;
+    margin-top: 0;
+    padding-bottom: 0;
+    padding-left: 18px;
+}
+
+#preview p {
+    color: #4D4D4D;
+    font-family: 'proxima-nova',sans-serif;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 23px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
