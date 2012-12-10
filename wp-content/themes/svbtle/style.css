@@ -96,7 +96,7 @@ h3#reply-title{margin:18px 0}
 #comments-list ul #respond{margin:0}
 #cancel-comment-reply-link{font-size:12px; font-weight:normal; line-height:18px}
 article a.comment-reply-link{font-size: 13px; text-decoration: none; font-weight: bold;}
-#respond .required{margin-left: -10px; color:#ff4b33; font-weight:bold}
+#respond .required{color:#ff4b33; font-weight:bold}
 #respond .comment-form-author label, #respond .comment-form-email label, #respond .comment-form-url label, #respond .comment-form-comment label{color:#888;  font-size:12px; width: 70px; display: inline-block;  }
 #respond .comment-form-comment label {padding: 0; text-align: left; }
 #respond input[type="text"]{margin-bottom:14px; padding:4px; margin-right:10px; border:0; border-bottom:1px solid #ccc}
