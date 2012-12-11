@@ -508,7 +508,7 @@ function add_items($admin_bar)
 add_action('comment_form_before','svbtle_comment_form_before');
 add_action('comment_form_after','svbtle_comment_form_after');
 function svbtle_comment_form_before() {
- echo '<div class=comments>';
+ echo '<div class="comments">';
  }
 
  function svbtle_comment_form_after() {
