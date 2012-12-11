@@ -15,9 +15,7 @@ get_header(); ?>
 
 <?php get_template_part( 'loop', 'index' ); ?>
 
-<div class="comments">
-	<?php comments_template(); ?>
-</div><!-- .comments -->
+<?php comments_template(); ?>
 
 <nav class="pagination">
   <span class="prev">
