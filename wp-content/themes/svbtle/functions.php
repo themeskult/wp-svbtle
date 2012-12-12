@@ -504,4 +504,13 @@ function add_items($admin_bar)
     $admin_bar->add_menu( $args);
 }
 
-?>
+// Modifying the Comment Call before and after comment_form gets called in comments.php
+add_action('comment_form_before','svbtle_comment_form_before');
+add_action('comment_form_after','svbtle_comment_form_after');
+function svbtle_comment_form_before() {
+ echo '<div class="comments">';
+ }
+
+ function svbtle_comment_form_after() {
+ echo '</div>';
+ }
