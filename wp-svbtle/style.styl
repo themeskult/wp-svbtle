@@ -1,0 +1,132 @@
+html{ -webkit-font-smoothing:antialiased; }
+body{font-size: 100%; color: #4D4D4D; margin-top: 1em; font-family: helvetica}
+h1,h2,h3,h4,h5,h6, .button, #post_title
+  font-family: "freight-sans-pro",sans-serif;
+  font-weight: bold;
+input[type=text]{border: 0; font-size: 13px;}
+input[type=text]:focus{outline: none}
+input[type="text"]:disabled{color: #ccc;}
+
+input.text, .textarea{border: 1px solid #ccc; padding: 10px 14px; width: 200px}
+textarea{resize: none; }
+
+a, a:visited{color: black; font-weight: bold;text-decoration: none;}
+a:hover{color: #0184ca; }
+.button, a.button{display: inline-block; cursor: pointer; text-shadow: none;  border: 0; margin: 0;  text-transform: uppercase; font-size: 12px; font-weight: 900; color: white; background: black; border-radius: 5px; padding: 10px 20px}
+.button .tick{display: none; margin-right: 10px;}
+.button.checked .tick{display: inline-block;}
+input.button.big{padding: 14px 30px; font-size: 16px;}
+
+#logo{position: fixed; background: black; border-radius: 100px; width: 82px; height: 82px; bottom: 20px; left: 20px; }
+#logo a{border: 5px solid white; border-radius: 100px; width: 52px; height: 52px; margin: 10px; float: left;}
+#logo a img{width: 100%}
+
+a.button-icon
+  display: inline-block; background: black; float: right; width: 30px; height: 30px; border-radius: 5px;
+  &.home
+    background: black url('../images/home.png') center no-repeat; margin-right: 20px;
+  &.settings
+    background: black url('../images/settings.png') center no-repeat; margin-right: 20px;
+  &.logout
+    background: black url('../images/logout.png') center no-repeat;
+
+.button:hover, .button.checked, a.button-icon:hover{background-color: #0184ca}
+
+.page-homepage
+  a.button-icon
+    &.home
+      display: none;
+
+.wrap{width: 80%; margin: auto}
+
+
+.module
+  width: 50%; float: left;
+  a {display: block;}
+  h2{padding: 0 5% 0 5% ; margin: 0; border-bottom: 1px solid #ccc; margin-bottom: 0; font-weight: 900; text-transform: uppercase;}
+  p{border-bottom: 1px solid #ccc; padding: .7em 5%; margin: 0}
+  p:first-child{border-top: 1px solid #ccc}
+  p:last-child{border: 0;}
+  &.published
+    a 
+      color: #666;
+      .word-count{border: 3px solid #666; font-size: .8em; font-weight: bold; border-radius: 100px; width: 38px; padding: 10px 0; margin-right: 10px; text-align: center; display: inline-block;}
+      &:hover
+        color: #0184ca;
+        .word-count {border-color: #0184ca;}
+    p{padding: .7em 5% 0.6em 5%;}
+
+  .ideas
+    border: 8px solid black;   min-height: 500px
+    h2{color: black; font-size: 2em;  margin-top: .4em; padding-bottom: .3em}
+    a{font-weight: 600; display: block;}
+    p{line-height: 2.4em}
+    input.start_typing{border: 0; font-size: 1.3em; color: #0184ca; width: 100%}
+    a.button.new-entry{float: right; display: block; padding: 0px 20px; margin-top: -2px; font-size: 14px}
+
+.form-idea{padding: 0 5%; border-bottom: 1px solid #ccc; margin: 1em 0 0 0; padding-bottom: 1em}
+
+.buttons {position: absolute; opacity: .2; text-align: right; z-index: 101; right: 1.4em; left: 200px; bottom: 0; padding-bottom: 1em; background: white; box-shadow: 0 -50px 30px 10px white}
+.buttons:hover{opacity: 1}
+.buttons .button{display: inline-block; margin: 5px}
+.buttons div.double{display: inline-block; border: 4px solid black; border-radius: 8px}
+.buttons div.double .RadioClass{display: none;}
+
+.page-edit 
+  .wrap{ margin-left: 200px; width: 590px; overflow-y:scroll; bottom: 100px; position: fixed; top: 5em; }
+  .icon-markdown{width: 32px; opacity: .1; height: 20px; margin-left: 0; margin-bottom: -100px; float: left; display: block; background: url('../images/markdown-logo.png');}
+
+  textarea.text, textarea{border: 0; width: 500px}
+  #post_title{width: 90%; height: 50px; padding-left: 50px;}
+  textarea.content{color: #4d4d4d; margin-top: -3px; margin-left: 48px; line-height: 23px; font-size: 15px; font-family: 'proxima-nova',sans-serif; resize: none; padding-right: 20px; padding-bottom:50px !important;}
+  input.text:focus, textarea:focus{outline: 0}
+  #post_title{font-size: 2em; font-weight: bold;}
+
+  .wps-notice{width: 80%; margin: auto; position: absolute; left: 10%;}
+
+  div.preview { position: absolute; z-index: 100; width: 480px; height: 80%; top: 25px; right: 50px; background: #fff; display: none; }
+
+  div.preview iframe 
+    width: 100%; height: 100%; border: 3px solid #000;
+
+  div.preview .close {margin: 0 0 5px; }
+
+  .overlay{
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    overflow: hidden;
+    display: none;
+    right: 0;
+    z-index: 8010;
+    background: rgba(0,0,0,.6);
+  }
+
+  #external-url
+    label{color: black; font-weight: bold; margin-bottom: 10px; display: block;}
+    input.text{width: 96%; padding: 8px 2%; margin-bottom: 8px;}
+    background: white; width: 340px; margin: 20% auto; padding: 10px;
+    a.remove
+      background: red;
+      &:hover{background-color: red;}
+    hr{margin: 20px 0;}
+
+.page-settings
+  h3 {margin-bottom: 20px;}
+  a.button-icon
+    &.settings
+      display: none;
+
+  label
+    font-weight: bold;
+    font-size: 13px;
+    color: black; text-transform: uppercase;
+
+  input.text
+    font-size: 14px; border: 1px solid #ccc; padding: 10px 2%; width: 60%;
+    &:focus{border-color: #999;}
+  .themes
+    a.theme   
+       display: inline-block; margin-right: 50px; font-weight: bold;
+      img{border: 4px solid #ccc; padding: 1px; margin-bottom: 4px}
