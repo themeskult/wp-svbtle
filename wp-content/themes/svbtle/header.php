@@ -117,6 +117,6 @@
 		
 		<section id="river" role="main">
         
-        <?php if ($_GET['not_found']): ?>
+        <?php if (isset($_GET['not_found'])): ?>
         <div id="notice"><span>:(</span><br><br>Not found.</div>
         <?php endif; ?>
