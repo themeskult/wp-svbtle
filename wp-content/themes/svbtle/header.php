@@ -60,25 +60,9 @@
 		        <?php bloginfo( 'description' ); ?>
 		      </h2>
 		    </li>
-		
-		
-				<?php
-					$mypages = get_pages( );
 
-					foreach( $mypages as $page ) {		
-						$content = $page->post_content;
-						if ( ! $content ) // Check for empty page
-							continue;
 
-						$content = apply_filters( 'the_content', $content );
-					?>
-						<li class="link">
-							<a href="<?php echo get_page_link( $page->ID ); ?>"><?php echo $page->post_title; ?></a>
-						</li>
-						
-					<?php
-					}	
-				?>
+		    <?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_class' => 'nav-menu' ) ); ?>
 				
 				<?php if (!empty($options['twitter_username'])): ?>
 					<li class="link twitter">
