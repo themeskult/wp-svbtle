@@ -40,13 +40,13 @@ table tr:nth-child(even){background:#eee}
 
 /* =Comments
 -------------------------------------------------------------- */
-.comments{ border-top: 1px solid #E2E2E2;
+#comments, .comments{ border-top: 1px solid #E2E2E2;
     padding-top: 50px;
     padding-left: 50px;
     padding-right: 50px;
 }
 .comments ol{padding-top:20px}
-#comments{clear:both}
+#comments{clear:both; }
 
 #comments .navigation{padding:0 0 18px 0}
 h3#comments-title, 
