@@ -75,8 +75,8 @@ get_header(); ?>
 
 <?php
 $posts=$wpdb->get_results($wpdb->prepare(
- "SELECT post_id, meta_value FROM $wpdb->postmeta WHERE meta_key = %s
-  ORDER BY CHAR_LENGTH(meta_value) DESC, meta_value DESC LIMIT 5",
+ "SELECT post_id, meta_value FROM $wpdb->postmeta WHERE meta_key = %s " .
+ "ORDER BY CHAR_LENGTH(meta_value) DESC, meta_value DESC LIMIT 5",
  '_wp-svbtle-kudos'
 ));
 ?>
