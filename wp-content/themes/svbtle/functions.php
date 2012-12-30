@@ -268,7 +268,7 @@ function theme_admin_header_image() {
 }
 
 function register_custom_menu() {
-	register_nav_menu('custom_menu', __('Svbtle Menu'));
+	register_nav_menu( 'primary', __( 'Svbtle Menu') );
 }
 
 require_once ( get_stylesheet_directory() . '/theme-options.php' );
