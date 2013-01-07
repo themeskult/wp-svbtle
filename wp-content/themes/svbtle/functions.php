@@ -491,7 +491,7 @@ function add_items($admin_bar)
     $args = array(
             'id'    => 'wp-svbtle-editor',
             'title' => 'wp-svbtle editor',
-            'href'  => '/wp-svbtle',
+            'href'  => get_bloginfo('url') . '/wp-svbtle',
             'meta'  => array('title' => __('wp-svbtle editor'))
             );
  
