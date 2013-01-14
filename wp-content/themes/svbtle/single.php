@@ -75,23 +75,23 @@ get_header(); ?>
 
 <?php
 $posts=$wpdb->get_results($wpdb->prepare(
- "SELECT post_id, meta_value FROM $wpdb->postmeta WHERE meta_key = %s " .
+ "SELECT post_id, meta_value FROM $wpdb->postmeta WHERE meta_key = %s AND post_id <> %d " .
  "ORDER BY CHAR_LENGTH(meta_value) DESC, meta_value DESC LIMIT 5",
- '_wp-svbtle-kudos'
+ '_wp-svbtle-kudos', get_the_ID()
 ));
 ?>
 
 <div>
   <h2 id='also-read-title'>Also read...</h2>
   <ul id='also-read-items'>
-  <?php foreach ( $posts as $post ) {?>
+  <?php for($i=0; $i<count($posts); $i++): ?>
     <li>
-      <a href="<?php echo get_permalink($post->post_id); ?>">
-        <h3><?php echo get_the_title($post->post_id); ?></h3>
-        <p class="link_kudo"><?php echo $post->meta_value; ?></p>
+      <a href="<?php echo get_permalink($posts[$i]->post_id); ?>">
+        <h3><?php echo get_the_title($posts[$i]->post_id); ?></h3>
+        <p class="link_kudo"><?php echo $posts[$i]->meta_value; ?></p>
       </a>
     </li>
-  <?php }; ?>
+  <?php endfor; ?>
   </ul>
 </div>
 
