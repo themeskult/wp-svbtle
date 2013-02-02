@@ -30,7 +30,7 @@
 	
 		?>
 
-		<style>blockquote {border-color: <?php echo $color ?>;}aside#logo,aside#logo div a,ul#user_meta a:hover span.link_logo_inside,ul#user_meta a:hover span.link_logo,aside.kudo.complete span.circle {background-color: <?php echo $color ?>;}section.preview header#begin h2,ul#user_meta a:hover,nav.pagination span.next a,nav.pagination span.prev a {color: <?php echo $color ?>;}ul#user_meta a:hover,nav.pagination span.next a,nav.pagination span.prev a {border-color: <?php echo $color ?>;}::-moz-selection { background: <?php echo $color ?>; color: #fff; text-shadow: none;}::selection { background: <?php echo $color ?>; color: #fff; text-shadow: none;}
+		<style>blockquote {border-color: <?php echo $color ?>;}figure.logo, aside.alsoby li a:hover, aside.kudo.complete span.circle {background-color: <?php echo $color ?>;}section.preview header#begin h2,ul#user_meta a:hover,nav.pagination span.next a,nav.pagination span.prev a {color: <?php echo $color ?>;}ul#user_meta a:hover,nav.pagination span.next a,nav.pagination span.prev a {border-color: <?php echo $color ?>;}::-moz-selection { background: <?php echo $color ?>; color: #fff; text-shadow: none;}::selection { background: <?php echo $color ?>; color: #fff; text-shadow: none;}
 		</style>
 		
 		<?php wp_head();  ?>
@@ -38,32 +38,25 @@
 		
 	</head>
 	<body <?php body_class(); ?>>
+
 		<header id="sidebar">
-		  <aside id="logo" class="clearfix">
-		    <div class="clearfix">
-		      <a href="<?php echo home_url( '/' ); ?>"><?php bloginfo( 'name' ); ?></a>
-		    </div>
-		  </aside>
-		  <ul id="user_meta">
-		    <li class="blog_name">  
-		      <h1 id="blog_name">
-			      <a href="<?php echo home_url( '/' ); ?>"><?php bloginfo( 'name' ); ?></a>
-		      </h1>
-		    </li>
-				<li class="blog_owner">  
-		      <h2 id="blog_owner">
-		        <a href="<?php echo home_url( '/' ); ?>"><?php echo $options['theme_username'] ?></a>
-		      </h2>
-		    </li>
-		    <li class="tagline">
-		      <h2 id="tagline">
-		        <?php bloginfo( 'description' ); ?>
-		      </h2>
-		    </li>
+			<figure class="logo medium">
+				<a href="<?php echo home_url( '/' ); ?>"><?php bloginfo( 'name' ); ?></a>
+			</figure>
+			<h1><a href="<?php echo home_url( '/' ); ?>"><?php bloginfo( 'name' ); ?></a></h1>
+			<h2><a href="<?php echo home_url( '/' ); ?>"><?php echo $options['theme_username'] ?></a></h2>
+			<h3><?php bloginfo( 'description' ); ?></h3>
 
+			<ul id="user_nav">
+				<?php   
+				$pages = get_pages(); 
+  foreach ( $pages as $page ): ?>
 
-		    <?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_class' => 'nav-menu' ) ); ?>
-				
+  	<li>
+  		<a href="<?php echo get_page_link( $page->ID ) ?>" title=""><?php echo $page->post_title ?></a>
+  	</li>
+
+<?php endforeach; ?>  
 				<?php if (!empty($options['twitter_username'])): ?>
 					<li class="link twitter">
 						<a target="_blank" href="http://twitter.com/<?php echo $options['twitter_username'] ?>">@<?php echo $options['twitter_username'] ?></a>
