@@ -1,6 +1,7 @@
 </section><!-- #main -->
 
 <?php $options = get_option ( 'svbtle_options' ); ?>
+<script data-cfasync="false" src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
 
 <script type="text/javascript" charset="utf-8">
 	function getKudos() {
