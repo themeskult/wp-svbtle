@@ -121,6 +121,9 @@ ol.commentlist li.comment.byuser #respond .form-submit{margin-left: 0}
 
 article.post {overflow: visible}
 
+/* Don't skew images with embedded sizes in posts */
+article img{height:100%; width:100%}
+
 #respond .comment-subscription-form{margin-bottom: 10px}
 
 
