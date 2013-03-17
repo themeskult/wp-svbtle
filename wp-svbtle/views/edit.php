@@ -42,9 +42,9 @@ include('header.php');
 			<?php endif; ?>
 
 			<textarea  id="post_title" class="text expand" name="post_title" placeholder="Title Here" size="60" tabindex="1"><?php echo $post_title;?></textarea>
-
-			<textarea name="post_content" id="post_content" placeholder="Write post here" class="content"  tabindex="2"><?php echo $post_content ?></textarea>
-
+			<div id="post_content_wrapper" style="position:fixed;left:200px;top:75px;bottom:75px;max-height:100%">
+				<textarea name="post_content" id="post_content" placeholder="Write post here" class="content" style="min-height:100%;max-height:100%" tabindex="2"><?php echo $post_content ?></textarea>
+			</div>
 		<?php else: ?>
 			<?php // a lo mejor convendría un redirect? ?>
 			<p>Sorry, you don't have permission to post new article!</p>
