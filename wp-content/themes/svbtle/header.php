@@ -16,6 +16,8 @@
 		<![endif]-->
 		<?php
 
+			wp_enqueue_script('jquery');
+
 			if ( is_singular() && get_option( 'thread_comments' ) )
 				wp_enqueue_script( 'comment-reply' );
 
