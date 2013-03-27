@@ -53,25 +53,6 @@
 			
 				<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
 				
-				<?php if (!empty($options['twitter_username'])): ?>
-					<li class="link twitter">
-						<a target="_blank" href="http://twitter.com/<?php echo $options['twitter_username'] ?>">@<?php echo $options['twitter_username'] ?></a>
-					</li>
-				<?php endif ?>
-				
-				<?php if (!empty($options['github_username'])): ?>
-					<li class="link github">
-						<a target="_blank" href="http://github.com/<?php echo $options['github_username'] ?>">Github</a>
-					</li>
-				<?php endif ?>
-				
-				<?php if (!empty($options['contact_email'])): ?>
-					<li class="link email">
-						<a href="mailto:<?php echo $options['contact_email'] ?>">						
-							say hello</a> 
-					</li>
-				<?php endif ?>
-			
 				<?php if ($options['rss-link']): ?>
 					<li class="link feed">
 				      <a href="<?php bloginfo('rss_url'); ?>">feed</a>

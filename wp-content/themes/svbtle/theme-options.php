@@ -64,24 +64,7 @@ function theme_options_do_page() {
 						<th><?php _e( 'Your name', 'wordpress-svbtle' ); ?></th>
 						<td><input class="regular-text" type="text" name="svbtle_options[theme_username]" value="<?php esc_attr_e( $options['theme_username'] ); ?>" /></td>
 					</tr>
-					<tr>
-						<th><?php _e( 'Twitter Username', 'wordpress-svbtle' ); ?></th>
-						<td><input class="regular-text" type="text" name="svbtle_options[twitter_username]" value="<?php esc_attr_e( $options['twitter_username'] ); ?>" /></td>
-					</tr>
-					<tr>
-						<th><?php _e( 'Github Username', 'wordpress-svbtle' ); ?></th>
-						<td>
-							<input class="regular-text" type="text" name="svbtle_options[github_username]" value="<?php esc_attr_e( $options['github_username'] ); ?>" />
-						</td>
-					</tr>
-
-					<tr>
-						<th><?php _e( 'Contact Email', 'wordpress-svbtle' ); ?></th>
-						<td>
-							<input class="regular-text" type="text" name="svbtle_options[contact_email]" value="<?php esc_attr_e( $options['contact_email'] ); ?>" />
-						</td>
-					</tr>
-
+				
 					<tr>
 						<th><?php _e( 'Show RSS Link', 'wordpress-svbtle' ); ?></th>
 						<td>
