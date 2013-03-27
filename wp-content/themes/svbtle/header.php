@@ -50,15 +50,9 @@
 			<h3><?php bloginfo( 'description' ); ?></h3>
 
 			<ul id="user_nav">
-				<?php   
-				$pages = get_pages(); 
-  foreach ( $pages as $page ): ?>
-
-  	<li>
-  		<a href="<?php echo get_page_link( $page->ID ) ?>" title=""><?php echo $page->post_title ?></a>
-  	</li>
-
-<?php endforeach; ?>  
+			
+				<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
+				
 				<?php if (!empty($options['twitter_username'])): ?>
 					<li class="link twitter">
 						<a target="_blank" href="http://twitter.com/<?php echo $options['twitter_username'] ?>">@<?php echo $options['twitter_username'] ?></a>
