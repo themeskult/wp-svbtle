@@ -1,7 +1,7 @@
 # wp-svbtle
 #### Wordpress admin & Theme inspired by svbtle.com. [Follow us on twitter][]
 
-  [Follow us on twitter]: http://twitter.com/gravityonmars
+  [Follow me on twitter]: http://twitter.com/gravityonmars
 
 [View Demo][]
 
