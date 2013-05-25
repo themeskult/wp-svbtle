@@ -432,7 +432,7 @@ endif; // ends check for wp_svbtle_comment()
 function implement_ajax() {
 	global $wpdb;
 
-	$post_id = mysql_real_escape_string($_POST['article']);
+	$post_id = intval($_POST['article']);
 
 	$kudos = get_post_meta( $post_id , '_wp-svbtle-kudos', true );
 	$new_kudos = $kudos + 1;
@@ -451,7 +451,7 @@ function remove_kudos() {
 	
 	global $wpdb;
 
-	$post_id = mysql_real_escape_string($_POST['article']);
+	$post_id = intval($_POST['article']);
 
 	$kudos = get_post_meta( $post_id , '_wp-svbtle-kudos', true );
 	$new_kudos = $kudos - 1;
