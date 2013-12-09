@@ -25,7 +25,9 @@ function theme_setup() {
 			'random-default'		=> true,
 			'wp-head-callback'		=> 'theme_header_style',
 			'admin-head-callback'		=> 'theme_admin_header_style',
-			'admin-preview-callback'	=> 'theme_admin_header_image'
+			'admin-preview-callback'	=> 'theme_admin_header_image',
+			'post-thumbnails'		=> true
+
 		) );
 	} else {
 		add_theme_support( 'custom-header', array( 'random-default' => true ) );
