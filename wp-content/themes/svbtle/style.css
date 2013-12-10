@@ -143,6 +143,24 @@ li.share-end{display: none !important; clear: none !important;}
 .sharedaddy li{float: left; margin: 0 !important;  list-style: none !important; padding: 0 !important}
 
 
+/* Featured Image (post thumbnail) styling */
+.thumbnail {
+  margin-bottom: 10px;  
+}
+img.thumbnail {
+  border-radius: 300px; 
+  border-style: solid;
+  border-color: white; 
+  border-width: 5px; 
+   box-shadow: 0px 6px 11px rgba(0, 0, 0, 0.43);
+  -moz-box-shadow: 0px 6px 11px rgba(0, 0, 0, 0.43);
+  -webkit-box-shadow: 0px 6px 11px rgba(0, 0, 0, 0.43);
+}
+img.thumbnail:hover {
+  -webkit-filter: grayscale(100%); 
+}
+
+
 
 @media (max-width: 630px) {
 	/* Responsive Comments */
