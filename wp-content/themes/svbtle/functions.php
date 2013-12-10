@@ -25,12 +25,12 @@ function theme_setup() {
 			'random-default'		=> true,
 			'wp-head-callback'		=> 'theme_header_style',
 			'admin-head-callback'		=> 'theme_admin_header_style',
-			'admin-preview-callback'	=> 'theme_admin_header_image',
-			'post-thumbnails'		=> true
+			'admin-preview-callback'	=> 'theme_admin_header_image'
 
 		) );
 	} else {
 		add_theme_support( 'custom-header', array( 'random-default' => true ) );
+		add_theme_support( 'post-thumbnails' );
 		//WP Custom Header - random roation by default
 		define( 'HEADER_TEXTCOLOR', '' );
 		define( 'HEADER_IMAGE', '%s/images/icons/bolt_large.png' );
