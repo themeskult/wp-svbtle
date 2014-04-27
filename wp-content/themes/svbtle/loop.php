@@ -5,8 +5,10 @@
 		<?php $kudos = get_post_meta( $post->ID, '_wp-svbtle-kudos', true ) ? get_post_meta( $post->ID, '_wp-svbtle-kudos', true ) : '0';?>
 					
 			<article id="<?php the_ID(); ?>" class="post">
-
 				<h2 class="entry-title"><?php print_post_title(); ?></h2>
+				<?php $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'thumbnail' ); ?>
+            			<?php $bigImage = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'single-post-thumbnail' ); ?>
+            			<?php if ( has_post_thumbnail() ) { ?><a href="<?php if (is_single()) { echo $bigImage[0]; } else { the_permalink(); } ?>"><img src="<?php echo "$image[0]"; ?>" alt="" class="thumbnail alignleft" /></a><?php } ?>
 
 				<?php if ( is_archive() || is_search() ) : // Only display excerpts for archives and search. ?>
 					<div class="entry-summary">
