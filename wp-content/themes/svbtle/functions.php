@@ -29,7 +29,7 @@ function theme_setup() {
 		) );
 	} else {
 		add_theme_support( 'custom-header', array( 'random-default' => true ) );
-		//WP Custom Header - random roation by default
+		//WP Custom Header - random rotation by default
 		define( 'HEADER_TEXTCOLOR', '' );
 		define( 'HEADER_IMAGE', '%s/images/icons/bolt_large.png' );
 		define( 'HEADER_IMAGE_HEIGHT', '100' );
